@@ -13,8 +13,12 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    Clocks/Clock.cpp \
+    Clocks/AnalogClock.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    Clocks/Clock.h \
+    Clocks/AnalogClock.h
 
 FORMS    += mainwindow.ui

@@ -39,10 +39,12 @@
 		B465D89D17033FDE0022E543 /* QtWidgets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B465D88017033FDE0022E543 /* QtWidgets.framework */; };
 		B465D89E17033FDE0022E543 /* QtXml.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B465D88117033FDE0022E543 /* QtXml.framework */; };
 		B465D89F17033FDE0022E543 /* QtXmlPatterns.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B465D88217033FDE0022E543 /* QtXmlPatterns.framework */; };
+		B48E32E41704DE5900E0DB00 /* AnalogClock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B48E32E01704DE5900E0DB00 /* AnalogClock.cpp */; };
+		B48E32E51704DE5900E0DB00 /* Clock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B48E32E21704DE5900E0DB00 /* Clock.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
-		B40A8CA117032DF800FE876D /* PBXBuildRule */ = {
+		B4E9D31117048259001D7674 /* PBXBuildRule */ = {
 			isa = PBXBuildRule;
 			compilerSpec = com.apple.compilers.proxy.script;
 			filePatterns = "*.h";
@@ -68,9 +70,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B40A8C7817032B2B00FE876D /* app */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B40A8C7817032B2B00FE876D /* Clock */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Clock; sourceTree = BUILT_PRODUCTS_DIR; };
 		B465D7B0170338B20022E543 /* mainwindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainwindow.cpp; sourceTree = SOURCE_ROOT; };
-		B465D7B1170338B20022E543 /* mainwindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mainwindow.h; sourceTree = SOURCE_ROOT; };
+		B465D7B1170338B20022E543 /* mainwindow.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = mainwindow.h; sourceTree = SOURCE_ROOT; };
 		B465D7B3170338C60022E543 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = SOURCE_ROOT; };
 		B465D86617033FDE0022E543 /* QtCLucene.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtCLucene.framework; path = Users/Qt5.0.1/5.0.1/clang_64/lib/QtCLucene.framework; sourceTree = SDKROOT; };
 		B465D86717033FDE0022E543 /* QtConcurrent.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtConcurrent.framework; path = ../../../Qt5.0.1/5.0.1/clang_64/lib/QtConcurrent.framework; sourceTree = "<group>"; };
@@ -101,6 +103,10 @@
 		B465D88017033FDE0022E543 /* QtWidgets.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtWidgets.framework; path = ../../../Qt5.0.1/5.0.1/clang_64/lib/QtWidgets.framework; sourceTree = "<group>"; };
 		B465D88117033FDE0022E543 /* QtXml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtXml.framework; path = ../../../Qt5.0.1/5.0.1/clang_64/lib/QtXml.framework; sourceTree = "<group>"; };
 		B465D88217033FDE0022E543 /* QtXmlPatterns.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtXmlPatterns.framework; path = ../../../Qt5.0.1/5.0.1/clang_64/lib/QtXmlPatterns.framework; sourceTree = "<group>"; };
+		B48E32E01704DE5900E0DB00 /* AnalogClock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AnalogClock.cpp; path = Clocks/AnalogClock.cpp; sourceTree = SOURCE_ROOT; };
+		B48E32E11704DE5900E0DB00 /* AnalogClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnalogClock.h; path = Clocks/AnalogClock.h; sourceTree = SOURCE_ROOT; };
+		B48E32E21704DE5900E0DB00 /* Clock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Clock.cpp; path = Clocks/Clock.cpp; sourceTree = SOURCE_ROOT; };
+		B48E32E31704DE5900E0DB00 /* Clock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Clock.h; path = Clocks/Clock.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,7 +198,7 @@
 		B4817F661702F83800BD9A2F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B40A8C7817032B2B00FE876D /* app */,
+				B40A8C7817032B2B00FE876D /* Clock */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -200,6 +206,7 @@
 		B4817F671702F83800BD9A2F /* devgui2 */ = {
 			isa = PBXGroup;
 			children = (
+				B48E32D81704DC2D00E0DB00 /* Clocks */,
 				B465D7B0170338B20022E543 /* mainwindow.cpp */,
 				B465D7B1170338B20022E543 /* mainwindow.h */,
 				B465D7B3170338C60022E543 /* main.cpp */,
@@ -207,25 +214,37 @@
 			path = devgui2;
 			sourceTree = "<group>";
 		};
+		B48E32D81704DC2D00E0DB00 /* Clocks */ = {
+			isa = PBXGroup;
+			children = (
+				B48E32E01704DE5900E0DB00 /* AnalogClock.cpp */,
+				B48E32E11704DE5900E0DB00 /* AnalogClock.h */,
+				B48E32E21704DE5900E0DB00 /* Clock.cpp */,
+				B48E32E31704DE5900E0DB00 /* Clock.h */,
+			);
+			name = Clocks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B40A8C7717032B2B00FE876D /* app */ = {
+		B40A8C7717032B2B00FE876D /* Clock */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B40A8C7E17032B2B00FE876D /* Build configuration list for PBXNativeTarget "app" */;
+			buildConfigurationList = B40A8C7E17032B2B00FE876D /* Build configuration list for PBXNativeTarget "Clock" */;
 			buildPhases = (
 				B40A8C7417032B2B00FE876D /* Sources */,
 				B40A8C7517032B2B00FE876D /* Frameworks */,
 				B40A8C7617032B2B00FE876D /* CopyFiles */,
+				B48E32D41704839D00E0DB00 /* ShellScript */,
 			);
 			buildRules = (
-				B40A8CA117032DF800FE876D /* PBXBuildRule */,
+				B4E9D31117048259001D7674 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
-			name = app;
+			name = Clock;
 			productName = app;
-			productReference = B40A8C7817032B2B00FE876D /* app */;
+			productReference = B40A8C7817032B2B00FE876D /* Clock */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -248,10 +267,26 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B40A8C7717032B2B00FE876D /* app */,
+				B40A8C7717032B2B00FE876D /* Clock */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B48E32D41704839D00E0DB00 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "find \"$SOURCE_ROOT\" -name '*_moc.cpp' -print0 | xargs -0 rm ";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B40A8C7417032B2B00FE876D /* Sources */ = {
@@ -261,6 +296,8 @@
 				B465D7B6170339800022E543 /* mainwindow.h in Sources */,
 				B465D7B2170338B20022E543 /* mainwindow.cpp in Sources */,
 				B465D7B5170338C60022E543 /* main.cpp in Sources */,
+				B48E32E41704DE5900E0DB00 /* AnalogClock.cpp in Sources */,
+				B48E32E51704DE5900E0DB00 /* Clock.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,11 +317,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"${HOME}/Qt5.0.1/5.0.1/clang_64/lib\"/**",
-					"\"$(SRCROOT)/../../Qt5.0.1/5.0.1/clang_64/lib\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "\"${HOME}/Qt5.0.1/5.0.1/clang_64/lib/\"/**";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -298,6 +331,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"/Users/jens/Qt5.0.1/5.0.1/clang_64/include\"/**";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -319,17 +353,14 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"${HOME}/Qt5.0.1/5.0.1/clang_64/lib\"/**",
-					"\"$(SRCROOT)/../../Qt5.0.1/5.0.1/clang_64/lib\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "\"${HOME}/Qt5.0.1/5.0.1/clang_64/lib/\"/**";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"/Users/jens/Qt5.0.1/5.0.1/clang_64/include\"/**";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -351,7 +382,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B40A8C7E17032B2B00FE876D /* Build configuration list for PBXNativeTarget "app" */ = {
+		B40A8C7E17032B2B00FE876D /* Build configuration list for PBXNativeTarget "Clock" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B40A8C7F17032B2B00FE876D /* Debug */,

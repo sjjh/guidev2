@@ -1,7 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QtWidgets/qmainwindow.h>
+#include <qmainwindow>
+#include <qpushbutton>
+#include "Clocks/AnalogClock.h"
 
 namespace Ui {
 class MainWindow;
@@ -17,6 +19,13 @@ public:
     
 private:
     Ui::MainWindow *ui;
+    QPushButton* pushButton;
+    AnalogClock* clock;
+    
+    private slots:
+    
+    void handleButton();
+    void resetColor();
 };
 
 #endif // MAINWINDOW_H
