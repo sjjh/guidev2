@@ -17,7 +17,7 @@
 #define MINIMUM_MINUTE_TICK_WIDTH   3
 
 #include "AnalogClock.h"
-#include <qpainter>
+#include <qpainter.h>
 #include <math.h>
 
 AnalogClock::AnalogClock()

@@ -1,8 +1,8 @@
 #include "mainwindow.h"
-#include <qmenu>
-#include <qmenubar>
-#include <qaction>
-#include <qboxlayout>
+#include <qmenu.h>
+#include <qmenubar.h>
+#include <qaction.h>
+#include <qboxlayout.h>
 
 #define WINDOW_TITLE    "Clock"
 #define BUTTON_TITLE    "Click meeeee"

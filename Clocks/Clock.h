@@ -10,9 +10,9 @@
 #define __guidev2__Clock__
 
 #include <iostream>
-#include <qwidget>
+#include <qwidget.h>
 #include <ctime>
-#include <qtime>
+#include <QTime>
 
 class Clock: public QWidget
 {

@@ -1,8 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <qmainwindow>
-#include <qpushbutton>
+#include <qmainwindow.h>
+#include <qpushbutton.h>
 #include "Clocks/AnalogClock.h"
 
 namespace Ui {
