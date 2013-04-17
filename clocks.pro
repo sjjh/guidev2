@@ -14,11 +14,21 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    Clocks/Clock.cpp \
-    Clocks/AnalogClock.cpp
+    NotificationCenter.cpp \
+    ClockApp.cpp \
+    Model/Pupil.cpp \
+    Model/DataSource.cpp \
+    ViewControllers/ViewController.cpp \
+    Views/Clocks/Clock.cpp \
+    Views/Clocks/AnalogClock.cpp
 
 HEADERS  += mainwindow.h \
-    Clocks/Clock.h \
-    Clocks/AnalogClock.h
+    NotificationCenter.h \
+    ClockApp.h \
+    Model/Pupil.h \
+    Model/DataSource.h \
+    ViewControllers/ViewController.h \
+    Views/Clocks/Clock.h \
+    Views/Clocks/AnalogClock.h
 
 FORMS    += mainwindow.ui

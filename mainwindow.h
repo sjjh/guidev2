@@ -3,7 +3,7 @@
 
 #include <qmainwindow.h>
 #include <qpushbutton.h>
-#include "AnalogClock.h"
+#include "Views/Clocks/AnalogClock.h"
 
 namespace Ui {
 class MainWindow;
