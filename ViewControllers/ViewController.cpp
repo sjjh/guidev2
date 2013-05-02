@@ -15,7 +15,7 @@ ViewController::ViewController()
 
 ViewController::~ViewController()
 {
-    
+
 }
 
 QWidget* ViewController::getView()

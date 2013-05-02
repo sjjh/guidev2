@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B40EE5741732BB8800667D36 /* Undoable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B40EE5721732BB8800667D36 /* Undoable.cpp */; };
+		B40EE5781732BCCC00667D36 /* UndoRedoManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B40EE5761732BCCC00667D36 /* UndoRedoManager.cpp */; };
+		B40EE57B1732BCE200667D36 /* UndoRedoViewController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B40EE5791732BCE200667D36 /* UndoRedoViewController.cpp */; };
+		B40EE57E1732BD2000667D36 /* Drawable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B40EE57C1732BD2000667D36 /* Drawable.cpp */; };
+		B40EE5811732BD7400667D36 /* UndoRedoWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B40EE57F1732BD7400667D36 /* UndoRedoWindow.cpp */; };
+		B40EE5851732C45900667D36 /* Undoable.h in Sources */ = {isa = PBXBuildFile; fileRef = B40EE5731732BB8800667D36 /* Undoable.h */; };
+		B40EE5861732C45900667D36 /* UndoRedoManager.h in Sources */ = {isa = PBXBuildFile; fileRef = B40EE5771732BCCC00667D36 /* UndoRedoManager.h */; };
+		B40EE5871732C45900667D36 /* UndoRedoViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = B40EE57A1732BCE200667D36 /* UndoRedoViewController.h */; };
+		B40EE5881732C45900667D36 /* Drawable.h in Sources */ = {isa = PBXBuildFile; fileRef = B40EE57D1732BD2000667D36 /* Drawable.h */; };
+		B40EE5891732C45900667D36 /* UndoRedoWindow.h in Sources */ = {isa = PBXBuildFile; fileRef = B40EE5801732BD7400667D36 /* UndoRedoWindow.h */; };
+		B40EE58C1732C97F00667D36 /* UndoRedoView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B40EE58A1732C97F00667D36 /* UndoRedoView.cpp */; };
+		B40EE58F1732D08C00667D36 /* Rectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B40EE58D1732D08C00667D36 /* Rectangle.cpp */; };
+		B40EE5901732D72500667D36 /* UndoRedoView.h in Sources */ = {isa = PBXBuildFile; fileRef = B40EE58B1732C97F00667D36 /* UndoRedoView.h */; };
+		B40EE5911732D72500667D36 /* Rectangle.h in Sources */ = {isa = PBXBuildFile; fileRef = B40EE58E1732D08C00667D36 /* Rectangle.h */; };
 		B465D7B2170338B20022E543 /* mainwindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B465D7B0170338B20022E543 /* mainwindow.cpp */; };
 		B465D7B5170338C60022E543 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B465D7B3170338C60022E543 /* main.cpp */; };
 		B465D7B6170339800022E543 /* mainwindow.h in Sources */ = {isa = PBXBuildFile; fileRef = B465D7B1170338B20022E543 /* mainwindow.h */; };
@@ -83,6 +97,20 @@
 
 /* Begin PBXFileReference section */
 		B40A8C7817032B2B00FE876D /* Clock */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Clock; sourceTree = BUILT_PRODUCTS_DIR; };
+		B40EE5721732BB8800667D36 /* Undoable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Undoable.cpp; path = UndoRedo/Undoable.cpp; sourceTree = SOURCE_ROOT; };
+		B40EE5731732BB8800667D36 /* Undoable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Undoable.h; path = UndoRedo/Undoable.h; sourceTree = SOURCE_ROOT; };
+		B40EE5761732BCCC00667D36 /* UndoRedoManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UndoRedoManager.cpp; path = UndoRedo/UndoRedoManager.cpp; sourceTree = SOURCE_ROOT; };
+		B40EE5771732BCCC00667D36 /* UndoRedoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UndoRedoManager.h; path = UndoRedo/UndoRedoManager.h; sourceTree = SOURCE_ROOT; };
+		B40EE5791732BCE200667D36 /* UndoRedoViewController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UndoRedoViewController.cpp; path = UndoRedo/UndoRedoViewController.cpp; sourceTree = SOURCE_ROOT; };
+		B40EE57A1732BCE200667D36 /* UndoRedoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UndoRedoViewController.h; path = UndoRedo/UndoRedoViewController.h; sourceTree = SOURCE_ROOT; };
+		B40EE57C1732BD2000667D36 /* Drawable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Drawable.cpp; path = UndoRedo/Drawable.cpp; sourceTree = SOURCE_ROOT; };
+		B40EE57D1732BD2000667D36 /* Drawable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Drawable.h; path = UndoRedo/Drawable.h; sourceTree = SOURCE_ROOT; };
+		B40EE57F1732BD7400667D36 /* UndoRedoWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UndoRedoWindow.cpp; path = UndoRedo/UndoRedoWindow.cpp; sourceTree = SOURCE_ROOT; };
+		B40EE5801732BD7400667D36 /* UndoRedoWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UndoRedoWindow.h; path = UndoRedo/UndoRedoWindow.h; sourceTree = SOURCE_ROOT; };
+		B40EE58A1732C97F00667D36 /* UndoRedoView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UndoRedoView.cpp; path = UndoRedo/UndoRedoView.cpp; sourceTree = SOURCE_ROOT; };
+		B40EE58B1732C97F00667D36 /* UndoRedoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UndoRedoView.h; path = UndoRedo/UndoRedoView.h; sourceTree = SOURCE_ROOT; };
+		B40EE58D1732D08C00667D36 /* Rectangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Rectangle.cpp; path = UndoRedo/Rectangle.cpp; sourceTree = SOURCE_ROOT; };
+		B40EE58E1732D08C00667D36 /* Rectangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Rectangle.h; path = UndoRedo/Rectangle.h; sourceTree = SOURCE_ROOT; };
 		B465D7B0170338B20022E543 /* mainwindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainwindow.cpp; sourceTree = SOURCE_ROOT; };
 		B465D7B1170338B20022E543 /* mainwindow.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = mainwindow.h; sourceTree = SOURCE_ROOT; };
 		B465D7B3170338C60022E543 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = SOURCE_ROOT; };
@@ -171,6 +199,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B40EE5751732BB9000667D36 /* UndoRedo */ = {
+			isa = PBXGroup;
+			children = (
+				B40EE5721732BB8800667D36 /* Undoable.cpp */,
+				B40EE5731732BB8800667D36 /* Undoable.h */,
+				B40EE5761732BCCC00667D36 /* UndoRedoManager.cpp */,
+				B40EE5771732BCCC00667D36 /* UndoRedoManager.h */,
+				B40EE5791732BCE200667D36 /* UndoRedoViewController.cpp */,
+				B40EE57A1732BCE200667D36 /* UndoRedoViewController.h */,
+				B40EE57C1732BD2000667D36 /* Drawable.cpp */,
+				B40EE57D1732BD2000667D36 /* Drawable.h */,
+				B40EE57F1732BD7400667D36 /* UndoRedoWindow.cpp */,
+				B40EE5801732BD7400667D36 /* UndoRedoWindow.h */,
+				B40EE58A1732C97F00667D36 /* UndoRedoView.cpp */,
+				B40EE58B1732C97F00667D36 /* UndoRedoView.h */,
+				B40EE58D1732D08C00667D36 /* Rectangle.cpp */,
+				B40EE58E1732D08C00667D36 /* Rectangle.h */,
+			);
+			name = UndoRedo;
+			sourceTree = "<group>";
+		};
 		B465D82B17033EB20022E543 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +287,7 @@
 				B4EFFEFE171ED3130076E810 /* ClockApp.h */,
 				B4EFFF00171ED32C0076E810 /* NotificationCenter.cpp */,
 				B4EFFF01171ED32C0076E810 /* NotificationCenter.h */,
+				B40EE5751732BB9000667D36 /* UndoRedo */,
 			);
 			path = devgui2;
 			sourceTree = "<group>";
@@ -349,6 +399,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B40EE5901732D72500667D36 /* UndoRedoView.h in Sources */,
+				B40EE5911732D72500667D36 /* Rectangle.h in Sources */,
+				B40EE5851732C45900667D36 /* Undoable.h in Sources */,
+				B40EE5861732C45900667D36 /* UndoRedoManager.h in Sources */,
+				B40EE5871732C45900667D36 /* UndoRedoViewController.h in Sources */,
+				B40EE5881732C45900667D36 /* Drawable.h in Sources */,
+				B40EE5891732C45900667D36 /* UndoRedoWindow.h in Sources */,
 				B4EFFF03171ED4A90076E810 /* DataSource.h in Sources */,
 				B4EFFF04171ED4A90076E810 /* Pupil.h in Sources */,
 				B4EFFF05171ED4A90076E810 /* AnalogClock.h in Sources */,
@@ -366,6 +423,13 @@
 				B4EFFEFC171ED2FF0076E810 /* Pupil.cpp in Sources */,
 				B4EFFEFF171ED3130076E810 /* ClockApp.cpp in Sources */,
 				B4EFFF02171ED32C0076E810 /* NotificationCenter.cpp in Sources */,
+				B40EE5741732BB8800667D36 /* Undoable.cpp in Sources */,
+				B40EE5781732BCCC00667D36 /* UndoRedoManager.cpp in Sources */,
+				B40EE57B1732BCE200667D36 /* UndoRedoViewController.cpp in Sources */,
+				B40EE57E1732BD2000667D36 /* Drawable.cpp in Sources */,
+				B40EE5811732BD7400667D36 /* UndoRedoWindow.cpp in Sources */,
+				B40EE58C1732C97F00667D36 /* UndoRedoView.cpp in Sources */,
+				B40EE58F1732D08C00667D36 /* Rectangle.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

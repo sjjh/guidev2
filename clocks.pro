@@ -21,7 +21,14 @@ SOURCES += main.cpp\
     ViewControllers/ViewController.cpp \
     Views/Clocks/Clock.cpp \
     Views/Clocks/AnalogClock.cpp \
-    Views/Clocks/FlipClock.cpp
+    Views/Clocks/FlipClock.cpp \
+    UndoRedo/UndoRedoWindow.cpp \
+    UndoRedo/UndoRedoViewController.cpp \
+    UndoRedo/UndoRedoView.cpp \
+    UndoRedo/UndoRedoManager.cpp \
+    UndoRedo/Undoable.cpp \
+    UndoRedo/Rectangle.cpp \
+    UndoRedo/Drawable.cpp
 
 HEADERS  += mainwindow.h \
     NotificationCenter.h \
@@ -31,4 +38,11 @@ HEADERS  += mainwindow.h \
     ViewControllers/ViewController.h \
     Views/Clocks/Clock.h \
     Views/Clocks/AnalogClock.h \
-    Views/Clocks/FlipClock.h
+    Views/Clocks/FlipClock.h \
+    UndoRedo/UndoRedoWindow.h \
+    UndoRedo/UndoRedoViewController.h \
+    UndoRedo/UndoRedoView.h \
+    UndoRedo/UndoRedoManager.h \
+    UndoRedo/Undoable.h \
+    UndoRedo/Rectangle.h \
+    UndoRedo/Drawable.h

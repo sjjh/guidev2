@@ -5,7 +5,6 @@
 #include <qboxlayout.h>
 
 #define WINDOW_TITLE    "Clock"
-#define BUTTON_TITLE    "Update time"
 
 #define WINDOW_HEIGHT   200
 #define WINDOW_WIDTH    300

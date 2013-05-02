@@ -34,3 +34,8 @@ QTime Clock::getTime()
 {
     return this->time;
 }
+
+void Clock::init()
+{
+    
+}

@@ -13,5 +13,7 @@ int main(int argc, char *argv[])
 {
     ClockApp a(argc, argv);
     
+    a.showMainWindow();
+    
     return a.exec();
 }
