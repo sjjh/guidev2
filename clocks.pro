@@ -30,5 +30,3 @@ HEADERS  += mainwindow.h \
     ViewControllers/ViewController.h \
     Views/Clocks/Clock.h \
     Views/Clocks/AnalogClock.h
-
-FORMS    += mainwindow.ui
