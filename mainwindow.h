@@ -9,23 +9,24 @@ namespace Ui {
 class MainWindow;
 }
 
+/**
+ * Represents the main window of the application.
+ */
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
     
-public:
-    explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
+    public:
     
-private:
-    Ui::MainWindow *ui;
-    QPushButton* pushButton;
-    AnalogClock* clock;
+        /**
+         * Creates a new main window instance.
+         */
+        MainWindow(QWidget *parent = 0);
     
-    private slots:
-    
-    void handleButton();
-    void resetColor();
+    private:
+
+        AnalogClock* clock;
+
 };
 
 #endif // MAINWINDOW_H

@@ -1,10 +1,8 @@
-//
-//  AnalogClock.cpp
-//  guidev2
-//
-//  Created by Jens Meder on 28.03.13.
-//
-//
+/**
+ *
+ *   Created by Jens Meder on 28.03.13.
+ *
+ */
 
 #define NUMBER_OF_MINUTES   60
 #define NUMBER_OF_HOURS     12
@@ -22,6 +20,8 @@
 
 AnalogClock::AnalogClock()
 {
+    // Initialize the clock with default values
+    
     hourArmBrush = QBrush(Qt::red);
     minuteArmBrush = QBrush(Qt::black);
     
@@ -39,6 +39,8 @@ AnalogClock::~AnalogClock()
 
 void AnalogClock::paintEvent(QPaintEvent *)
 {
+    // Calculate the size properties relative to the clocks size
+    
     float diameter = std::min(width(),height());
     float radius = diameter / 2.0;
     
@@ -51,6 +53,8 @@ void AnalogClock::paintEvent(QPaintEvent *)
     int hourArmWidth = fmax(2, radius / 20);
     int minuteArmLength = fmax(5, radius - hourTickWidth - labelRectSize);
     int minuteArmWidth = fmax(2, radius / 30);
+    
+    // Initialize context
     
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing, true);
@@ -100,6 +104,8 @@ void AnalogClock::paintEvent(QPaintEvent *)
     
     for(int i = 0; i < NUMBER_OF_MINUTES; i++)
     {
+        // Skip every 5th tick -> hour tick
+        
         if(i % 5 == 0)
         {
             continue;

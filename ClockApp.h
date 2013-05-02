@@ -13,13 +13,25 @@
 #include <QApplication>
 #include "mainwindow.h"
 
+/**
+ * Represents the clock application.
+ */
 class ClockApp: public QApplication
 {
     private:
+    
         MainWindow* mainWindow;
     
     public:
+    
+        /**
+         * Creates a new ClockApp instance.
+         */
         ClockApp(int &argc, char **argv);
+    
+        /**
+         * Destroys the ClockApp object and performs necessary clean up.
+         */
         ~ClockApp();
 };
 

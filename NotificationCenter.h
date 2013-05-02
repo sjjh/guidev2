@@ -11,10 +11,23 @@
 
 #include <iostream>
 
+/**
+ * Represents a notification center for distributing application wide messages between objects using signals and slots.
+ */
 class NotificationCenter
 {
-    private:
+    public:
+    
+        /**
+        * Destroys the NotificationCenter object and performs necessary clean up.
+        */
         ~NotificationCenter();
+    
+    private:
+    
+        /**
+         * Creates a new NotificationCenter instance.
+         */
         NotificationCenter();
 };
 

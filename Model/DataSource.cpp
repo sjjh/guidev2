@@ -12,8 +12,3 @@ DataSource::DataSource()
 {
     
 }
-
-DataSource::~DataSource()
-{
-    
-}
