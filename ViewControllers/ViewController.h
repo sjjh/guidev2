@@ -7,11 +7,12 @@
 
 #include <iostream>
 #include <QWidget>
+#include <QObject>
 
 /**
  * Base class for all view controllers
  */
-class ViewController
+class ViewController: public QObject
 {
     protected:
     
@@ -20,7 +21,7 @@ class ViewController
          */
         ViewController();
     
-    private:
+    protected:
     
         QWidget* view;
     

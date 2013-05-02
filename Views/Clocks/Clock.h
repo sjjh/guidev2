@@ -49,8 +49,8 @@ class Clock: public QWidget
         Clock(QTime time);
 
         /**
-         * iniciate a Clock (Colors, ... and all stuff happening in a Constructor)
-         * This method needs to be overwritten in the subclasses.
+         * initiate a Clock (Colors, ... and all stuff happening in a Constructor)
+         * This method needs to be overwritten in subclasses.
          */
         virtual void init();
 };
