@@ -21,7 +21,6 @@ class Undoable
     
         virtual void redo();
         virtual void undo();
-        virtual void takeSnapshot();
     
 };
 

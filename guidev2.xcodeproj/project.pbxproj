@@ -21,6 +21,8 @@
 		B40EE58F1732D08C00667D36 /* Rectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B40EE58D1732D08C00667D36 /* Rectangle.cpp */; };
 		B40EE5901732D72500667D36 /* UndoRedoView.h in Sources */ = {isa = PBXBuildFile; fileRef = B40EE58B1732C97F00667D36 /* UndoRedoView.h */; };
 		B40EE5911732D72500667D36 /* Rectangle.h in Sources */ = {isa = PBXBuildFile; fileRef = B40EE58E1732D08C00667D36 /* Rectangle.h */; };
+		B40EE5941732E78B00667D36 /* FlipClock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B40EE5921732E78B00667D36 /* FlipClock.cpp */; };
+		B40EE5951732E79000667D36 /* FlipClock.h in Sources */ = {isa = PBXBuildFile; fileRef = B40EE5931732E78B00667D36 /* FlipClock.h */; };
 		B465D7B2170338B20022E543 /* mainwindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B465D7B0170338B20022E543 /* mainwindow.cpp */; };
 		B465D7B5170338C60022E543 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B465D7B3170338C60022E543 /* main.cpp */; };
 		B465D7B6170339800022E543 /* mainwindow.h in Sources */ = {isa = PBXBuildFile; fileRef = B465D7B1170338B20022E543 /* mainwindow.h */; };
@@ -102,7 +104,7 @@
 		B40EE5761732BCCC00667D36 /* UndoRedoManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UndoRedoManager.cpp; path = UndoRedo/UndoRedoManager.cpp; sourceTree = SOURCE_ROOT; };
 		B40EE5771732BCCC00667D36 /* UndoRedoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UndoRedoManager.h; path = UndoRedo/UndoRedoManager.h; sourceTree = SOURCE_ROOT; };
 		B40EE5791732BCE200667D36 /* UndoRedoViewController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UndoRedoViewController.cpp; path = UndoRedo/UndoRedoViewController.cpp; sourceTree = SOURCE_ROOT; };
-		B40EE57A1732BCE200667D36 /* UndoRedoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UndoRedoViewController.h; path = UndoRedo/UndoRedoViewController.h; sourceTree = SOURCE_ROOT; };
+		B40EE57A1732BCE200667D36 /* UndoRedoViewController.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = UndoRedoViewController.h; path = UndoRedo/UndoRedoViewController.h; sourceTree = SOURCE_ROOT; };
 		B40EE57C1732BD2000667D36 /* Drawable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Drawable.cpp; path = UndoRedo/Drawable.cpp; sourceTree = SOURCE_ROOT; };
 		B40EE57D1732BD2000667D36 /* Drawable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Drawable.h; path = UndoRedo/Drawable.h; sourceTree = SOURCE_ROOT; };
 		B40EE57F1732BD7400667D36 /* UndoRedoWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UndoRedoWindow.cpp; path = UndoRedo/UndoRedoWindow.cpp; sourceTree = SOURCE_ROOT; };
@@ -111,6 +113,8 @@
 		B40EE58B1732C97F00667D36 /* UndoRedoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UndoRedoView.h; path = UndoRedo/UndoRedoView.h; sourceTree = SOURCE_ROOT; };
 		B40EE58D1732D08C00667D36 /* Rectangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Rectangle.cpp; path = UndoRedo/Rectangle.cpp; sourceTree = SOURCE_ROOT; };
 		B40EE58E1732D08C00667D36 /* Rectangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Rectangle.h; path = UndoRedo/Rectangle.h; sourceTree = SOURCE_ROOT; };
+		B40EE5921732E78B00667D36 /* FlipClock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FlipClock.cpp; path = Views/Clocks/FlipClock.cpp; sourceTree = SOURCE_ROOT; };
+		B40EE5931732E78B00667D36 /* FlipClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlipClock.h; path = Views/Clocks/FlipClock.h; sourceTree = SOURCE_ROOT; };
 		B465D7B0170338B20022E543 /* mainwindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainwindow.cpp; sourceTree = SOURCE_ROOT; };
 		B465D7B1170338B20022E543 /* mainwindow.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = mainwindow.h; sourceTree = SOURCE_ROOT; };
 		B465D7B3170338C60022E543 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = SOURCE_ROOT; };
@@ -295,6 +299,8 @@
 		B48E32D81704DC2D00E0DB00 /* Clocks */ = {
 			isa = PBXGroup;
 			children = (
+				B40EE5921732E78B00667D36 /* FlipClock.cpp */,
+				B40EE5931732E78B00667D36 /* FlipClock.h */,
 				B4EFFEE7171ED0C80076E810 /* AnalogClock.cpp */,
 				B4EFFEE8171ED0C80076E810 /* AnalogClock.h */,
 				B4EFFEE9171ED0C80076E810 /* Clock.cpp */,
@@ -399,6 +405,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B40EE5951732E79000667D36 /* FlipClock.h in Sources */,
 				B40EE5901732D72500667D36 /* UndoRedoView.h in Sources */,
 				B40EE5911732D72500667D36 /* Rectangle.h in Sources */,
 				B40EE5851732C45900667D36 /* Undoable.h in Sources */,
@@ -430,6 +437,7 @@
 				B40EE5811732BD7400667D36 /* UndoRedoWindow.cpp in Sources */,
 				B40EE58C1732C97F00667D36 /* UndoRedoView.cpp in Sources */,
 				B40EE58F1732D08C00667D36 /* Rectangle.cpp in Sources */,
+				B40EE5941732E78B00667D36 /* FlipClock.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,7 +461,9 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -462,11 +472,14 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "\"/Users/jens/Qt5.0.1/5.0.1/clang_64/include\"/**";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -488,13 +501,18 @@
 				FRAMEWORK_SEARCH_PATHS = "\"${HOME}/Qt5.0.1/5.0.1/clang_64/lib/\"/**";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "\"/Users/jens/Qt5.0.1/5.0.1/clang_64/include\"/**";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				SDKROOT = macosx;
 			};
 			name = Release;

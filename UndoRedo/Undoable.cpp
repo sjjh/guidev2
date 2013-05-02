@@ -22,8 +22,3 @@ void Undoable::redo()
 {
     
 }
-
-void Undoable::takeSnapshot()
-{
-    
-}

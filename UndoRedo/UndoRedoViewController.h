@@ -10,7 +10,7 @@
 #define __guidev2__UndoRedoViewController__
 
 #include <iostream>
-#include "ViewControllers/ViewController.h"
+#include "ViewController.h"
 
 class UndoRedoViewController: public ViewController
 {

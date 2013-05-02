@@ -14,19 +14,32 @@
 #include <QVector>
 #include "Drawable.h"
 #include <QMouseEvent>
+#include "Undoable.h"
+#include <QAction>
 
-class UndoRedoView: public QWidget
+class UndoRedoView: public QWidget, public Undoable
 {
     Q_OBJECT
     
     private:
+    
+        QAction* undoAction;
+        QAction* redoAction;
         QVector<Drawable*>* drawables;
+        int undoIndex;
     
     public:
+    
         UndoRedoView(QWidget * parent = 0, Qt::WindowFlags f = 0);
         ~UndoRedoView();
     
         void addDrawable(Drawable*);
+    
+        bool canUndo();
+        bool canRedo();
+        void undo();
+        void redo();
+        void takeSnapshot();
     
     protected:
     

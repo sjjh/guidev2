@@ -16,6 +16,6 @@ Rectangle::Rectangle(QPoint origin):Drawable(origin)
 void Rectangle::draw(QPainter *painter)
 {
     painter->save();
-    painter->fillRect(QRect(origin, QSize(5,5)), *fillBrush);
+    painter->fillRect(QRect(origin, QSize(10,10)), *fillBrush);
     painter->restore();
 }
