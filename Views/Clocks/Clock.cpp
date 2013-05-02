@@ -13,6 +13,11 @@ Clock::Clock()
     this->time = QTime::currentTime();
 }
 
+Clock::Clock(QTime time)
+{
+    this->time = time;
+}
+
 Clock::~Clock()
 {
     

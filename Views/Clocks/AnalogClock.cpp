@@ -20,14 +20,24 @@
 
 AnalogClock::AnalogClock()
 {
+    this->init();
+}
+
+AnalogClock::AnalogClock(QTime time){
+    this->init();
+    this->setTime(time);
+}
+
+void AnalogClock::init()
+{
     // Initialize the clock with default values
-    
+
     hourArmBrush = QBrush(Qt::red);
     minuteArmBrush = QBrush(Qt::black);
-    
+
     hourTickBrush = QBrush(Qt::black);
     minuteTickBrush = QBrush(Qt::gray);
-    
+
     labelPen = QPen(Qt::black);
     backgroundBrush = QBrush(Qt::white);
 }

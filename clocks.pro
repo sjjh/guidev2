@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     Model/DataSource.cpp \
     ViewControllers/ViewController.cpp \
     Views/Clocks/Clock.cpp \
-    Views/Clocks/AnalogClock.cpp
+    Views/Clocks/AnalogClock.cpp \
+    Views/Clocks/FlipClock.cpp
 
 HEADERS  += mainwindow.h \
     NotificationCenter.h \
@@ -29,4 +30,5 @@ HEADERS  += mainwindow.h \
     Model/DataSource.h \
     ViewControllers/ViewController.h \
     Views/Clocks/Clock.h \
-    Views/Clocks/AnalogClock.h
+    Views/Clocks/AnalogClock.h \
+    Views/Clocks/FlipClock.h

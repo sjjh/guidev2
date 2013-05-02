@@ -42,6 +42,17 @@ class Clock: public QWidget
          * Creates a new clock instance.
          */
         Clock();
+
+        /**
+         * Creates a new clock instance with the given time
+         */
+        Clock(QTime time);
+
+        /**
+         * iniciate a Clock (Colors, ... and all stuff happening in a Constructor)
+         * This method needs to be overwritten in the subclasses.
+         */
+        virtual void init();
 };
 
 #endif /* defined(__guidev2__Clock__) */

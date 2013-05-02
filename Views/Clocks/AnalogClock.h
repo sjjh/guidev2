@@ -22,6 +22,11 @@ class AnalogClock: public Clock
          * Creates a new AnalogClock instance.
          */
         AnalogClock();
+
+        /**
+         * Create a new AnalogClock instance with the given time.
+         */
+        AnalogClock(QTime time);
     
         /**
          * Destroys the AnalogClock object and performs necessary clean up.
@@ -108,6 +113,11 @@ class AnalogClock: public Clock
          * Draws ticks around the outer part of the clock background.
          */
         void drawTick(QPainter* painter, int radius, float angle, int width, int length, QBrush* brush);
+
+     protected:
+
+       void init();
+
 };
 
 #endif /* defined(__guidev2__AnalogClock__) */
