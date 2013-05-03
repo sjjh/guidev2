@@ -11,8 +11,8 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = clocks
 TEMPLATE = app
 
-INCLUDEPATH = ViewControllers
-INCLUDEPATH = UndoRedo
+INCLUDEPATH = ViewControllers \
+UndoRedo
 
 
 SOURCES += main.cpp\
