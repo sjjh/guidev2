@@ -52,7 +52,7 @@ void UndoRedoView::addDrawable(Drawable * drawable)
 {    
     if(undoIndex != drawables->size() - 1)
     {
-        for(int i = drawables->size() - 1; i >= undoIndex; i--)
+        for(int i = drawables->size() - 1; i > undoIndex; i--)
         {
             drawables->pop_back();
         }

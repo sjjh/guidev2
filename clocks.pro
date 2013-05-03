@@ -12,6 +12,7 @@ TARGET = clocks
 TEMPLATE = app
 
 INCLUDEPATH = ViewControllers
+INCLUDEPATH = UndoRedo
 
 
 SOURCES += main.cpp\
@@ -30,7 +31,8 @@ SOURCES += main.cpp\
     UndoRedo/UndoRedoManager.cpp \
     UndoRedo/Undoable.cpp \
     UndoRedo/Rectangle.cpp \
-    UndoRedo/Drawable.cpp
+    UndoRedo/Drawable.cpp \
+    UndoRedo/Circle.cpp
 
 HEADERS  += mainwindow.h \
     NotificationCenter.h \
@@ -47,4 +49,5 @@ HEADERS  += mainwindow.h \
     UndoRedo/UndoRedoManager.h \
     UndoRedo/Undoable.h \
     UndoRedo/Rectangle.h \
-    UndoRedo/Drawable.h
+    UndoRedo/Drawable.h \
+    UndoRedo/Circle.h

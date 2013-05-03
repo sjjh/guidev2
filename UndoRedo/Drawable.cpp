@@ -11,6 +11,7 @@
 Drawable::Drawable(QPoint origin)
 {
     this->origin = origin;
+    fillBrush = new QBrush(Qt::red);
 }
 
 Drawable::~Drawable()

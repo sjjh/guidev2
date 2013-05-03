@@ -9,6 +9,7 @@
 #include "UndoRedoViewController.h"
 #include "UndoRedoView.h"
 #include "Rectangle.h"
+#include "Circle.h"
 
 UndoRedoViewController::UndoRedoViewController()
 {
@@ -19,9 +20,20 @@ UndoRedoViewController::UndoRedoViewController()
 
 void UndoRedoViewController::mouseReleased(QMouseEvent *event)
 {
-    Rectangle* rect = new Rectangle(QPoint(event->pos()));
+    if(event->button() == Qt::LeftButton)
+    {
+        Rectangle* rect = new Rectangle(event->pos());
     
-    UndoRedoView* v = (UndoRedoView*)view;
+        UndoRedoView* v = (UndoRedoView*)view;
     
-    v->addDrawable(rect);
+        v->addDrawable(rect);
+    }
+    else
+    {
+        Circle* circle = new Circle(event->pos());
+        
+        UndoRedoView* v = (UndoRedoView*)view;
+    
+        v->addDrawable(circle);
+    }
 }

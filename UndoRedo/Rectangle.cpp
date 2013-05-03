@@ -10,7 +10,7 @@
 
 Rectangle::Rectangle(QPoint origin):Drawable(origin)
 {
-    fillBrush = new QBrush(Qt::red);
+
 }
 
 void Rectangle::draw(QPainter *painter)
