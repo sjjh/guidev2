@@ -10,25 +10,40 @@
  */
 class FlipClock : public Clock
 {
-public:
-    /**
-     * @brief FlipClock constructor
-     */
-    FlipClock();
+    public:
+        /**
+         * @brief FlipClock constructor
+         */
+        FlipClock();
 
-    /**
-     * @brief FlipClock constructor
-     */
-    FlipClock(QTime time);
+        /**
+         * @brief FlipClock constructor
+         */
+        FlipClock(QTime time);
 
-    /**
-     * @brief FlipClock destructor
-     */
-    ~FlipClock();
+        /**
+         * @brief FlipClock destructor
+         */
+        ~FlipClock();
 
-protected:
+        /**
+         * Sets the brush used to draw the background of the clock.
+         */
+        void setBackgroundBrush(QBrush brush);
 
-  void init();
+        /**
+         * Returns the brush used to draw background of the clock.
+         */
+        QBrush getBackgroundBrush();
+
+        virtual void paintEvent(QPaintEvent*);
+
+    private:
+        QBrush  backgroundBrush;
+
+    protected:
+
+      void init();
 };
 
 #endif // __guidev2__FlipClock__
