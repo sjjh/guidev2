@@ -8,14 +8,14 @@
 
 #include "Rectangle.h"
 
-Rectangle::Rectangle(QPoint origin):Drawable(origin)
+Rectangle::Rectangle(QPoint origin, QWidget* parent):Drawable(origin, parent)
 {
-
+    createPath();
 }
 
-void Rectangle::draw(QPainter *painter)
+void Rectangle::createPath()
 {
-    painter->save();
-    painter->fillRect(QRect(origin, QSize(10,10)), *fillBrush);
-    painter->restore();
+    path = QPainterPath();
+    path.addRect(origin.x() - 5, origin.y() - 5, 10, 10);
+    path.closeSubpath();
 }

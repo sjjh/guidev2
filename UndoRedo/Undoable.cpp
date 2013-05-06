@@ -12,13 +12,3 @@ Undoable::Undoable()
 {
     
 }
-
-void Undoable::undo()
-{
-    
-}
-
-void Undoable::redo()
-{
-    
-}

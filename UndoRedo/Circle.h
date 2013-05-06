@@ -16,8 +16,8 @@ class Circle: public Drawable
 {
     public:
     
-        Circle(QPoint);
-        void draw(QPainter*);
+        Circle(QPoint, QWidget*);
+        virtual void createPath();
 };
 
 #endif /* defined(__guidev2__Circle__) */

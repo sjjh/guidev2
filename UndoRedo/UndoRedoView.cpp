@@ -34,7 +34,38 @@ UndoRedoView::~UndoRedoView()
 
 void UndoRedoView::mouseReleaseEvent ( QMouseEvent * event )
 {
-    emit(mouseReleased(event));
+    if(!hitDrawable)
+    {
+        emit(mouseReleased(event));
+    }
+    else
+    {
+        UndoRedoManager::instance()->addUndoable(hitDrawable);
+        hitDrawable = NULL;
+    }
+}
+
+void UndoRedoView::mousePressEvent(QMouseEvent * event)
+{
+    for(int i = drawables->size() - 1; i >= 0 ; i--)
+    {
+        Drawable* drawable = drawables->at(i);
+        if (drawable->containsPoint(event->pos()))
+        {
+            hitDrawable = drawable;
+            hitDrawable->takeSnapshot();
+            break;
+        }
+    }
+}
+
+void UndoRedoView::mouseMoveEvent(QMouseEvent *event)
+{
+    if(hitDrawable)
+    {
+        hitDrawable->setOrigin(event->pos());
+        repaint();
+    }
 }
 
 void UndoRedoView::paintEvent(QPaintEvent * event)

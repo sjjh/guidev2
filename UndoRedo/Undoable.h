@@ -19,8 +19,8 @@ class Undoable
     
     public:
     
-        virtual void redo();
-        virtual void undo();
+        virtual void redo() = 0;
+        virtual void undo() = 0;
     
 };
 

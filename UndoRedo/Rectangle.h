@@ -16,9 +16,9 @@ class Rectangle: public Drawable
 {
     public:
     
-        Rectangle(QPoint);
-    
-        virtual void draw(QPainter *painter);
+        Rectangle(QPoint, QWidget*);
+    protected:
+        virtual void createPath();
 };
 
 #endif /* defined(__guidev2__Rectangle__) */

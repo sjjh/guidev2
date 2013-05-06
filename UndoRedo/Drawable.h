@@ -11,19 +11,35 @@
 
 #include <iostream>
 #include <QPainter>
+#include "Undoable.h"
+#include <QStack>
 
-class Drawable
+class Drawable: public Undoable
 {
     protected:
-        Drawable(QPoint);
-        
     
+        QStack<QPoint>* undoStack;
+        QStack<QPoint>* redoStack;
+    
+        Drawable(QPoint, QWidget*);
+        
+        QWidget* parent;
         QBrush* fillBrush;
         QPoint origin;
+        QPainterPath path;
+        virtual void createPath() = 0;
+        
     
     public:
+    
         virtual void draw(QPainter *painter);
+        bool containsPoint(QPoint);
+        void setOrigin(QPoint);
         ~Drawable();
+    
+        void undo();
+        void redo();
+        void takeSnapshot();
 };
 
 #endif /* defined(__guidev2__Drawable__) */

@@ -210,7 +210,6 @@
 		B40EE5751732BB9000667D36 /* UndoRedo */ = {
 			isa = PBXGroup;
 			children = (
-				B44680CE1733DDB500D533A6 /* Drawable.cpp */,
 				B44680C91733DD2000D533A6 /* Circle.cpp */,
 				B44680CA1733DD2000D533A6 /* Circle.h */,
 				B40EE5721732BB8800667D36 /* Undoable.cpp */,
@@ -219,6 +218,7 @@
 				B40EE5771732BCCC00667D36 /* UndoRedoManager.h */,
 				B40EE5791732BCE200667D36 /* UndoRedoViewController.cpp */,
 				B40EE57A1732BCE200667D36 /* UndoRedoViewController.h */,
+				B44680CE1733DDB500D533A6 /* Drawable.cpp */,
 				B40EE57D1732BD2000667D36 /* Drawable.h */,
 				B40EE57F1732BD7400667D36 /* UndoRedoWindow.cpp */,
 				B40EE5801732BD7400667D36 /* UndoRedoWindow.h */,

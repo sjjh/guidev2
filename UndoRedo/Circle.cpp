@@ -9,18 +9,16 @@
 #include "Circle.h"
 
 
-Circle::Circle(QPoint origin):Drawable(origin)
+Circle::Circle(QPoint origin, QWidget* parent):Drawable(origin, parent)
 {
     fillBrush = new QBrush(Qt::black);
+    
+    createPath();
 }
 
-void Circle::draw(QPainter *painter)
+void Circle::createPath()
 {
-    painter->save();
-    
-    painter->setPen(Qt::transparent);
-    painter->setBrush(*fillBrush);
-    painter->drawEllipse(QRect(origin,QSize(20,20)));
-    
-    painter->restore();
+    path = QPainterPath();
+    path.addEllipse(origin.x() - 10, origin.y() - 10, 20, 20);
+    path.closeSubpath();
 }

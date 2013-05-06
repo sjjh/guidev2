@@ -22,7 +22,7 @@ void UndoRedoViewController::mouseReleased(QMouseEvent *event)
 {
     if(event->button() == Qt::LeftButton)
     {
-        Rectangle* rect = new Rectangle(event->pos());
+        Rectangle* rect = new Rectangle(event->pos(), view);
     
         UndoRedoView* v = (UndoRedoView*)view;
     
@@ -30,7 +30,7 @@ void UndoRedoViewController::mouseReleased(QMouseEvent *event)
     }
     else
     {
-        Circle* circle = new Circle(event->pos());
+        Circle* circle = new Circle(event->pos(), view);
         
         UndoRedoView* v = (UndoRedoView*)view;
     
