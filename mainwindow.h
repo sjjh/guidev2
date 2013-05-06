@@ -4,6 +4,8 @@
 #include <qmainwindow.h>
 #include <qpushbutton.h>
 #include "Views/Clocks/AnalogClock.h"
+#include "Views/Clocks/FlipClock.h"
+#include "Views/Clocks/Clock.h"
 
 namespace Ui {
 class MainWindow;
@@ -25,7 +27,7 @@ class MainWindow : public QMainWindow
     
     private:
 
-        AnalogClock* clock;
+        Clock* clock;
 
 };
 
