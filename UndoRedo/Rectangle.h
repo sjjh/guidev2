@@ -12,12 +12,23 @@
 #include <iostream>
 #include "Drawable.h"
 
+/**
+ * Represents a Rectangle shape object.
+ */
 class Rectangle: public Drawable
 {
     public:
     
+        /**
+        * Creates a new Rectangle instance.
+        */
         Rectangle(QPoint, QWidget*);
+
     protected:
+
+        /**
+         * Creates the shape to be drawn
+         */
         virtual void createPath();
 };
 

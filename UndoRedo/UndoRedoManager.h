@@ -14,6 +14,9 @@
 #include <QStack>
 #include <QObject>
 
+/**
+ * Controller class for undo/redo functionality
+ */
 class UndoRedoManager: public QObject
 {
     Q_OBJECT

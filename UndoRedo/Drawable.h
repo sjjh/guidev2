@@ -14,6 +14,9 @@
 #include "Undoable.h"
 #include <QStack>
 
+/**
+ * Base class for all drawable objects.
+ */
 class Drawable: public Undoable
 {
     protected:
@@ -32,13 +35,39 @@ class Drawable: public Undoable
     
     public:
     
+        /**
+         * Draws the shape object.
+         */
         virtual void draw(QPainter *painter);
+
+        /**
+         * Return true if a Drawable object contains the current mouse pointer position
+         */
         bool containsPoint(QPoint);
+
+        /**
+         * Contains the locations of a Drawable object.
+         */
         void setOrigin(QPoint);
+
+        /**
+         * Destroys the Drawable object and performs necessary clean up.
+         */
         ~Drawable();
     
+        /**
+         * Undo an action.
+         */
         void undo();
+
+        /**
+         * Redo an action.
+         */
         void redo();
+
+        /**
+         * Saves information about object amount and location at a given time.
+         */
         void takeSnapshot();
 };
 

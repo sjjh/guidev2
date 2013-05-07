@@ -11,6 +11,9 @@
 
 #include <iostream>
 
+/**
+ * Base class for all undoable objects.
+ */
 class Undoable
 {    
     protected:
@@ -19,7 +22,14 @@ class Undoable
     
     public:
     
+        /**
+         * Undo changes to this object.
+         */
         virtual void redo() = 0;
+
+        /**
+         * Redo changes to this object.
+         */
         virtual void undo() = 0;
     
 };

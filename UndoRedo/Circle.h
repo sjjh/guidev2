@@ -12,11 +12,21 @@
 #include <iostream>
 #include "Drawable.h"
 
+/**
+ * Represents a circle shape object.
+ */
 class Circle: public Drawable
 {
     public:
     
+        /**
+         * Creates a new Circle instance.
+         */
         Circle(QPoint, QWidget*);
+
+        /**
+         * Creates the shape to be drawn
+         */
         virtual void createPath();
 };
 
