@@ -28,7 +28,8 @@ MainWindow::MainWindow(QWidget *parent)
     // Add TestWidget -> draws a red circle *woohoo*
     
 //    clock = new AnalogClock(QTime(12,15));
-//    clock = new AnalogClock();
+    clock = new AnalogClock();
+    centralWidget->layout()->addWidget(clock);
     clock = new FlipClock();
     centralWidget->layout()->addWidget(clock);
 }

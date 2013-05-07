@@ -10,6 +10,7 @@
 #define __guidev2__UndoRedoViewController__
 
 #include <iostream>
+#include <QWidget>
 #include "ViewController.h"
 
 class UndoRedoViewController: public ViewController
@@ -19,7 +20,10 @@ class UndoRedoViewController: public ViewController
     public:
     
         UndoRedoViewController();
-    
+
+    private:
+        QWidget* canvasView;
+
     private slots:
     
         void mouseReleased(QMouseEvent* event);

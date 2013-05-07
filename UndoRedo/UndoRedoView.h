@@ -1,57 +1,34 @@
-//
-//  UndoRedoView.h
-//  guidev2
-//
-//  Created by Jens Meder on 02.05.13.
-//
-//
-
 #ifndef __guidev2__UndoRedoView__
 #define __guidev2__UndoRedoView__
 
-#include <iostream>
 #include <QWidget>
-#include <QVector>
-#include "Drawable.h"
-#include <QMouseEvent>
-#include "Undoable.h"
-#include <QAction>
+#include "UndoRedoCanvasView.h"
+//#include "UndoRedoLabelView.h"
 
-class UndoRedoView: public QWidget, public Undoable
+class UndoRedoView: public QWidget
 {
     Q_OBJECT
-    
-    private:
-    
-        QAction* undoAction;
-        QAction* redoAction;
-        QVector<Drawable*>* drawables;
-        int undoIndex;
-        Drawable* hitDrawable;
-    
-    public:
-    
-        UndoRedoView(QWidget * parent = 0, Qt::WindowFlags f = 0);
-        ~UndoRedoView();
-    
-        void addDrawable(Drawable*);
-    
-        bool canUndo();
-        bool canRedo();
-        void undo();
-        void redo();
-        void takeSnapshot();
-    
-    protected:
-    
-        virtual void mouseReleaseEvent(QMouseEvent * event);
-        virtual void mousePressEvent(QMouseEvent* event);
-        virtual void mouseMoveEvent(QMouseEvent* event);
-        virtual void paintEvent(QPaintEvent*);
-    
-    signals:
-    
-        void mouseReleased(QMouseEvent*);
+
+public:
+    UndoRedoView(QWidget * parent = 0, Qt::WindowFlags f = 0);
+    ~UndoRedoView();
+
+    /**
+     * @brief getCanvasView
+     * @return returns the canvas you can paint on
+     */
+    UndoRedoCanvasView* getCanvasView();
+
+    /**
+     * @brief getLabelView
+     * @return returns the descriptive label
+     */
+//    UndoRedoLabelView* getLabelView()
+
+
+private:
+//    UndoRedoLabelView* labelView;
+    UndoRedoCanvasView* canvasView;
 };
 
-#endif /* defined(__guidev2__UndoRedoView__) */
+#endif // __guidev2__UndoRedoView__

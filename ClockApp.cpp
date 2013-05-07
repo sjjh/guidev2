@@ -48,7 +48,7 @@ void ClockApp::showMainWindow()
 
 void ClockApp::showUndoRedoPlayGround()
 {
-    if(!undoRedoViewController)
+   if(!undoRedoViewController)
     {
         undoRedoViewController = new UndoRedoViewController();
     }

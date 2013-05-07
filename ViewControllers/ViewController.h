@@ -28,7 +28,7 @@ class ViewController: public QObject
     public:
     
         /**
-         * Returns the view the view controller is responsible for.
+         * Returns the view the viewController is responsible for.
          */
         QWidget* getView();
     

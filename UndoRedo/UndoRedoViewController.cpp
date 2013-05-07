@@ -14,8 +14,10 @@
 UndoRedoViewController::UndoRedoViewController()
 {
     view = new UndoRedoView();
+
+    canvasView = (QWidget*)((UndoRedoView*)view)->getCanvasView();
     
-    view->connect(view, SIGNAL(mouseReleased(QMouseEvent*)), this, SLOT(mouseReleased(QMouseEvent*)));
+    canvasView->connect(canvasView, SIGNAL(mouseReleased(QMouseEvent*)), this, SLOT(mouseReleased(QMouseEvent*)));
 }
 
 void UndoRedoViewController::mouseReleased(QMouseEvent *event)
@@ -24,7 +26,7 @@ void UndoRedoViewController::mouseReleased(QMouseEvent *event)
     {
         Rectangle* rect = new Rectangle(event->pos(), view);
     
-        UndoRedoView* v = (UndoRedoView*)view;
+        UndoRedoCanvasView* v = (UndoRedoCanvasView*)view;
     
         v->addDrawable(rect);
     }
@@ -32,7 +34,7 @@ void UndoRedoViewController::mouseReleased(QMouseEvent *event)
     {
         Circle* circle = new Circle(event->pos(), view);
         
-        UndoRedoView* v = (UndoRedoView*)view;
+        UndoRedoCanvasView* v = (UndoRedoCanvasView*)view;
     
         v->addDrawable(circle);
     }

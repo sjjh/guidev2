@@ -27,12 +27,13 @@ SOURCES += main.cpp\
     Views/Clocks/FlipClock.cpp \
     UndoRedo/UndoRedoWindow.cpp \
     UndoRedo/UndoRedoViewController.cpp \
-    UndoRedo/UndoRedoView.cpp \
     UndoRedo/UndoRedoManager.cpp \
     UndoRedo/Undoable.cpp \
     UndoRedo/Rectangle.cpp \
     UndoRedo/Drawable.cpp \
-    UndoRedo/Circle.cpp
+    UndoRedo/Circle.cpp \
+    UndoRedo/UndoRedoCanvasView.cpp \
+    UndoRedo/UndoRedoView.cpp
 
 HEADERS  += mainwindow.h \
     NotificationCenter.h \
@@ -45,9 +46,10 @@ HEADERS  += mainwindow.h \
     Views/Clocks/FlipClock.h \
     UndoRedo/UndoRedoWindow.h \
     UndoRedo/UndoRedoViewController.h \
-    UndoRedo/UndoRedoView.h \
     UndoRedo/UndoRedoManager.h \
     UndoRedo/Undoable.h \
     UndoRedo/Rectangle.h \
     UndoRedo/Drawable.h \
-    UndoRedo/Circle.h
+    UndoRedo/Circle.h \
+    UndoRedo/UndoRedoCanvasView.h \
+    UndoRedo/UndoRedoView.h
