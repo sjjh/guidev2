@@ -25,6 +25,8 @@ UndoRedoCanvasView::UndoRedoCanvasView(QWidget * parent, Qt::WindowFlags f):QWid
     this->addAction(redoAction);
     
     undoIndex = -1;
+    
+    hitDrawable = NULL;
 }
 
 UndoRedoCanvasView::~UndoRedoCanvasView()
@@ -93,7 +95,7 @@ void UndoRedoCanvasView::addDrawable(Drawable * drawable)
     drawables->append(drawable);
     
     undoIndex = drawables->size() - 1;
-    
+
     repaint();
 }
 
