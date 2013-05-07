@@ -13,7 +13,8 @@
 
 ClockApp::ClockApp(int &argc, char **argv):QApplication(argc, argv)
 {
-        
+    undoRedoWindow = NULL;
+    undoRedoViewController = NULL;
 }
 
 ClockApp::~ClockApp()
@@ -60,4 +61,5 @@ void ClockApp::showUndoRedoPlayGround()
     }    
     
     undoRedoWindow->setVisible(true);
+   // undoRedoWindow->showNormal();
 }
