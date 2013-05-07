@@ -54,15 +54,15 @@ void AnalogClock::paintEvent(QPaintEvent *)
     float diameter = std::min(width(),height());
     float radius = diameter / 2.0;
     
-    int hourTickHeight = fmax(MINIMUM_HOUR_TICK_HEIGHT,radius / 30);
-    int hourTickWidth = fmax(MINIMUM_HOUR_TICK_WIDTH,radius / 10);
-    int minuteTickHeight = fmax(MINIMUM_MINUTE_TICK_WIDTH,radius / 60);
-    int minuteTickWidth = fmax(MINIMUM_MINUTE_TICK_WIDTH,radius / 20);
-    int labelRectSize = fmax(10, radius / 4);
-    int hourArmLength = fmax(2, radius / 3);
-    int hourArmWidth = fmax(2, radius / 20);
+    int hourTickHeight = fmax(MINIMUM_HOUR_TICK_HEIGHT,radius / 30.);
+    int hourTickWidth = fmax(MINIMUM_HOUR_TICK_WIDTH,radius / 10.);
+    int minuteTickHeight = fmax(MINIMUM_MINUTE_TICK_WIDTH,radius / 60.);
+    int minuteTickWidth = fmax(MINIMUM_MINUTE_TICK_WIDTH,radius / 20.);
+    int labelRectSize = fmax(10, radius / 4.);
+    int hourArmLength = fmax(2, radius / 3.);
+    int hourArmWidth = fmax(2, radius / 20.);
     int minuteArmLength = fmax(5, radius - hourTickWidth - labelRectSize);
-    int minuteArmWidth = fmax(2, radius / 30);
+    int minuteArmWidth = fmax(2, radius / 30.);
     
     // Initialize context
     
@@ -71,7 +71,7 @@ void AnalogClock::paintEvent(QPaintEvent *)
     
     // Adjust painter matrix for drawing in the center of the widget bounds
     
-    painter.translate((width() - diameter) / 2,(height() - diameter) / 2);
+    painter.translate((width() - diameter) / 2.,(height() - diameter) / 2.);
     
     // Draw background
     
@@ -96,16 +96,16 @@ void AnalogClock::paintEvent(QPaintEvent *)
         
         // Adjust matrix
         
-        painter.translate((radius - hourTickWidth - labelRectSize / 2) * cos(RADIANT(angle)), (radius - hourTickWidth - labelRectSize / 2) * sin(RADIANT(angle)));
+        painter.translate((radius - hourTickWidth - labelRectSize / 2.) * cos(RADIANT(angle)), (radius - hourTickWidth - labelRectSize / 2.) * sin(RADIANT(angle)));
         painter.translate(radius,radius);
         
         // Draw label
         
         painter.setPen(labelPen);
         QFont font(painter.font());
-        font.setPointSizeF(fmax(MINIMUM_FONT_SIZE, radius / 6));
+        font.setPointSizeF(fmax(MINIMUM_FONT_SIZE, radius / 6.));
         painter.setFont(font);
-        painter.drawText(-labelRectSize / 2, -labelRectSize / 2, labelRectSize,labelRectSize,Qt::AlignVCenter | Qt::AlignHCenter,QString::number(i));
+        painter.drawText(-labelRectSize / 2, -labelRectSize / 2., labelRectSize,labelRectSize,Qt::AlignVCenter | Qt::AlignHCenter,QString::number(i));
         
         painter.restore();
     }
@@ -128,7 +128,7 @@ void AnalogClock::paintEvent(QPaintEvent *)
     
     // Draw hour arm
     
-    float angle = 360.0 / NUMBER_OF_HOURS * time.hour() + 90 + 30 * time.minute() / 60;
+    float angle = 360.0 / NUMBER_OF_HOURS * time.hour() + 90 + 30 * time.minute() / 60.;
     drawArm(&painter, radius, angle, hourArmWidth, hourArmLength, &this->hourArmBrush);
     
     // Draw minute arm

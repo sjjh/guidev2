@@ -6,14 +6,11 @@ UndoRedoView::UndoRedoView(QWidget * parent, Qt::WindowFlags f):QWidget(parent, 
     QVBoxLayout *mainLayout = new QVBoxLayout;
 
     //create views
-//    labelView = new UndoRedoLabelView();
-    canvasView = new UndoRedoCanvasView();
+    canvasView = new UndoRedoCanvasView();    
 
-
-//    mainLayout->addWidget(labelView);
     mainLayout->addWidget(canvasView);
 
-
+    setLayout(mainLayout);
 }
 
 UndoRedoView::~UndoRedoView()
@@ -26,8 +23,4 @@ UndoRedoCanvasView* UndoRedoView::getCanvasView()
 {
     return this->canvasView;
 }
-/**
-UndoRedoLabelView* UndoRedoView::getLabelView()
-{
-    return this->labelView;
-}*/
+

@@ -25,6 +25,8 @@
 		B44680CC1733DD3300D533A6 /* Circle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B44680C91733DD2000D533A6 /* Circle.cpp */; };
 		B44680CD1733DD3300D533A6 /* Circle.h in Sources */ = {isa = PBXBuildFile; fileRef = B44680CA1733DD2000D533A6 /* Circle.h */; };
 		B44680CF1733DDB500D533A6 /* Drawable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B44680CE1733DDB500D533A6 /* Drawable.cpp */; };
+		B457522F17398A1F006F1FA5 /* UndoRedoCanvasView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B457522D17398A1F006F1FA5 /* UndoRedoCanvasView.cpp */; };
+		B457523017398A27006F1FA5 /* UndoRedoCanvasView.h in Sources */ = {isa = PBXBuildFile; fileRef = B457522E17398A1F006F1FA5 /* UndoRedoCanvasView.h */; };
 		B465D7B2170338B20022E543 /* mainwindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B465D7B0170338B20022E543 /* mainwindow.cpp */; };
 		B465D7B5170338C60022E543 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B465D7B3170338C60022E543 /* main.cpp */; };
 		B465D7B6170339800022E543 /* mainwindow.h in Sources */ = {isa = PBXBuildFile; fileRef = B465D7B1170338B20022E543 /* mainwindow.h */; };
@@ -119,6 +121,8 @@
 		B44680C91733DD2000D533A6 /* Circle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Circle.cpp; path = UndoRedo/Circle.cpp; sourceTree = SOURCE_ROOT; };
 		B44680CA1733DD2000D533A6 /* Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Circle.h; path = UndoRedo/Circle.h; sourceTree = SOURCE_ROOT; };
 		B44680CE1733DDB500D533A6 /* Drawable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Drawable.cpp; path = UndoRedo/Drawable.cpp; sourceTree = SOURCE_ROOT; };
+		B457522D17398A1F006F1FA5 /* UndoRedoCanvasView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UndoRedoCanvasView.cpp; path = UndoRedo/UndoRedoCanvasView.cpp; sourceTree = SOURCE_ROOT; };
+		B457522E17398A1F006F1FA5 /* UndoRedoCanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UndoRedoCanvasView.h; path = UndoRedo/UndoRedoCanvasView.h; sourceTree = SOURCE_ROOT; };
 		B465D7B0170338B20022E543 /* mainwindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainwindow.cpp; sourceTree = SOURCE_ROOT; };
 		B465D7B1170338B20022E543 /* mainwindow.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = mainwindow.h; sourceTree = SOURCE_ROOT; };
 		B465D7B3170338C60022E543 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = SOURCE_ROOT; };
@@ -210,6 +214,8 @@
 		B40EE5751732BB9000667D36 /* UndoRedo */ = {
 			isa = PBXGroup;
 			children = (
+				B457522D17398A1F006F1FA5 /* UndoRedoCanvasView.cpp */,
+				B457522E17398A1F006F1FA5 /* UndoRedoCanvasView.h */,
 				B44680C91733DD2000D533A6 /* Circle.cpp */,
 				B44680CA1733DD2000D533A6 /* Circle.h */,
 				B40EE5721732BB8800667D36 /* Undoable.cpp */,
@@ -411,6 +417,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B457523017398A27006F1FA5 /* UndoRedoCanvasView.h in Sources */,
 				B44680CC1733DD3300D533A6 /* Circle.cpp in Sources */,
 				B44680CD1733DD3300D533A6 /* Circle.h in Sources */,
 				B40EE5951732E79000667D36 /* FlipClock.h in Sources */,
@@ -446,6 +453,7 @@
 				B40EE58F1732D08C00667D36 /* Rectangle.cpp in Sources */,
 				B40EE5941732E78B00667D36 /* FlipClock.cpp in Sources */,
 				B44680CF1733DDB500D533A6 /* Drawable.cpp in Sources */,
+				B457522F17398A1F006F1FA5 /* UndoRedoCanvasView.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

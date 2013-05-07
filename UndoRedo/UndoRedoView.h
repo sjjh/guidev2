@@ -19,15 +19,9 @@ public:
      */
     UndoRedoCanvasView* getCanvasView();
 
-    /**
-     * @brief getLabelView
-     * @return returns the descriptive label
-     */
-//    UndoRedoLabelView* getLabelView()
-
 
 private:
-//    UndoRedoLabelView* labelView;
+
     UndoRedoCanvasView* canvasView;
 };
 

@@ -24,17 +24,17 @@ void UndoRedoViewController::mouseReleased(QMouseEvent *event)
 {
     if(event->button() == Qt::LeftButton)
     {
-        Rectangle* rect = new Rectangle(event->pos(), view);
+        Rectangle* rect = new Rectangle(event->pos(), canvasView);
     
-        UndoRedoCanvasView* v = (UndoRedoCanvasView*)view;
+        UndoRedoCanvasView* v = (UndoRedoCanvasView*)canvasView;
     
         v->addDrawable(rect);
     }
     else
     {
-        Circle* circle = new Circle(event->pos(), view);
+        Circle* circle = new Circle(event->pos(), canvasView);
         
-        UndoRedoCanvasView* v = (UndoRedoCanvasView*)view;
+        UndoRedoCanvasView* v = (UndoRedoCanvasView*)canvasView;
     
         v->addDrawable(circle);
     }

@@ -15,6 +15,6 @@
 UndoRedoWindow::UndoRedoWindow(QWidget * parent):QWidget(parent,Qt::Window)
 {
     setLayout(new QHBoxLayout());
-    
+
     setMinimumSize(WIDTH, HEIGHT);
 }
