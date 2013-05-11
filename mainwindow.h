@@ -25,6 +25,8 @@ class MainWindow : public QMainWindow
          */
         MainWindow(QWidget *parent = 0);
     
+        Clock* getClock();
+    
     private:
 
         Clock* clock;

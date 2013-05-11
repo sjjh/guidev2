@@ -25,6 +25,20 @@
 		B44680CC1733DD3300D533A6 /* Circle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B44680C91733DD2000D533A6 /* Circle.cpp */; };
 		B44680CD1733DD3300D533A6 /* Circle.h in Sources */ = {isa = PBXBuildFile; fileRef = B44680CA1733DD2000D533A6 /* Circle.h */; };
 		B44680CF1733DDB500D533A6 /* Drawable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B44680CE1733DDB500D533A6 /* Drawable.cpp */; };
+		B450FF68173D3013000A03B4 /* BasicAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B450FF66173D3013000A03B4 /* BasicAnimation.cpp */; };
+		B450FF6B173D3219000A03B4 /* AnimationCurve.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B450FF69173D3219000A03B4 /* AnimationCurve.cpp */; };
+		B450FF6E173D3226000A03B4 /* LinearAnimationCurve.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B450FF6C173D3226000A03B4 /* LinearAnimationCurve.cpp */; };
+		B450FF71173D3253000A03B4 /* EaseInAnimationCurve.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B450FF6F173D3253000A03B4 /* EaseInAnimationCurve.cpp */; };
+		B450FF74173D3260000A03B4 /* EaseOutAnimationCurve.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B450FF72173D3260000A03B4 /* EaseOutAnimationCurve.cpp */; };
+		B450FF77173D32D5000A03B4 /* EaseInOutAnimationCurve.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B450FF75173D32D5000A03B4 /* EaseInOutAnimationCurve.cpp */; };
+		B450FF7A173D3725000A03B4 /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B450FF78173D3725000A03B4 /* Animation.cpp */; };
+		B450FF7B173D58B6000A03B4 /* BasicAnimation.h in Sources */ = {isa = PBXBuildFile; fileRef = B450FF67173D3013000A03B4 /* BasicAnimation.h */; };
+		B450FF7C173D58B6000A03B4 /* AnimationCurve.h in Sources */ = {isa = PBXBuildFile; fileRef = B450FF6A173D3219000A03B4 /* AnimationCurve.h */; };
+		B450FF7D173D58B6000A03B4 /* LinearAnimationCurve.h in Sources */ = {isa = PBXBuildFile; fileRef = B450FF6D173D3226000A03B4 /* LinearAnimationCurve.h */; };
+		B450FF7E173D58B6000A03B4 /* EaseInAnimationCurve.h in Sources */ = {isa = PBXBuildFile; fileRef = B450FF70173D3253000A03B4 /* EaseInAnimationCurve.h */; };
+		B450FF7F173D58B6000A03B4 /* EaseOutAnimationCurve.h in Sources */ = {isa = PBXBuildFile; fileRef = B450FF73173D3260000A03B4 /* EaseOutAnimationCurve.h */; };
+		B450FF80173D58B6000A03B4 /* EaseInOutAnimationCurve.h in Sources */ = {isa = PBXBuildFile; fileRef = B450FF76173D32D5000A03B4 /* EaseInOutAnimationCurve.h */; };
+		B450FF81173D58B6000A03B4 /* Animation.h in Sources */ = {isa = PBXBuildFile; fileRef = B450FF79173D3725000A03B4 /* Animation.h */; };
 		B457522F17398A1F006F1FA5 /* UndoRedoCanvasView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B457522D17398A1F006F1FA5 /* UndoRedoCanvasView.cpp */; };
 		B457523017398A27006F1FA5 /* UndoRedoCanvasView.h in Sources */ = {isa = PBXBuildFile; fileRef = B457522E17398A1F006F1FA5 /* UndoRedoCanvasView.h */; };
 		B465D7B2170338B20022E543 /* mainwindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B465D7B0170338B20022E543 /* mainwindow.cpp */; };
@@ -121,6 +135,20 @@
 		B44680C91733DD2000D533A6 /* Circle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Circle.cpp; path = UndoRedo/Circle.cpp; sourceTree = SOURCE_ROOT; };
 		B44680CA1733DD2000D533A6 /* Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Circle.h; path = UndoRedo/Circle.h; sourceTree = SOURCE_ROOT; };
 		B44680CE1733DDB500D533A6 /* Drawable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Drawable.cpp; path = UndoRedo/Drawable.cpp; sourceTree = SOURCE_ROOT; };
+		B450FF66173D3013000A03B4 /* BasicAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BasicAnimation.cpp; path = Animations/BasicAnimation.cpp; sourceTree = SOURCE_ROOT; };
+		B450FF67173D3013000A03B4 /* BasicAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicAnimation.h; path = Animations/BasicAnimation.h; sourceTree = SOURCE_ROOT; };
+		B450FF69173D3219000A03B4 /* AnimationCurve.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AnimationCurve.cpp; path = Animations/AnimationCurve.cpp; sourceTree = SOURCE_ROOT; };
+		B450FF6A173D3219000A03B4 /* AnimationCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnimationCurve.h; path = Animations/AnimationCurve.h; sourceTree = SOURCE_ROOT; };
+		B450FF6C173D3226000A03B4 /* LinearAnimationCurve.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LinearAnimationCurve.cpp; path = Animations/LinearAnimationCurve.cpp; sourceTree = SOURCE_ROOT; };
+		B450FF6D173D3226000A03B4 /* LinearAnimationCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LinearAnimationCurve.h; path = Animations/LinearAnimationCurve.h; sourceTree = SOURCE_ROOT; };
+		B450FF6F173D3253000A03B4 /* EaseInAnimationCurve.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EaseInAnimationCurve.cpp; path = Animations/EaseInAnimationCurve.cpp; sourceTree = SOURCE_ROOT; };
+		B450FF70173D3253000A03B4 /* EaseInAnimationCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EaseInAnimationCurve.h; path = Animations/EaseInAnimationCurve.h; sourceTree = SOURCE_ROOT; };
+		B450FF72173D3260000A03B4 /* EaseOutAnimationCurve.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EaseOutAnimationCurve.cpp; path = Animations/EaseOutAnimationCurve.cpp; sourceTree = SOURCE_ROOT; };
+		B450FF73173D3260000A03B4 /* EaseOutAnimationCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EaseOutAnimationCurve.h; path = Animations/EaseOutAnimationCurve.h; sourceTree = SOURCE_ROOT; };
+		B450FF75173D32D5000A03B4 /* EaseInOutAnimationCurve.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EaseInOutAnimationCurve.cpp; path = Animations/EaseInOutAnimationCurve.cpp; sourceTree = SOURCE_ROOT; };
+		B450FF76173D32D5000A03B4 /* EaseInOutAnimationCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EaseInOutAnimationCurve.h; path = Animations/EaseInOutAnimationCurve.h; sourceTree = SOURCE_ROOT; };
+		B450FF78173D3725000A03B4 /* Animation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Animation.cpp; path = Animations/Animation.cpp; sourceTree = SOURCE_ROOT; };
+		B450FF79173D3725000A03B4 /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Animation.h; path = Animations/Animation.h; sourceTree = SOURCE_ROOT; };
 		B457522D17398A1F006F1FA5 /* UndoRedoCanvasView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UndoRedoCanvasView.cpp; path = UndoRedo/UndoRedoCanvasView.cpp; sourceTree = SOURCE_ROOT; };
 		B457522E17398A1F006F1FA5 /* UndoRedoCanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UndoRedoCanvasView.h; path = UndoRedo/UndoRedoCanvasView.h; sourceTree = SOURCE_ROOT; };
 		B465D7B0170338B20022E543 /* mainwindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainwindow.cpp; sourceTree = SOURCE_ROOT; };
@@ -236,6 +264,27 @@
 			name = UndoRedo;
 			sourceTree = "<group>";
 		};
+		B450FF62173D2E20000A03B4 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				B450FF66173D3013000A03B4 /* BasicAnimation.cpp */,
+				B450FF67173D3013000A03B4 /* BasicAnimation.h */,
+				B450FF69173D3219000A03B4 /* AnimationCurve.cpp */,
+				B450FF6A173D3219000A03B4 /* AnimationCurve.h */,
+				B450FF6C173D3226000A03B4 /* LinearAnimationCurve.cpp */,
+				B450FF6D173D3226000A03B4 /* LinearAnimationCurve.h */,
+				B450FF6F173D3253000A03B4 /* EaseInAnimationCurve.cpp */,
+				B450FF70173D3253000A03B4 /* EaseInAnimationCurve.h */,
+				B450FF72173D3260000A03B4 /* EaseOutAnimationCurve.cpp */,
+				B450FF73173D3260000A03B4 /* EaseOutAnimationCurve.h */,
+				B450FF75173D32D5000A03B4 /* EaseInOutAnimationCurve.cpp */,
+				B450FF76173D32D5000A03B4 /* EaseInOutAnimationCurve.h */,
+				B450FF78173D3725000A03B4 /* Animation.cpp */,
+				B450FF79173D3725000A03B4 /* Animation.h */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 		B465D82B17033EB20022E543 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +342,7 @@
 		B4817F671702F83800BD9A2F /* devgui2 */ = {
 			isa = PBXGroup;
 			children = (
+				B450FF62173D2E20000A03B4 /* Animations */,
 				B4EFFEF0171ED1A10076E810 /* Model */,
 				B4EFFEE6171ED08D0076E810 /* Views */,
 				B4EFFEE5171ED03E0076E810 /* ViewControllers */,
@@ -417,6 +467,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B450FF7B173D58B6000A03B4 /* BasicAnimation.h in Sources */,
+				B450FF7C173D58B6000A03B4 /* AnimationCurve.h in Sources */,
+				B450FF7D173D58B6000A03B4 /* LinearAnimationCurve.h in Sources */,
+				B450FF7E173D58B6000A03B4 /* EaseInAnimationCurve.h in Sources */,
+				B450FF7F173D58B6000A03B4 /* EaseOutAnimationCurve.h in Sources */,
+				B450FF80173D58B6000A03B4 /* EaseInOutAnimationCurve.h in Sources */,
+				B450FF81173D58B6000A03B4 /* Animation.h in Sources */,
 				B457523017398A27006F1FA5 /* UndoRedoCanvasView.h in Sources */,
 				B44680CC1733DD3300D533A6 /* Circle.cpp in Sources */,
 				B44680CD1733DD3300D533A6 /* Circle.h in Sources */,
@@ -454,6 +511,13 @@
 				B40EE5941732E78B00667D36 /* FlipClock.cpp in Sources */,
 				B44680CF1733DDB500D533A6 /* Drawable.cpp in Sources */,
 				B457522F17398A1F006F1FA5 /* UndoRedoCanvasView.cpp in Sources */,
+				B450FF68173D3013000A03B4 /* BasicAnimation.cpp in Sources */,
+				B450FF6B173D3219000A03B4 /* AnimationCurve.cpp in Sources */,
+				B450FF6E173D3226000A03B4 /* LinearAnimationCurve.cpp in Sources */,
+				B450FF71173D3253000A03B4 /* EaseInAnimationCurve.cpp in Sources */,
+				B450FF74173D3260000A03B4 /* EaseOutAnimationCurve.cpp in Sources */,
+				B450FF77173D32D5000A03B4 /* EaseInOutAnimationCurve.cpp in Sources */,
+				B450FF7A173D3725000A03B4 /* Animation.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,8 @@
 #include <QMenuBar>
 #include <QAction>
 #include <QLayout>
+#include <QRect>
+#include "BasicAnimation.h"
 
 ClockApp::ClockApp(int &argc, char **argv):QApplication(argc, argv)
 {
@@ -46,6 +48,10 @@ void ClockApp::showMainWindow()
     menuBar->addMenu(helpMenu);
     
     mainWindow->setMenuBar(menuBar);
+    
+    BasicAnimation* sizeAnimation = new BasicAnimation(mainWindow->window(),QString("windowOpacity"));
+    sizeAnimation->setEndValue(0.0);
+    //sizeAnimation->start();
 }
 
 void ClockApp::showUndoRedoPlayGround()

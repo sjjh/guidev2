@@ -12,7 +12,8 @@ TARGET = clocks
 TEMPLATE = app
 
 INCLUDEPATH = ViewControllers \
-UndoRedo
+UndoRedo \
+Animations
 
 
 SOURCES += main.cpp\
@@ -33,7 +34,14 @@ SOURCES += main.cpp\
     UndoRedo/Drawable.cpp \
     UndoRedo/Circle.cpp \
     UndoRedo/UndoRedoCanvasView.cpp \
-    UndoRedo/UndoRedoView.cpp
+    UndoRedo/UndoRedoView.cpp \
+    Animations/LinearAnimationCurve.cpp \
+    Animations/EaseOutAnimationCurve.cpp \
+    Animations/EaseInOutAnimationCurve.cpp \
+    Animations/EaseInAnimationCurve.cpp \
+    Animations/BasicAnimation.cpp \
+    Animations/AnimationCurve.cpp \
+    Animations/Animation.cpp
 
 HEADERS  += mainwindow.h \
     NotificationCenter.h \
@@ -52,4 +60,11 @@ HEADERS  += mainwindow.h \
     UndoRedo/Drawable.h \
     UndoRedo/Circle.h \
     UndoRedo/UndoRedoCanvasView.h \
-    UndoRedo/UndoRedoView.h
+    UndoRedo/UndoRedoView.h \
+    Animations/LinearAnimationCurve.h \
+    Animations/EaseOutAnimationCurve.h \
+    Animations/EaseInOutAnimationCurve.h \
+    Animations/EaseInAnimationCurve.h \
+    Animations/BasicAnimation.h \
+    Animations/AnimationCurve.h \
+    Animations/Animation.h

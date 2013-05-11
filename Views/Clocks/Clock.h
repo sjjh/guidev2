@@ -17,6 +17,10 @@
  */
 class Clock: public QWidget
 {
+    Q_OBJECT
+    
+    Q_PROPERTY(QTime time READ getTime WRITE setTime)
+    
     public:
     
         /**

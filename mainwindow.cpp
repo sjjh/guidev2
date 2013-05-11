@@ -3,6 +3,8 @@
 #include <qmenubar.h>
 #include <qaction.h>
 #include <qboxlayout.h>
+#include "BasicAnimation.h"
+#include <QString>
 
 #define WINDOW_TITLE    "Clock"
 
@@ -28,9 +30,18 @@ MainWindow::MainWindow(QWidget *parent)
     // Add TestWidget -> draws a red circle *woohoo*
     
 //    clock = new AnalogClock(QTime(12,15));
-    clock = new AnalogClock();
+    clock = new AnalogClock(QTime(4,26));
     centralWidget->layout()->addWidget(clock);
-    clock = new FlipClock();
-    centralWidget->layout()->addWidget(clock);
+
+    centralWidget->layout()->addWidget(new FlipClock());
+    
+    BasicAnimation* animation = new BasicAnimation(clock,QString("time"));
+    animation->setEndValue(QTime(13,24));
+    animation->start();
+}
+
+Clock* MainWindow::getClock()
+{
+    return clock;
 }
 
