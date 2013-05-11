@@ -16,7 +16,7 @@ class LinearAnimationCurve: public AnimationCurve
 {
     public:
     
-        LinearAnimationCurve(int,QVariant, QVariant);
+        LinearAnimationCurve(int = 0,QVariant = 0, QVariant = 0);
     
     protected:
     

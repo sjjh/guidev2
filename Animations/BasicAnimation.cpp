@@ -11,9 +11,9 @@
 #include <QRect>
 #include "EaseInOutAnimationCurve.h"
 
-BasicAnimation::BasicAnimation(QObject* target, QString property):Animation(target,property)
+BasicAnimation::BasicAnimation(QObject* target, const char* property):Animation(target,property)
 {
-    this->startValue = target->property(property.toStdString().c_str());
+    this->startValue = target->property(property);
     this->endValue = 0;    
     this->animationCurve = new EaseInOutAnimationCurve(duration, startValue, endValue);
 }
@@ -26,11 +26,14 @@ BasicAnimation::~BasicAnimation()
 void BasicAnimation::setAnimationCurve(AnimationCurve* animationCurve)
 {
     this->animationCurve = animationCurve;
+    this->animationCurve->setStartValue(startValue);
+    this->animationCurve->setEndValue(endValue);
+    this->animationCurve->setDuration(duration);
 }
 
 void BasicAnimation::setStartValue(QVariant startValue)
 {
-    if(startValue.type() == target->property(propertyName.toStdString().c_str()).type())
+    if(startValue.type() == target->property(propertyName).type())
     {
         this->startValue = startValue;
         this->animationCurve->setStartValue(startValue);
@@ -49,4 +52,11 @@ void BasicAnimation::setEndValue(QVariant endValue)
 QVariant BasicAnimation::valueForTime(int time)
 {    
     return animationCurve->valueForTimeOffset(time);
+}
+
+void BasicAnimation::setDuration(int duration)
+{
+    Animation::setDuration(duration);
+    
+    this->animationCurve->setDuration(duration);
 }

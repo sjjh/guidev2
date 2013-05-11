@@ -22,18 +22,18 @@ class Animation: public QObject
 
     public:
     
-        void setDuration(int);
+        virtual void setDuration(int);
         void setRepeatCount(int);
         void start();
         void stop();
     
     protected:
     
-        Animation(QObject*, QString);
+        Animation(QObject*, const char*);
         virtual ~Animation();
     
         QObject* target;
-        QString propertyName;
+        const char* propertyName;
 
         int duration;
         int repeatCount;

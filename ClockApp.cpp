@@ -49,7 +49,7 @@ void ClockApp::showMainWindow()
     
     mainWindow->setMenuBar(menuBar);
     
-    BasicAnimation* sizeAnimation = new BasicAnimation(mainWindow->window(),QString("windowOpacity"));
+    BasicAnimation* sizeAnimation = new BasicAnimation(mainWindow->window(),"windowOpacity");
     sizeAnimation->setEndValue(0.0);
     //sizeAnimation->start();
 }

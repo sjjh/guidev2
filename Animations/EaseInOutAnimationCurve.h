@@ -18,7 +18,7 @@ class EaseInOutAnimationCurve: public AnimationCurve
 {
     public:
     
-        EaseInOutAnimationCurve(int, QVariant, QVariant);
+        EaseInOutAnimationCurve(int = 0, QVariant = 0, QVariant = 0);
     
     protected:
     

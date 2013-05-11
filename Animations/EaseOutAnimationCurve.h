@@ -17,7 +17,7 @@ class EaseOutAnimationCurve: public EaseInOutAnimationCurve
 {
     public:
     
-        EaseOutAnimationCurve(int, QVariant, QVariant);
+        EaseOutAnimationCurve(int = 0, QVariant = 0, QVariant = 0);
 };
 
 #endif /* defined(__guidev2__EaseOutAnimationCurve__) */

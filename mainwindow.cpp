@@ -5,6 +5,7 @@
 #include <qboxlayout.h>
 #include "BasicAnimation.h"
 #include <QString>
+#include "LinearAnimationCurve.h"
 
 #define WINDOW_TITLE    "Clock"
 
@@ -35,8 +36,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     centralWidget->layout()->addWidget(new FlipClock());
     
-    BasicAnimation* animation = new BasicAnimation(clock,QString("time"));
-    animation->setEndValue(QTime(13,24));
+    BasicAnimation* animation = new BasicAnimation(clock,"time");
+    animation->setEndValue(QTime::currentTime());
     animation->start();
 }
 

@@ -16,8 +16,7 @@ class AnimationCurve
 {
     protected:
     
-        AnimationCurve(int, QVariant, QVariant);
-        
+        AnimationCurve(int = 0, QVariant = 0, QVariant = 0);        
     
         QVariant startValue;
         QVariant endValue;

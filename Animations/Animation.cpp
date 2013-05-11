@@ -55,7 +55,7 @@ void Animation::threadTerminated()
     startTime = NULL;
 }
     
-Animation::Animation(QObject* target, QString property)
+Animation::Animation(QObject* target, const char* property)
 {
     this->target = target;
     this->propertyName = property;
@@ -80,11 +80,11 @@ void Animation::updateValue()
     
     if(startTime->elapsed() >= duration)
     {
-        this->target->setProperty(propertyName.toStdString().c_str(), valueForTime(duration));
+        this->target->setProperty(propertyName, valueForTime(duration));
         stop();
     }
     else
     {
-        this->target->setProperty(propertyName.toStdString().c_str(), valueForTime(startTime->elapsed()));
+        this->target->setProperty(propertyName, valueForTime(startTime->elapsed()));
     }
 }

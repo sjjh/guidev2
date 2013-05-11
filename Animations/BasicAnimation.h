@@ -19,12 +19,13 @@ class BasicAnimation: public Animation
 {
     public:
     
-        BasicAnimation(QObject*, QString);
+        BasicAnimation(QObject*, const char*);
         virtual ~BasicAnimation();
     
         void setAnimationCurve(AnimationCurve*);
         void setStartValue(QVariant);
         void setEndValue(QVariant);
+        virtual void setDuration(int);
     
     protected:
     
