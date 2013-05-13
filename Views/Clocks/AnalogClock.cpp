@@ -139,7 +139,7 @@ void AnalogClock::paintEvent(QPaintEvent *)
     
     // Draw minute arm
     
-    angle = 360.0 / NUMBER_OF_MINUTES * time.minute() + 90;
+    angle = 360.0 / NUMBER_OF_MINUTES * time.minute() + 90 + 6 * time.second() / 60.;
     
     drawArm(&painter, radius, angle, minuteArmWidth, minuteArmLength, &this->minuteArmBrush);
 }
