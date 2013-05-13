@@ -35,6 +35,8 @@ class FlipClock : public Clock
          * Returns the brush used to draw background of the clock.
          */
         QBrush getBackgroundBrush();
+    
+        virtual void setTime(QTime,bool);
 
         virtual void paintEvent(QPaintEvent*);
 

@@ -20,7 +20,7 @@ Clock::Clock(QTime time)
 
 Clock::~Clock()
 {
-    
+
 }
 
 void Clock::setTime(QTime time)
@@ -33,9 +33,4 @@ void Clock::setTime(QTime time)
 QTime Clock::getTime()
 {
     return this->time;
-}
-
-void Clock::init()
-{
-    
 }

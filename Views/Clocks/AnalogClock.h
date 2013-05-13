@@ -92,6 +92,10 @@ class AnalogClock: public Clock
          * Returns the brush used to draw background of the clock.
          */
         QBrush getBackgroundBrush();
+    
+        virtual void setTime(QTime);
+    
+        virtual void setTime(QTime, bool);
 
         virtual void paintEvent(QPaintEvent*);
     
@@ -103,6 +107,8 @@ class AnalogClock: public Clock
         QBrush  minuteTickBrush;
         QPen    labelPen;
         QBrush  backgroundBrush;
+        QPainterPath hourArmPath;
+        QPainterPath minuteArmPath;
     
         /**
          * Draws an arm of the clock.

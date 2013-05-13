@@ -17,13 +17,16 @@
 #include "AnalogClock.h"
 #include <qpainter.h>
 #include <math.h>
+#include "BasicAnimation.h"
 
 AnalogClock::AnalogClock()
 {
     this->init();
+    this->setTime(QTime::currentTime());
 }
 
-AnalogClock::AnalogClock(QTime time){
+AnalogClock::AnalogClock(QTime time)
+{
     this->init();
     this->setTime(time);
 }
@@ -40,6 +43,9 @@ void AnalogClock::init()
 
     labelPen = QPen(Qt::black);
     backgroundBrush = QBrush(Qt::white);
+    
+    this->minuteArmPath = QPainterPath();
+    this->hourArmPath = QPainterPath();
 }
 
 AnalogClock::~AnalogClock()
@@ -160,7 +166,7 @@ void AnalogClock::drawTick(QPainter *painter, int radius, float angle, int width
     painter->restore();
 }
 
-void AnalogClock::drawArm(QPainter *painter, int radius, float angle, int width, int length,QBrush* brush)
+void AnalogClock::drawArm(QPainter *painter, int radius, float angle, int width, int length, QBrush* brush)
 {
     float armOffset = fmax(0, radius / 50);
     
@@ -244,4 +250,24 @@ void AnalogClock::setBackgroundBrush(QBrush brush)
 {
     this->backgroundBrush = brush;
     repaint();
+}
+
+void AnalogClock::setTime(QTime time)
+{
+    this->setTime(time, false);
+}
+
+void AnalogClock::setTime(QTime time, bool animated)
+{
+    
+    if(animated)
+    {
+        animation = new BasicAnimation(this,"time");
+        ((BasicAnimation*)animation)->setEndValue(time);
+        animation->start();
+    }
+    else
+    {
+        Clock::setTime(time);
+    }
 }

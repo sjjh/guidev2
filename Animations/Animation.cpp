@@ -41,6 +41,8 @@ void Animation::stop()
 {
     animationTimer->stop();
     animationThread->terminate();
+    
+    currentRepeatIteration = 1;
 }
 
 void Animation::threadTerminated()
@@ -62,7 +64,11 @@ Animation::Animation(QObject* target, const char* property)
     this->animationTimer = NULL;
     this->animationThread = NULL;
     this->duration = 3000;
+    this->repeatCount = std::numeric_limits<int>().max();
     this->startTime = 0;
+    this->currentRepeatIteration = 1;
+    this->reversable = true;
+    this->isReversed = false;
 }
 
 Animation::~Animation()
@@ -80,11 +86,52 @@ void Animation::updateValue()
     
     if(startTime->elapsed() >= duration)
     {
-        this->target->setProperty(propertyName, valueForTime(duration));
-        stop();
+        // Current iteration finished
+        
+        if(isReversed)
+        {
+            this->target->setProperty(propertyName, valueForTime(duration - startTime->elapsed()));
+        }
+        else
+        {
+            this->target->setProperty(propertyName, valueForTime(startTime->elapsed()));
+        }
+        
+        if(reversable && !(currentRepeatIteration > repeatCount))
+        {
+            if(!isReversed)
+            {
+                currentRepeatIteration--;
+                isReversed = true;
+            }
+            else
+            {
+                isReversed = false;
+                
+            }
+        }
+        
+        // Check if more iterations are coming
+        
+        if(currentRepeatIteration < repeatCount)
+        {
+            startTime = 0;
+            currentRepeatIteration++;
+        }
+        else
+        {
+            stop();
+        }
     }
     else
     {
-        this->target->setProperty(propertyName, valueForTime(startTime->elapsed()));
+        if(isReversed)
+        {
+            this->target->setProperty(propertyName, valueForTime(duration - startTime->elapsed()));
+        }
+        else
+        {
+            this->target->setProperty(propertyName, valueForTime(startTime->elapsed()));
+        }
     }
 }

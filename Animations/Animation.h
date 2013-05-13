@@ -26,15 +26,17 @@ class Animation: public QObject
         void setRepeatCount(int);
         void start();
         void stop();
+        virtual ~Animation();
     
     protected:
     
         Animation(QObject*, const char*);
-        virtual ~Animation();
     
         QObject* target;
         const char* propertyName;
 
+        bool isReversed;
+        bool reversable;
         int duration;
         int repeatCount;
         virtual QVariant valueForTime(int) = 0;
@@ -44,6 +46,8 @@ class Animation: public QObject
         QThread* animationThread;
         QTimer* animationTimer;
         QTime* startTime;
+    
+        int currentRepeatIteration;
     
     private slots:
     

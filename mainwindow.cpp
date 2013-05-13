@@ -9,8 +9,8 @@
 
 #define WINDOW_TITLE    "Clock"
 
-#define WINDOW_HEIGHT   200
-#define WINDOW_WIDTH    300
+#define WINDOW_HEIGHT   300
+#define WINDOW_WIDTH    800
 
 MainWindow::MainWindow(QWidget *parent)
 : QMainWindow(parent)
@@ -36,9 +36,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     centralWidget->layout()->addWidget(new FlipClock());
     
-    BasicAnimation* animation = new BasicAnimation(clock,"time");
-    animation->setEndValue(QTime::currentTime());
-    animation->start();
+    clock->setTime(QTime::currentTime(),true);
 }
 
 Clock* MainWindow::getClock()

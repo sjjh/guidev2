@@ -11,6 +11,7 @@
 #include <qwidget.h>
 #include <ctime>
 #include <QTime>
+#include "Animation.h"
 
 /**
  *  Base class for all clock representations.
@@ -26,7 +27,12 @@ class Clock: public QWidget
         /**
          * Sets the time of the clock
          */
-        void setTime(QTime time);
+        virtual void setTime(QTime time);
+    
+        /**
+         * Sets the time of the clock with animation
+         */
+        virtual void setTime(QTime, bool) = 0;
     
         /**
          * Returns the time of the clock
@@ -56,7 +62,9 @@ class Clock: public QWidget
          * initiate a Clock (Colors, ... and all stuff happening in a Constructor)
          * This method needs to be overwritten in subclasses.
          */
-        virtual void init();
+        virtual void init() = 0;
+    
+        Animation* animation;
 };
 
 #endif /* defined(__guidev2__Clock__) */
