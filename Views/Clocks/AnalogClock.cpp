@@ -18,6 +18,8 @@
 #include <qpainter.h>
 #include <math.h>
 #include "BasicAnimation.h"
+#include <QMouseEvent>
+#include <math.h>
 
 AnalogClock::AnalogClock()
 {
@@ -44,8 +46,13 @@ void AnalogClock::init()
     labelPen = QPen(Qt::black);
     backgroundBrush = QBrush(Qt::white);
     
-    this->minuteArmPath = QPainterPath();
-    this->hourArmPath = QPainterPath();
+    diameter = std::min(width(),height());
+    radius = diameter / 2.0;
+    
+    draggingHourArm = false;
+    draggingMinuteArm = false;
+    
+    this->createArms();
 }
 
 AnalogClock::~AnalogClock()
@@ -57,18 +64,11 @@ void AnalogClock::paintEvent(QPaintEvent *)
 {
     // Calculate the size properties relative to the clocks size
     
-    float diameter = std::min(width(),height());
-    float radius = diameter / 2.0;
-    
     int hourTickHeight = fmax(MINIMUM_HOUR_TICK_HEIGHT,radius / 30.);
     int hourTickWidth = fmax(MINIMUM_HOUR_TICK_WIDTH,radius / 10.);
     int minuteTickHeight = fmax(MINIMUM_MINUTE_TICK_WIDTH,radius / 60.);
     int minuteTickWidth = fmax(MINIMUM_MINUTE_TICK_WIDTH,radius / 20.);
     int labelRectSize = fmax(10, radius / 4.);
-    int hourArmLength = fmax(2, radius / 3.);
-    int hourArmWidth = fmax(2, radius / 20.);
-    int minuteArmLength = fmax(5, radius - hourTickWidth - labelRectSize);
-    int minuteArmWidth = fmax(2, radius / 30.);
     
     // Initialize context
     
@@ -135,13 +135,14 @@ void AnalogClock::paintEvent(QPaintEvent *)
     // Draw hour arm
     
     float angle = 360.0 / NUMBER_OF_HOURS * time.hour() + 90 + 30 * time.minute() / 60.;
-    drawArm(&painter, radius, angle, hourArmWidth, hourArmLength, &this->hourArmBrush);
+
+    drawArm(&painter, radius, angle, &hourArmPath, &this->hourArmBrush);
     
     // Draw minute arm
     
     angle = 360.0 / NUMBER_OF_MINUTES * time.minute() + 90 + 6 * time.second() / 60.;
-    
-    drawArm(&painter, radius, angle, minuteArmWidth, minuteArmLength, &this->minuteArmBrush);
+        
+    drawArm(&painter, radius, angle, &minuteArmPath, &this->minuteArmBrush);
 }
 
 void AnalogClock::drawTick(QPainter *painter, int radius, float angle, int width, int height, QBrush* brush)
@@ -166,22 +167,21 @@ void AnalogClock::drawTick(QPainter *painter, int radius, float angle, int width
     painter->restore();
 }
 
-void AnalogClock::drawArm(QPainter *painter, int radius, float angle, int width, int length, QBrush* brush)
-{
-    float armOffset = fmax(0, radius / 50);
-    
-    painter->save(); 
-    
+void AnalogClock::drawArm(QPainter *painter, int radius, float angle, QPainterPath* path, QBrush* brush)
+{      
     // Adjust matrix
     
-    painter->translate(radius,radius);
-    painter->rotate(angle);
+    QMatrix mat;
+    mat.translate(radius, radius);
+    mat.rotate(angle);
     
     // Draw arm
     
+    painter->save();
+    
     painter->setBrush(*brush);
     
-    painter->drawRect(-length + armOffset, -width / 2, length, width);
+    painter->drawPath(mat.map(*path));
     
     painter->restore();
 }
@@ -270,4 +270,107 @@ void AnalogClock::setTime(QTime time, bool animated)
     {
         Clock::setTime(time);
     }
+}
+
+void AnalogClock::createArms()
+{   
+    int hourTickWidth = fmax(MINIMUM_HOUR_TICK_WIDTH,radius / 10.);
+
+    int labelRectSize = fmax(10, radius / 4.);
+    
+    int hourArmLength = fmax(2, radius / 3.);
+    int hourArmWidth = fmax(2, radius / 20.);
+    int minuteArmLength = fmax(5, radius - hourTickWidth - labelRectSize);
+    int minuteArmWidth = fmax(2, radius / 30.);
+    
+    hourArmPath = QPainterPath();
+    hourArmPath.addRect(-hourArmLength + fmax(0, radius / 50), -hourArmWidth / 2, hourArmLength, hourArmWidth);
+
+    minuteArmPath = QPainterPath();
+    minuteArmPath.addRect(-minuteArmLength + fmax(0, radius / 50), -minuteArmWidth / 2, minuteArmLength, minuteArmWidth);
+
+}
+
+void AnalogClock::resizeEvent (QResizeEvent* event)
+{
+    diameter = std::min(width(),height());
+    radius = diameter / 2.0;
+    
+    this->createArms();
+}
+
+void AnalogClock::mousePressEvent (QMouseEvent* event)
+{
+    float angle = 360.0 / NUMBER_OF_HOURS * time.hour() + 90 + 30 * time.minute() / 60.;
+
+    QMatrix mat;
+    mat.translate((width() - diameter) / 2.,(height() - diameter) / 2.);
+    mat.translate(radius, radius);
+    mat.rotate(angle);
+    
+    if (mat.map(hourArmPath).contains(event->pos()))
+    {
+        draggingHourArm = true;
+        return;
+    }
+    
+    // Draw minute arm
+    
+    mat.rotate(-angle);
+    angle = 360.0 / NUMBER_OF_MINUTES * time.minute() + 90 + 6 * time.second() / 60.;
+    mat.rotate(angle);
+    
+    if (mat.map(minuteArmPath).contains(event->pos()))
+    {
+        draggingMinuteArm = true;
+    }
+}
+
+void AnalogClock::mouseMoveEvent (QMouseEvent* event)
+{
+    float x1 = event->pos().x() - width() / 2.0;
+    float y1 = -(event->pos().y() - height() / 2.0);    
+    
+    float m = x1 >= 0?2*M_PI:0;
+    float c = x1 >= 0?-1:1;
+    
+    float b = m+c*acosf(y1 / sqrt(x1*x1 + y1*y1));    
+    
+    if(draggingMinuteArm)
+    {
+        float a = 2* M_PI / NUMBER_OF_MINUTES * time.minute();
+        float x2 = sinf(a);
+        float y2 = cosf(a);
+        a = 2 * M_PI - a;
+        
+        float d = acosf((x1*x2 + y1*y2) / (sqrt(x1 * x1 + y1 * y1)*sqrt(x2 * x2 + y2 * y2)));
+
+        if((a > b || (a <= M_PI / 2.0 && b > a)))
+        {
+            this->setTime(time.addSecs(d/M_PI * 1800));
+            emit(timeChanged(this));
+        }
+    }
+    else if(draggingHourArm)
+    {
+        float a = 2* M_PI / NUMBER_OF_HOURS * time.hour();
+        float x2 = sinf(a);
+        float y2 = cosf(a);
+        a = 2 * M_PI - a;
+        
+        float d = acosf((x1*x2 + y1*y2) / (sqrt(x1 * x1 + y1 * y1)*sqrt(x2 * x2 + y2 * y2)));
+
+        if(d > M_PI / 12.0 && (a > b || a <= M_PI))
+        {
+            this->setTime(time.addSecs(3600));
+            emit(timeChanged(this));
+        }
+    }
+}
+
+
+void AnalogClock::mouseReleaseEvent (QMouseEvent* event)
+{    
+    draggingHourArm = false;
+    draggingMinuteArm = false;
 }

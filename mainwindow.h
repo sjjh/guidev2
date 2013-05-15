@@ -25,11 +25,14 @@ class MainWindow : public QMainWindow
          */
         MainWindow(QWidget *parent = 0);
     
-        Clock* getClock();
+    public slots:
+    
+        void timeChanged(Clock*);
     
     private:
 
-        Clock* clock;
+        Clock* analog;
+        Clock* digital;
 
 };
 

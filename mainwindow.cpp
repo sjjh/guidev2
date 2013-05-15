@@ -31,16 +31,22 @@ MainWindow::MainWindow(QWidget *parent)
     // Add TestWidget -> draws a red circle *woohoo*
     
 //    clock = new AnalogClock(QTime(12,15));
-    clock = new AnalogClock(QTime(4,26));
-    centralWidget->layout()->addWidget(clock);
 
-    centralWidget->layout()->addWidget(new FlipClock());
+    QTime t = QTime::currentTime();
+    t.setHMS(t.hour() - 3,3, 0);
+
+    analog = new AnalogClock();
+    centralWidget->layout()->addWidget(analog);
     
-    clock->setTime(QTime::currentTime(),true);
+    digital = new FlipClock();
+
+    centralWidget->layout()->addWidget(digital);
+    
+    connect(analog, SIGNAL(timeChanged(Clock*)), this, SLOT(timeChanged(Clock*)));
 }
 
-Clock* MainWindow::getClock()
+void MainWindow::timeChanged(Clock * c)
 {
-    return clock;
+    digital->setTime(analog->getTime());
 }
 

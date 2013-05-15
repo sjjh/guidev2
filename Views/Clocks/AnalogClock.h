@@ -16,6 +16,12 @@
  */
 class AnalogClock: public Clock
 {
+    Q_OBJECT
+    
+    signals:
+    
+        void timeChanged(Clock*);
+
     public:
     
         /**
@@ -110,10 +116,18 @@ class AnalogClock: public Clock
         QPainterPath hourArmPath;
         QPainterPath minuteArmPath;
     
+        float diameter;
+        float radius;
+    
+        bool draggingHourArm;
+        bool draggingMinuteArm;
+    
         /**
          * Draws an arm of the clock.
          */
-        void drawArm(QPainter* painter, int radius, float angle, int width, int length, QBrush* brush);
+        void drawArm(QPainter* painter, int radius, float angle, QPainterPath* path, QBrush* brush);
+    
+        void createArms();
     
         /**
          * Draws ticks around the outer part of the clock background.
@@ -122,8 +136,11 @@ class AnalogClock: public Clock
 
      protected:
 
-       void init();
-
+        void init();
+        void resizeEvent (QResizeEvent*);
+        void mousePressEvent (QMouseEvent* event);
+        void mouseMoveEvent (QMouseEvent* event);
+        void mouseReleaseEvent(QMouseEvent* event);
 };
 
 #endif /* defined(__guidev2__AnalogClock__) */

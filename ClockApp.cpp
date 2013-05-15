@@ -48,10 +48,6 @@ void ClockApp::showMainWindow()
     menuBar->addMenu(helpMenu);
     
     mainWindow->setMenuBar(menuBar);
-    
-    BasicAnimation* sizeAnimation = new BasicAnimation(mainWindow->window(),"windowOpacity");
-    sizeAnimation->setEndValue(0.0);
-    //sizeAnimation->start();
 }
 
 void ClockApp::showUndoRedoPlayGround()
