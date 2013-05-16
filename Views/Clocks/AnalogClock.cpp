@@ -343,7 +343,7 @@ void AnalogClock::mouseMoveEvent (QMouseEvent* event)
         
         float d = acosf((x1*x2 + y1*y2) / (sqrt(x1 * x1 + y1 * y1)*sqrt(x2 * x2 + y2 * y2)));
 
-        if((e - a > 0 && fabs(e - a) < 1) || e - a < -4)
+        if((e - a > 0 && fabs(e - a) < 1) || e - a < -M_PI)
         {
             this->setTime(time.addSecs(d/M_PI * 1800));
             emit(timeChanged(this));
@@ -356,7 +356,7 @@ void AnalogClock::mouseMoveEvent (QMouseEvent* event)
     }
     else if(draggingHourArm)
     {
-        float a = 2* M_PI / NUMBER_OF_HOURS * time.hour();
+        float a = 2* M_PI / NUMBER_OF_HOURS * (time.hour() % 12);
         float x2 = sinf(a);
         float y2 = cosf(a);
         
@@ -364,10 +364,18 @@ void AnalogClock::mouseMoveEvent (QMouseEvent* event)
         
         std::cout << e -a  << std::endl;
 
-        if(d > M_PI / 12.0 && (e - a > 0 || a > M_PI))
+        if(d > M_PI / 12.0)
+        {
+            if(e - a < 0 || e - a > M_PI)
+        {
+            this->setTime(time.addSecs(-3600));
+            emit(timeChanged(this));
+        }
+        else
         {
             this->setTime(time.addSecs(3600));
             emit(timeChanged(this));
+        }
         }
     }
 }

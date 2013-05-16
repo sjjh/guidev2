@@ -13,7 +13,8 @@ TEMPLATE = app
 
 INCLUDEPATH = ViewControllers \
 UndoRedo \
-Animations
+Animations \
+Views
 
 
 SOURCES += main.cpp\
