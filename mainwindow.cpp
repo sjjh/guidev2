@@ -43,10 +43,18 @@ MainWindow::MainWindow(QWidget *parent)
     centralWidget->layout()->addWidget(digital);
     
     connect(analog, SIGNAL(timeChanged(Clock*)), this, SLOT(timeChanged(Clock*)));
+    connect(digital, SIGNAL(timeChanged(Clock*)),this, SLOT(timeChanged(Clock*)));
 }
 
 void MainWindow::timeChanged(Clock * c)
 {
-    digital->setTime(analog->getTime());
+    if(c == analog)
+    {
+        digital->setTime(analog->getTime());
+    }
+    else
+    {
+        analog->setTime(digital->getTime());
+    }
 }
 

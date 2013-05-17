@@ -10,6 +10,12 @@
  */
 class FlipClock : public Clock
 {
+    Q_OBJECT
+    
+    signals:
+    
+        void timeChanged(Clock*);
+
     public:
         /**
          * @brief FlipClock constructor
@@ -39,9 +45,29 @@ class FlipClock : public Clock
         virtual void setTime(QTime,bool);
 
         virtual void paintEvent(QPaintEvent*);
+    
+        void resizeEvent(QResizeEvent * event);
+    
+        void mouseReleaseEvent(QMouseEvent * event);
 
     private:
         QBrush  backgroundBrush;
+        QFont font;
+        qreal digitWidth;
+        qreal digitHeight;
+        qreal digitYOffset;
+        qreal digitXOffset;
+        qreal digitCornerRadius;
+        qreal digitSpacing;
+        QRect firstDigitRect;
+        QRect secondDigitRect;
+        QRect thirdDigitRect;
+        QRect forthDigitRect;
+    
+        QPainterPath hourDigit1Path;
+        QPainterPath hourDigit2Path;
+        QPainterPath minuteDigit1Path;
+        QPainterPath minuteDigit2Path;
 
     protected:
 

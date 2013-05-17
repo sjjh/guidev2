@@ -4,9 +4,13 @@
  *
  */
 
-#define NUMBER_OF_MINUTES   60
 #define NUMBER_OF_HOURS     12
-#define RADIANT(x)          M_PI * 2.0 * x / 360.0
+#define DEGREES_IN_CIRCLE   360.0
+#define RADIANT(x)          M_PI * 2.0 * x / DEGREES_IN_CIRCLE
+#define SECONDS_PER_HOUR    3600.0
+#define SECONDS_PER_MINUTE  60.0
+#define MINUTES_PER_HOUR    60.0
+
 #define MINIMUM_FONT_SIZE   8
 
 #define MINIMUM_HOUR_TICK_HEIGHT    3
@@ -66,7 +70,7 @@ void AnalogClock::paintEvent(QPaintEvent *)
     
     int hourTickHeight = fmax(MINIMUM_HOUR_TICK_HEIGHT,radius / 30.);
     int hourTickWidth = fmax(MINIMUM_HOUR_TICK_WIDTH,radius / 10.);
-    int minuteTickHeight = fmax(MINIMUM_MINUTE_TICK_WIDTH,radius / 60.);
+    int minuteTickHeight = fmax(MINIMUM_MINUTE_TICK_WIDTH,radius / MINUTES_PER_HOUR);
     int minuteTickWidth = fmax(MINIMUM_MINUTE_TICK_WIDTH,radius / 20.);
     int labelRectSize = fmax(10, radius / 4.);
     
@@ -92,7 +96,7 @@ void AnalogClock::paintEvent(QPaintEvent *)
     {
         // Draw tick
         
-        float angle = 360.0 / NUMBER_OF_HOURS * i - 90;
+        float angle = DEGREES_IN_CIRCLE / NUMBER_OF_HOURS * i - 90;
         
         drawTick(&painter, radius, angle, hourTickWidth, hourTickHeight, &this->hourTickBrush);
         
@@ -118,7 +122,7 @@ void AnalogClock::paintEvent(QPaintEvent *)
     
     // Draw minute ticks
     
-    for(int i = 0; i < NUMBER_OF_MINUTES; i++)
+    for(int i = 0; i < MINUTES_PER_HOUR; i++)
     {
         // Skip every 5th tick -> hour tick
         
@@ -127,20 +131,20 @@ void AnalogClock::paintEvent(QPaintEvent *)
             continue;
         }
         
-        float angle = 360.0 / NUMBER_OF_MINUTES * i;
+        float angle = DEGREES_IN_CIRCLE / MINUTES_PER_HOUR * i;
         
         drawTick(&painter, radius, angle, minuteTickWidth, minuteTickHeight, &this->minuteTickBrush);
     }
     
     // Draw hour arm
     
-    float angle = 360.0 / NUMBER_OF_HOURS * time.hour() + 90 + 30 * time.minute() / 60.;
+    float angle = DEGREES_IN_CIRCLE / NUMBER_OF_HOURS * time.hour() + 90 + 30 * time.minute() / MINUTES_PER_HOUR;
 
     drawArm(&painter, radius, angle, &hourArmPath, &this->hourArmBrush);
     
     // Draw minute arm
     
-    angle = 360.0 / NUMBER_OF_MINUTES * time.minute() + 90 + 6 * time.second() / 60.;
+    angle = DEGREES_IN_CIRCLE / MINUTES_PER_HOUR * time.minute() + 90 + 6 * time.second() / SECONDS_PER_MINUTE;
         
     drawArm(&painter, radius, angle, &minuteArmPath, &this->minuteArmBrush);
 }
@@ -262,7 +266,11 @@ void AnalogClock::setTime(QTime time, bool animated)
     
     if(animated)
     {
-        animation = new BasicAnimation(this,"time");
+        if(animation == NULL)
+        {
+            animation = new BasicAnimation(this,"time");
+        }
+
         ((BasicAnimation*)animation)->setEndValue(time);
         animation->start();
     }
@@ -301,7 +309,7 @@ void AnalogClock::resizeEvent (QResizeEvent* event)
 
 void AnalogClock::mousePressEvent (QMouseEvent* event)
 {
-    float angle = 360.0 / NUMBER_OF_HOURS * time.hour() + 90 + 30 * time.minute() / 60.;
+    float angle = DEGREES_IN_CIRCLE / NUMBER_OF_HOURS * time.hour() + 90 + 30 * time.minute() / MINUTES_PER_HOUR;
 
     QMatrix mat;
     mat.translate((width() - diameter) / 2.,(height() - diameter) / 2.);
@@ -317,7 +325,7 @@ void AnalogClock::mousePressEvent (QMouseEvent* event)
     // Draw minute arm
     
     mat.rotate(-angle);
-    angle = 360.0 / NUMBER_OF_MINUTES * time.minute() + 90 + 6 * time.second() / 60.;
+    angle = DEGREES_IN_CIRCLE / MINUTES_PER_HOUR * time.minute() + 90 + 6 * time.second() / SECONDS_PER_MINUTE;
     mat.rotate(angle);
     
     if (mat.map(minuteArmPath).contains(event->pos()))
@@ -331,51 +339,56 @@ void AnalogClock::mouseMoveEvent (QMouseEvent* event)
     float x1 = event->pos().x() - width() / 2.0;
     float y1 = -(event->pos().y() - height() / 2.0);    
     
-    float v = x1 < 0?M_PI:0;
-    float e = v + 0.5*M_PI - atanf(y1 / x1);
+    float v = x1 < 0 ? M_PI:0;
+    float beta = v + 0.5 * M_PI - atanf(y1 / x1);
     
     if(draggingMinuteArm)
     {
-        float a = 2 * M_PI / NUMBER_OF_MINUTES * time.minute();
+        float alpha = 2 * M_PI / MINUTES_PER_HOUR * time.minute();
 
-        float x2 = sinf(a);
-        float y2 = cosf(a);
+        float x2 = sinf(alpha);
+        float y2 = cosf(alpha);
         
-        float d = acosf((x1*x2 + y1*y2) / (sqrt(x1 * x1 + y1 * y1)*sqrt(x2 * x2 + y2 * y2)));
+        float d = acosf((x1 * x2 + y1 * y2) / (sqrt(x1 * x1 + y1 * y1) * sqrt(x2 * x2 + y2 * y2)));
 
-        if((e - a > 0 && fabs(e - a) < 1) || e - a < -M_PI)
+
+        if(d > M_PI / 30.0)
         {
-            this->setTime(time.addSecs(d/M_PI * 1800));
-            emit(timeChanged(this));
-        }
-        else
-        {
-            this->setTime(time.addSecs(-d/M_PI * 1800));
-            emit(timeChanged(this));
+        
+            time.setHMS(time.hour(), time.minute(), 0);
+        
+            if((beta - alpha > 0 && fabs(beta - alpha) < 1) || beta - alpha < -M_PI)
+            {
+                this->setTime(time.addSecs(d/M_PI * SECONDS_PER_HOUR / 2.0));
+                emit(timeChanged(this));
+            }
+            else
+            {
+                this->setTime(time.addSecs(-d/M_PI * SECONDS_PER_HOUR / 2.0));
+                emit(timeChanged(this));
+            }
         }
     }
     else if(draggingHourArm)
     {
-        float a = 2* M_PI / NUMBER_OF_HOURS * (time.hour() % 12);
-        float x2 = sinf(a);
-        float y2 = cosf(a);
+        float alpha = 2 * M_PI / NUMBER_OF_HOURS * (time.hour() % NUMBER_OF_HOURS);
+        float x2 = sinf(alpha);
+        float y2 = cosf(alpha);
         
-        float d = acosf((x1*x2 + y1*y2) / (sqrt(x1 * x1 + y1 * y1)*sqrt(x2 * x2 + y2 * y2)));
+        float d = acosf((x1 * x2 + y1 * y2) / (sqrt(x1 * x1 + y1 * y1) * sqrt(x2 * x2 + y2 * y2)));
         
-        std::cout << e -a  << std::endl;
-
-        if(d > M_PI / 12.0)
-        {
-            if(e - a < 0 || e - a > M_PI)
-        {
-            this->setTime(time.addSecs(-3600));
-            emit(timeChanged(this));
-        }
-        else
-        {
-            this->setTime(time.addSecs(3600));
-            emit(timeChanged(this));
-        }
+        if(d > M_PI / NUMBER_OF_HOURS)
+        {            
+            if(beta - alpha < 0 || beta - alpha > M_PI)
+            {
+                this->setTime(time.addSecs(-SECONDS_PER_HOUR));
+                emit(timeChanged(this));
+            }
+            else
+            {
+                this->setTime(time.addSecs(SECONDS_PER_HOUR));
+                emit(timeChanged(this));
+            }
         }
     }
 }

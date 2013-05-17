@@ -1,5 +1,6 @@
 #include "FlipClock.h"
 #include <qpainter.h>
+#include <QMouseEvent>
 
 FlipClock::FlipClock()
 {
@@ -16,6 +17,7 @@ void FlipClock::init()
 {
     //Initialize the clock with default values
     backgroundBrush = QBrush(Qt::black);
+    font = QFont();
 }
 
 FlipClock::~FlipClock()
@@ -25,13 +27,6 @@ FlipClock::~FlipClock()
 
 void FlipClock::paintEvent(QPaintEvent *)
 {
-    qreal digitWidth = width()/100.0*17;
-    qreal digitHeight = 2* digitWidth;
-    qreal digitYOffset = height() / 2.0 - digitHeight / 2.0;
-    qreal digitXOffset = width()/100.0*12;
-    qreal digitCornerRadius = digitWidth / 20.0;
-    qreal digitSpacing = digitWidth / 10;
-
     // Initialize context
 
     QPainter painter(this);
@@ -69,49 +64,18 @@ void FlipClock::paintEvent(QPaintEvent *)
     QBrush digitBackgroundBrush(digitBackgroundGradient);
     painter.setBrush(digitBackgroundBrush);
     
-    // first hour digit
-    QRect firstDigitRect(digitXOffset, digitYOffset, digitWidth, digitHeight);
-    painter.drawRoundedRect(firstDigitRect, digitCornerRadius, digitCornerRadius);
-    
-    // second hour digit
-    QRect secondDigitRect(firstDigitRect.x() + digitWidth + digitSpacing, digitYOffset, digitWidth, digitHeight);
-    painter.drawRoundedRect(secondDigitRect, digitCornerRadius, digitCornerRadius);
-    
-    // first minute digit
-    QRect thirdDigitRect(secondDigitRect.x() + digitWidth + digitSpacing * 3, digitYOffset, digitWidth, digitHeight);
-    painter.drawRoundedRect(thirdDigitRect, digitCornerRadius, digitCornerRadius);
-    
-    // second minute digit
-    QRect forthDigitRect(thirdDigitRect.x() + digitWidth + digitSpacing, digitYOffset, digitWidth, digitHeight);
-    painter.drawRoundedRect(forthDigitRect, digitCornerRadius, digitCornerRadius);
+    painter.drawPath(hourDigit1Path);
+    painter.drawPath(hourDigit2Path);
+    painter.drawPath(minuteDigit1Path);
+    painter.drawPath(minuteDigit2Path);
 
 
     // Draw the numbers of the given time
     // Font configuration
     painter.setPen(QPen(Qt::white,0));
-    QFont font(painter.font());
-
-    // calculating loop to calculate max. fontSize that fits into the flipChart
-    for (int i = 1; i < 500; i++)
-    {
-        font.setPointSize(i);
-        // create FontMetrics for resized font
-        QFontMetrics fm(font);
-        // get text width for current font size
-        int x = fm.width("0"); // "0" should be the widest digit
-        // get text height for current font size
-        int y = fm.height();
-        // check if text fits widget
-        if ((x > digitWidth) || (y > digitHeight))
-        {
-            // saving maximum possible size of font
-            font.setPointSize(i-1);
-            break;
-        }
-    }
 
     // create FontMetrics for resized font
-    QFontMetrics fm(font);
+
     painter.setFont(font);
 
     //first digit of hour
@@ -157,4 +121,73 @@ void FlipClock::setTime(QTime time, bool animated)
     {
         Clock::setTime(time);
     }
+}
+
+void FlipClock::resizeEvent(QResizeEvent * event)
+{
+    digitWidth = width()/100.0*17;
+    digitHeight = 2* digitWidth;
+    digitYOffset = height() / 2.0 - digitHeight / 2.0;
+    digitXOffset = width()/100.0*12;
+    digitCornerRadius = digitWidth / 20.0;
+    digitSpacing = digitWidth / 10;
+    
+    hourDigit1Path = QPainterPath();
+    hourDigit2Path = QPainterPath();
+    minuteDigit1Path = QPainterPath();
+    minuteDigit2Path = QPainterPath();
+    
+    firstDigitRect = QRect(digitXOffset, digitYOffset, digitWidth, digitHeight);
+    hourDigit1Path.addRoundedRect(firstDigitRect, digitCornerRadius, digitCornerRadius);
+    
+    // second hour digit
+    secondDigitRect = QRect(firstDigitRect.x() + digitWidth + digitSpacing, digitYOffset, digitWidth, digitHeight);
+    hourDigit2Path.addRoundedRect(secondDigitRect, digitCornerRadius, digitCornerRadius);
+    
+    // first minute digit
+    thirdDigitRect = QRect(secondDigitRect.x() + digitWidth + digitSpacing * 3, digitYOffset, digitWidth, digitHeight);
+    minuteDigit1Path.addRoundedRect(thirdDigitRect, digitCornerRadius, digitCornerRadius);
+    
+    // second minute digit
+    forthDigitRect = QRect(thirdDigitRect.x() + digitWidth + digitSpacing, digitYOffset, digitWidth, digitHeight);
+    minuteDigit2Path.addRoundedRect(forthDigitRect, digitCornerRadius, digitCornerRadius);
+    
+    QFontMetrics fm(font);
+
+    int pointSize = font.pointSizeF() * digitWidth / fm.width("0");
+
+    font.setPointSize(pointSize);
+}
+
+void FlipClock::mouseReleaseEvent(QMouseEvent *event)
+{
+    int multiplier = -1;
+    int numberOfSecondsToAdd = 0;
+    
+    if(event->pos().y() - digitYOffset < digitHeight / 2.0)
+    {
+        multiplier = 1;
+    }
+    
+    if(hourDigit1Path.contains(event->pos()))
+    {        
+        numberOfSecondsToAdd = multiplier * 36000;
+    }
+    else if(hourDigit2Path.contains(event->pos()))
+    {
+        numberOfSecondsToAdd = multiplier * 3600;
+    }
+    else if(minuteDigit1Path.contains(event->pos()))
+    {
+        numberOfSecondsToAdd = multiplier * 600;
+    }
+    else if(minuteDigit2Path.contains(event->pos()))
+    {
+        numberOfSecondsToAdd = multiplier * 60;
+    }
+    
+    time = time.addSecs(numberOfSecondsToAdd);
+    repaint();
+    
+    emit(timeChanged(this));
 }

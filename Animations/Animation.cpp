@@ -39,10 +39,13 @@ void Animation::start()
 
 void Animation::stop()
 {
-    animationTimer->stop();
-    animationThread->terminate();
+    if(animationThread != NULL && animationTimer != NULL)
+    {
+        animationTimer->stop();
+        animationThread->terminate();
     
-    currentRepeatIteration = 1;
+        currentRepeatIteration = 1;
+    }
 }
 
 void Animation::threadTerminated()
@@ -64,10 +67,10 @@ Animation::Animation(QObject* target, const char* property)
     this->animationTimer = NULL;
     this->animationThread = NULL;
     this->duration = 3000;
-    this->repeatCount = std::numeric_limits<int>().max();
+    this->repeatCount = 1;
     this->startTime = 0;
     this->currentRepeatIteration = 1;
-    this->reversable = true;
+    this->reversable = false;
     this->isReversed = false;
 }
 
