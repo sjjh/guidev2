@@ -14,7 +14,8 @@ TEMPLATE = app
 INCLUDEPATH = ViewControllers \
 UndoRedo \
 Animations \
-Views
+Views \
+View/Clocks
 
 
 SOURCES += main.cpp\
