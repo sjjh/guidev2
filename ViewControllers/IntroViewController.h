@@ -1,5 +1,5 @@
-#ifndef __guidev2__IintroViewController__
-#define __guidev2__IintroViewController__
+#ifndef __guidev2__IntroViewController__
+#define __guidev2__IntroViewController__
 
 #include "ViewController.h"
 
@@ -12,4 +12,4 @@ public:
     ~IntroViewController();
 };
 
-#endif // __guidev2__IintroViewController__
+#endif // __guidev2__IntroViewController__

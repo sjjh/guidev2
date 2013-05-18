@@ -45,7 +45,9 @@ SOURCES += main.cpp\
     Animations/Animation.cpp \
     ViewControllers/IntroViewController.cpp \
     Views/IntroView.cpp \
-    Model/DummyDataSource.cpp
+    Model/DummyDataSource.cpp \
+    ViewControllers/SelectPupilViewController.cpp \
+    Views/SelectPupilView.cpp
 
 HEADERS  += mainwindow.h \
     NotificationCenter.h \
@@ -74,7 +76,9 @@ HEADERS  += mainwindow.h \
     Animations/Animation.h \
     ViewControllers/IntroViewController.h \
     Views/IntroView.h \
-    Model/DummyDataSource.h
+    Model/DummyDataSource.h \
+    ViewControllers/SelectPupilViewController.h \
+    Views/SelectPupilView.h
 
 RESOURCES += \
     Clocks.qrc
