@@ -10,7 +10,22 @@ Pupil::Pupil()
     
 }
 
+Pupil::Pupil(QString name)
+{
+    this->name = name;
+}
+
 Pupil::~Pupil()
 {
     
+}
+
+QString Pupil::getName()
+{
+    return this->name;
+}
+
+void Pupil::setName(QString name)
+{
+    this->name = name;
 }
