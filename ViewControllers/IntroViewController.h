@@ -9,6 +9,7 @@ class IntroViewController : public ViewController
 
 public:
     IntroViewController();
+    ~IntroViewController();
 };
 
 #endif // __guidev2__IintroViewController__

@@ -5,3 +5,8 @@ IntroViewController::IntroViewController()
 {
     view = new IntroView();
 }
+
+IntroViewController::~IntroViewController()
+{
+    view = NULL;
+}
