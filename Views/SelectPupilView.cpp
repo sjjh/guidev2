@@ -25,6 +25,8 @@ SelectPupilView::SelectPupilView(QWidget *parent) :
             QPushButton b = new QPushButton(/*TODO allPupils->getPupilByIndex(pupilIndex)->getName()*/);
             this->pupilButtons->append(*b);
             this->mainLayout->addWidget(b,curRow,colIndex);
+            if(++pupilIndex==/*TODO maxPupils*/)
+                break;
         }
         curRow++;
     }
