@@ -11,7 +11,7 @@ class SelectPupilView : public QWidget
 {
     Q_OBJECT
 public:
-    SelectPupilView(QWidget *parent = 0, ClockApp app);
+    SelectPupilView(ClockApp app, QWidget *parent = 0);
     virtual ~SelectPupilView();
 
 private:

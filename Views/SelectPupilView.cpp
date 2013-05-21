@@ -10,7 +10,7 @@
 #include <QPushButton>
 #include "ClockApp.h"
 
-SelectPupilView::SelectPupilView(QWidget *parent, ClockApp app) :
+SelectPupilView::SelectPupilView(ClockApp app, QWidget *parent) :
     QWidget(parent)
 {
     thos->app = app;
