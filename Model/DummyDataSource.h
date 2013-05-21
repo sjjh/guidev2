@@ -11,7 +11,7 @@ public:
     DummyDataSource();
     virtual ~DummyDataSource();
     QList<Pupil *> getAllPupils();
-    Pupil *getPupilByName(QString &name);
+    Pupil *getPupilByName(QString *name);
     Pupil *getPupilById(int i);
     int getNumberOfPupils();
 

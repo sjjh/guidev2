@@ -20,7 +20,7 @@ QList<Pupil*> DummyDataSource::getAllPupils()
     return *this->pupils;
 }
 
-Pupil *DummyDataSource::getPupilByName(QString &name)
+Pupil *DummyDataSource::getPupilByName(QString *name)
 {
     for(int i=0; i<this->pupils->size(); i++) {
         if(this->pupils->at(i)->getName().compare(name) == 0)
