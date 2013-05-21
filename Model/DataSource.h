@@ -6,6 +6,8 @@
 #define __guidev2__DataSource__
 
 #include <iostream>
+#include <QList>
+#include "Pupil.h"
 
 /**
  * Base class for all data sources that can be used to store application data.
@@ -18,6 +20,28 @@ class DataSource
          * Creates a new DataSource instance.
          */
         DataSource();
+        virtual ~DataSource() {}
+
+        /**
+         * @brief getAllPupils
+         * @return a QList with all pupils
+         * @author Simon
+         */
+        virtual QList<Pupil*> getAllPupils() = 0;
+        /**
+         * @brief getPupilByName
+         * @param name the name of a pupil as QString
+         * @return a Pupil or NULL if no matching item was found
+         * @author Simon
+         */
+        virtual Pupil* getPupilByName(QString *name) = 0;
+        /**
+         * @brief getPupilById
+         * @param i the index of the pupil we want
+         * @return a Pupil or NULL if no matching item was found
+         * @author Simon
+         */
+        virtual Pupil &getPupilById(int i) = 0;
 
 };
 

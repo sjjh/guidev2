@@ -23,7 +23,6 @@ SOURCES += main.cpp\
     NotificationCenter.cpp \
     ClockApp.cpp \
     Model/Pupil.cpp \
-    Model/DataSource.cpp \
     ViewControllers/ViewController.cpp \
     Views/Clocks/Clock.cpp \
     Views/Clocks/AnalogClock.cpp \
@@ -43,7 +42,12 @@ SOURCES += main.cpp\
     Animations/EaseInAnimationCurve.cpp \
     Animations/BasicAnimation.cpp \
     Animations/AnimationCurve.cpp \
-    Animations/Animation.cpp
+    Animations/Animation.cpp \
+    ViewControllers/IntroViewController.cpp \
+    Views/IntroView.cpp \
+    Model/DummyDataSource.cpp \
+    ViewControllers/SelectPupilViewController.cpp \
+    Views/SelectPupilView.cpp
 
 HEADERS  += mainwindow.h \
     NotificationCenter.h \
@@ -69,4 +73,12 @@ HEADERS  += mainwindow.h \
     Animations/EaseInAnimationCurve.h \
     Animations/BasicAnimation.h \
     Animations/AnimationCurve.h \
-    Animations/Animation.h
+    Animations/Animation.h \
+    ViewControllers/IntroViewController.h \
+    Views/IntroView.h \
+    Model/DummyDataSource.h \
+    ViewControllers/SelectPupilViewController.h \
+    Views/SelectPupilView.h
+
+RESOURCES += \
+    Clocks.qrc

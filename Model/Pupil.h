@@ -15,8 +15,7 @@ class Pupil
 {
     private:
     
-        QString* name;
-        ~Pupil();
+        QString name;
     
     public:
     
@@ -24,11 +23,25 @@ class Pupil
          * Creates a new Pupil instance.
          */
         Pupil();
+
+        /**
+         * @brief constructor which sets the name
+         * @param name the name of the pupil as QString
+         */
+        Pupil(QString name);
+
+        ~Pupil();
     
         /**
          * Returns the name of the pupil.
          */
-        QString* getName();
+        QString getName();
+
+        /**
+         * @brief setName
+         * @param name the name to set as QString
+         */
+        void setName(QString name);
 };
 
 #endif /* defined(__guidev2__Pupil__) */

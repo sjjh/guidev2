@@ -1,0 +1,7 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource prefix="icon">
+	<file alias="preferences">res/icons/preferences-system.svg</file>
+	<file alias="go-next">res/icons/go-next.svg</file>
+	<file alias="go-home">res/icons/go-home.svg</file>
+</qresource>
+</RCC>

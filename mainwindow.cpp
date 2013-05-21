@@ -6,6 +6,7 @@
 #include "BasicAnimation.h"
 #include <QString>
 #include "LinearAnimationCurve.h"
+#include "IntroViewController.h"
 
 #define WINDOW_TITLE    "Clock"
 
@@ -22,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
     
     // Create layout and central widget for window
     
-    QHBoxLayout* layout = new QHBoxLayout();
+    QVBoxLayout* layout = new QVBoxLayout();
     
     QWidget* centralWidget = new QWidget();
     setCentralWidget(centralWidget);
@@ -44,6 +45,8 @@ MainWindow::MainWindow(QWidget *parent)
     
     connect(analog, SIGNAL(timeChanged(Clock*)), this, SLOT(timeChanged(Clock*)));
     connect(digital, SIGNAL(timeChanged(Clock*)),this, SLOT(timeChanged(Clock*)));
+
+    centralWidget->layout()->addWidget((new IntroViewController())->getView());
 }
 
 void MainWindow::timeChanged(Clock * c)
