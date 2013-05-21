@@ -9,10 +9,10 @@ class DummyDataSource : public DataSource
 {
 public:
     DummyDataSource();
-    ~DummyDataSource();
+    virtual ~DummyDataSource();
     QList<Pupil *> getAllPupils();
     Pupil *getPupilByName(QString &name);
-    Pupil &getPupilById(int i);
+    Pupil *getPupilById(int i);
 
 private:
     QList<Pupil*> *pupils;

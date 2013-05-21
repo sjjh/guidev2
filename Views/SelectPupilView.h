@@ -11,7 +11,7 @@ class SelectPupilView : public QWidget
     Q_OBJECT
 public:
     SelectPupilView(QWidget *parent = 0);
-    ~SelectPupilView();
+    virtual ~SelectPupilView();
 
 private:
     QGridLayout *mainLayout;

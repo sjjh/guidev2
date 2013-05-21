@@ -19,8 +19,8 @@ class DataSource
         /**
          * Creates a new DataSource instance.
          */
-        DataSource();
-        virtual ~DataSource() {}
+        DataSource() {};
+        virtual ~DataSource() {};
 
         /**
          * @brief getAllPupils
@@ -41,7 +41,7 @@ class DataSource
          * @return a Pupil or NULL if no matching item was found
          * @author Simon
          */
-        virtual Pupil &getPupilById(int i) = 0;
+        virtual Pupil* getPupilById(int i) = 0;
 
 };
 

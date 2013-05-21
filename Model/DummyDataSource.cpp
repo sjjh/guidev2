@@ -24,15 +24,15 @@ Pupil *DummyDataSource::getPupilByName(QString &name)
 {
     for(int i=0; i<this->pupils->size(); i++) {
         if(this->pupils->at(i)->getName().compare(name) == 0)
-            return &this->pupils->value(i);
+            return pupils->at(i);
     }
     return NULL;
 }
 
-Pupil& DummyDataSource::getPupilById(int i)
+Pupil* DummyDataSource::getPupilById(int i)
 {
     if(this->pupils->size() > i)
-        return this->pupils[i];
+        return pupils->at(i);
     else
-        return NULL;
+        return 0;
 }

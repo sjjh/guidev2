@@ -73,10 +73,20 @@
 		B465D89D17033FDE0022E543 /* QtWidgets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B465D88017033FDE0022E543 /* QtWidgets.framework */; };
 		B465D89E17033FDE0022E543 /* QtXml.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B465D88117033FDE0022E543 /* QtXml.framework */; };
 		B465D89F17033FDE0022E543 /* QtXmlPatterns.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B465D88217033FDE0022E543 /* QtXmlPatterns.framework */; };
+		B4AC9CF6174B986500D05A9B /* IntroView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9CF2174B986500D05A9B /* IntroView.cpp */; };
+		B4AC9CF7174B986500D05A9B /* SelectPupilView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9CF4174B986500D05A9B /* SelectPupilView.cpp */; };
+		B4AC9CFA174B987A00D05A9B /* DummyDataSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9CF8174B987A00D05A9B /* DummyDataSource.cpp */; };
+		B4AC9CFB174B9BCE00D05A9B /* DummyDataSource.h in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9CF9174B987A00D05A9B /* DummyDataSource.h */; };
+		B4AC9CFC174B9BCE00D05A9B /* IntroView.h in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9CF3174B986500D05A9B /* IntroView.h */; };
+		B4AC9CFD174B9BCE00D05A9B /* SelectPupilView.h in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9CF5174B986500D05A9B /* SelectPupilView.h */; };
+		B4AC9D02174B9BF900D05A9B /* IntroViewController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9CFE174B9BF900D05A9B /* IntroViewController.cpp */; };
+		B4AC9D03174B9BF900D05A9B /* SelectPupilViewController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9D00174B9BF900D05A9B /* SelectPupilViewController.cpp */; };
+		B4AC9D04174B9C0100D05A9B /* IntroViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9CFF174B9BF900D05A9B /* IntroViewController.h */; };
+		B4AC9D05174B9C0100D05A9B /* SelectPupilViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9D01174B9BF900D05A9B /* SelectPupilViewController.h */; };
+		B4AC9D0C174B9D9100D05A9B /* Clocks.qrc in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9D0B174B9D8800D05A9B /* Clocks.qrc */; };
 		B4EFFEEB171ED0C80076E810 /* AnalogClock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4EFFEE7171ED0C80076E810 /* AnalogClock.cpp */; };
 		B4EFFEEC171ED0C80076E810 /* Clock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4EFFEE9171ED0C80076E810 /* Clock.cpp */; };
 		B4EFFEF6171ED2DA0076E810 /* ViewController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4EFFEF4171ED2DA0076E810 /* ViewController.cpp */; };
-		B4EFFEF9171ED2F20076E810 /* DataSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4EFFEF7171ED2F20076E810 /* DataSource.cpp */; };
 		B4EFFEFC171ED2FF0076E810 /* Pupil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4EFFEFA171ED2FF0076E810 /* Pupil.cpp */; };
 		B4EFFEFF171ED3130076E810 /* ClockApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4EFFEFD171ED3130076E810 /* ClockApp.cpp */; };
 		B4EFFF02171ED32C0076E810 /* NotificationCenter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4EFFF00171ED32C0076E810 /* NotificationCenter.cpp */; };
@@ -90,6 +100,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
+		B4AC9D0D174B9DE800D05A9B /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.qrc";
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+				"${INPUT_FILE_DIR}/${INPUT_FILE_BASE}_qrc.cpp",
+				"",
+			);
+			script = "${HOME}/Qt5.0.1/5.0.1/clang_64/bin/rcc ${INPUT_FILE_PATH} -o ${INPUT_FILE_DIR}/${INPUT_FILE_BASE}_qrc.cpp";
+		};
 		B4E9D31117048259001D7674 /* PBXBuildRule */ = {
 			isa = PBXBuildRule;
 			compilerSpec = com.apple.compilers.proxy.script;
@@ -183,13 +205,26 @@
 		B465D88017033FDE0022E543 /* QtWidgets.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtWidgets.framework; path = ../../../Qt5.0.1/5.0.1/clang_64/lib/QtWidgets.framework; sourceTree = "<group>"; };
 		B465D88117033FDE0022E543 /* QtXml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtXml.framework; path = ../../../Qt5.0.1/5.0.1/clang_64/lib/QtXml.framework; sourceTree = "<group>"; };
 		B465D88217033FDE0022E543 /* QtXmlPatterns.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtXmlPatterns.framework; path = ../../../Qt5.0.1/5.0.1/clang_64/lib/QtXmlPatterns.framework; sourceTree = "<group>"; };
+		B4AC9CF2174B986500D05A9B /* IntroView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IntroView.cpp; path = Views/IntroView.cpp; sourceTree = SOURCE_ROOT; };
+		B4AC9CF3174B986500D05A9B /* IntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntroView.h; path = Views/IntroView.h; sourceTree = SOURCE_ROOT; };
+		B4AC9CF4174B986500D05A9B /* SelectPupilView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SelectPupilView.cpp; path = Views/SelectPupilView.cpp; sourceTree = SOURCE_ROOT; };
+		B4AC9CF5174B986500D05A9B /* SelectPupilView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectPupilView.h; path = Views/SelectPupilView.h; sourceTree = SOURCE_ROOT; };
+		B4AC9CF8174B987A00D05A9B /* DummyDataSource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DummyDataSource.cpp; path = Model/DummyDataSource.cpp; sourceTree = SOURCE_ROOT; };
+		B4AC9CF9174B987A00D05A9B /* DummyDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DummyDataSource.h; path = Model/DummyDataSource.h; sourceTree = SOURCE_ROOT; };
+		B4AC9CFE174B9BF900D05A9B /* IntroViewController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IntroViewController.cpp; path = ViewControllers/IntroViewController.cpp; sourceTree = SOURCE_ROOT; };
+		B4AC9CFF174B9BF900D05A9B /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntroViewController.h; path = ViewControllers/IntroViewController.h; sourceTree = SOURCE_ROOT; };
+		B4AC9D00174B9BF900D05A9B /* SelectPupilViewController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SelectPupilViewController.cpp; path = ViewControllers/SelectPupilViewController.cpp; sourceTree = SOURCE_ROOT; };
+		B4AC9D01174B9BF900D05A9B /* SelectPupilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectPupilViewController.h; path = ViewControllers/SelectPupilViewController.h; sourceTree = SOURCE_ROOT; };
+		B4AC9D08174B9D4600D05A9B /* go-home.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "go-home.svg"; path = "res/icons/go-home.svg"; sourceTree = SOURCE_ROOT; };
+		B4AC9D09174B9D4600D05A9B /* go-next.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "go-next.svg"; path = "res/icons/go-next.svg"; sourceTree = SOURCE_ROOT; };
+		B4AC9D0A174B9D4600D05A9B /* preferences-system.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "preferences-system.svg"; path = "res/icons/preferences-system.svg"; sourceTree = SOURCE_ROOT; };
+		B4AC9D0B174B9D8800D05A9B /* Clocks.qrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Clocks.qrc; sourceTree = "<group>"; };
 		B4EFFEE7171ED0C80076E810 /* AnalogClock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AnalogClock.cpp; path = Views/Clocks/AnalogClock.cpp; sourceTree = SOURCE_ROOT; };
 		B4EFFEE8171ED0C80076E810 /* AnalogClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnalogClock.h; path = Views/Clocks/AnalogClock.h; sourceTree = SOURCE_ROOT; };
 		B4EFFEE9171ED0C80076E810 /* Clock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Clock.cpp; path = Views/Clocks/Clock.cpp; sourceTree = SOURCE_ROOT; };
 		B4EFFEEA171ED0C80076E810 /* Clock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Clock.h; path = Views/Clocks/Clock.h; sourceTree = SOURCE_ROOT; };
 		B4EFFEF4171ED2DA0076E810 /* ViewController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ViewController.cpp; path = ViewControllers/ViewController.cpp; sourceTree = SOURCE_ROOT; };
 		B4EFFEF5171ED2DA0076E810 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ViewControllers/ViewController.h; sourceTree = SOURCE_ROOT; };
-		B4EFFEF7171ED2F20076E810 /* DataSource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DataSource.cpp; path = Model/DataSource.cpp; sourceTree = SOURCE_ROOT; };
 		B4EFFEF8171ED2F20076E810 /* DataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataSource.h; path = Model/DataSource.h; sourceTree = SOURCE_ROOT; };
 		B4EFFEFA171ED2FF0076E810 /* Pupil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Pupil.cpp; path = Model/Pupil.cpp; sourceTree = SOURCE_ROOT; };
 		B4EFFEFB171ED2FF0076E810 /* Pupil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pupil.h; path = Model/Pupil.h; sourceTree = SOURCE_ROOT; };
@@ -325,6 +360,7 @@
 		B4817F5A1702F7D900BD9A2F = {
 			isa = PBXGroup;
 			children = (
+				B4AC9D0B174B9D8800D05A9B /* Clocks.qrc */,
 				B4817F671702F83800BD9A2F /* devgui2 */,
 				B465D82B17033EB20022E543 /* Frameworks */,
 				B4817F661702F83800BD9A2F /* Products */,
@@ -351,6 +387,7 @@
 				B465D7B3170338C60022E543 /* main.cpp */,
 				B4EFFEFD171ED3130076E810 /* ClockApp.cpp */,
 				B4EFFEFE171ED3130076E810 /* ClockApp.h */,
+				B4AC9D06174B9D3000D05A9B /* res */,
 				B4EFFF00171ED32C0076E810 /* NotificationCenter.cpp */,
 				B4EFFF01171ED32C0076E810 /* NotificationCenter.h */,
 				B40EE5751732BB9000667D36 /* UndoRedo */,
@@ -371,9 +408,31 @@
 			name = Clocks;
 			sourceTree = "<group>";
 		};
+		B4AC9D06174B9D3000D05A9B /* res */ = {
+			isa = PBXGroup;
+			children = (
+				B4AC9D07174B9D3800D05A9B /* Icons */,
+			);
+			name = res;
+			sourceTree = "<group>";
+		};
+		B4AC9D07174B9D3800D05A9B /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				B4AC9D08174B9D4600D05A9B /* go-home.svg */,
+				B4AC9D09174B9D4600D05A9B /* go-next.svg */,
+				B4AC9D0A174B9D4600D05A9B /* preferences-system.svg */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
 		B4EFFEE5171ED03E0076E810 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B4AC9CFE174B9BF900D05A9B /* IntroViewController.cpp */,
+				B4AC9CFF174B9BF900D05A9B /* IntroViewController.h */,
+				B4AC9D00174B9BF900D05A9B /* SelectPupilViewController.cpp */,
+				B4AC9D01174B9BF900D05A9B /* SelectPupilViewController.h */,
 				B4EFFEF4171ED2DA0076E810 /* ViewController.cpp */,
 				B4EFFEF5171ED2DA0076E810 /* ViewController.h */,
 			);
@@ -383,6 +442,10 @@
 		B4EFFEE6171ED08D0076E810 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B4AC9CF2174B986500D05A9B /* IntroView.cpp */,
+				B4AC9CF3174B986500D05A9B /* IntroView.h */,
+				B4AC9CF4174B986500D05A9B /* SelectPupilView.cpp */,
+				B4AC9CF5174B986500D05A9B /* SelectPupilView.h */,
 				B48E32D81704DC2D00E0DB00 /* Clocks */,
 			);
 			name = Views;
@@ -391,7 +454,8 @@
 		B4EFFEF0171ED1A10076E810 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B4EFFEF7171ED2F20076E810 /* DataSource.cpp */,
+				B4AC9CF8174B987A00D05A9B /* DummyDataSource.cpp */,
+				B4AC9CF9174B987A00D05A9B /* DummyDataSource.h */,
 				B4EFFEF8171ED2F20076E810 /* DataSource.h */,
 				B4EFFEFA171ED2FF0076E810 /* Pupil.cpp */,
 				B4EFFEFB171ED2FF0076E810 /* Pupil.h */,
@@ -412,6 +476,7 @@
 				B48E32D41704839D00E0DB00 /* ShellScript */,
 			);
 			buildRules = (
+				B4AC9D0D174B9DE800D05A9B /* PBXBuildRule */,
 				B4E9D31117048259001D7674 /* PBXBuildRule */,
 			);
 			dependencies = (
@@ -467,6 +532,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4AC9D0C174B9D9100D05A9B /* Clocks.qrc in Sources */,
+				B4AC9D04174B9C0100D05A9B /* IntroViewController.h in Sources */,
+				B4AC9D05174B9C0100D05A9B /* SelectPupilViewController.h in Sources */,
+				B4AC9CFB174B9BCE00D05A9B /* DummyDataSource.h in Sources */,
+				B4AC9CFC174B9BCE00D05A9B /* IntroView.h in Sources */,
+				B4AC9CFD174B9BCE00D05A9B /* SelectPupilView.h in Sources */,
 				B450FF7B173D58B6000A03B4 /* BasicAnimation.h in Sources */,
 				B450FF7C173D58B6000A03B4 /* AnimationCurve.h in Sources */,
 				B450FF7D173D58B6000A03B4 /* LinearAnimationCurve.h in Sources */,
@@ -498,7 +569,6 @@
 				B4EFFEEB171ED0C80076E810 /* AnalogClock.cpp in Sources */,
 				B4EFFEEC171ED0C80076E810 /* Clock.cpp in Sources */,
 				B4EFFEF6171ED2DA0076E810 /* ViewController.cpp in Sources */,
-				B4EFFEF9171ED2F20076E810 /* DataSource.cpp in Sources */,
 				B4EFFEFC171ED2FF0076E810 /* Pupil.cpp in Sources */,
 				B4EFFEFF171ED3130076E810 /* ClockApp.cpp in Sources */,
 				B4EFFF02171ED32C0076E810 /* NotificationCenter.cpp in Sources */,
@@ -518,6 +588,11 @@
 				B450FF74173D3260000A03B4 /* EaseOutAnimationCurve.cpp in Sources */,
 				B450FF77173D32D5000A03B4 /* EaseInOutAnimationCurve.cpp in Sources */,
 				B450FF7A173D3725000A03B4 /* Animation.cpp in Sources */,
+				B4AC9CF6174B986500D05A9B /* IntroView.cpp in Sources */,
+				B4AC9CF7174B986500D05A9B /* SelectPupilView.cpp in Sources */,
+				B4AC9CFA174B987A00D05A9B /* DummyDataSource.cpp in Sources */,
+				B4AC9D02174B9BF900D05A9B /* IntroViewController.cpp in Sources */,
+				B4AC9D03174B9BF900D05A9B /* SelectPupilViewController.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

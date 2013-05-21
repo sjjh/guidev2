@@ -18,18 +18,18 @@ SelectPupilView::SelectPupilView(QWidget *parent) :
     int curRow = 0;
     //buttons to select pupils
     this->pupilButtons = new QList<QPushButton*>();
-    for(int pupilIndex=0; pupilIndex</*TODO maxPupils*/; pupilIndex++)
+    /*for(int pupilIndex=0; pupilIndex<; pupilIndex++)
     {
         for(int colIndex=1; colIndex<MAX_PUPIL_COLS; colIndex++)
         {
-            QPushButton b = new QPushButton(/*TODO allPupils->getPupilByIndex(pupilIndex)->getName()*/);
-            this->pupilButtons->append(*b);
+            QPushButton* b = new QPushButton();
+            this->pupilButtons->append(b);
             this->mainLayout->addWidget(b,curRow,colIndex);
-            if(++pupilIndex==/*TODO maxPupils*/)
+            if(++pupilIndex==)
                 break;
         }
         curRow++;
-    }
+    }*/
 
     //home-button
     this->homeButton = new QPushButton("");
@@ -37,4 +37,8 @@ SelectPupilView::SelectPupilView(QWidget *parent) :
 
     //add widget bottom-left to layout (row,col,rowSpan,colspan)
     this->mainLayout->addWidget(homeButton,curRow,0,Qt::AlignLeft);
+}
+
+SelectPupilView::~SelectPupilView()
+{
 }
