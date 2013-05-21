@@ -20,7 +20,6 @@ class DataSource
          * Creates a new DataSource instance.
          */
         DataSource() {};
-        virtual ~DataSource() {};
 
         /**
          * @brief getAllPupils
@@ -49,6 +48,9 @@ class DataSource
          * @author Simon
          */
         virtual int getNumberOfPupils() = 0;
+
+public:
+        virtual ~DataSource() {};
 
 };
 
