@@ -12,18 +12,22 @@
 #include <QLayout>
 #include <QRect>
 #include "BasicAnimation.h"
+#include "Model/DataSource.h"
+#include "Model/DummyDataSource.h"
 
 ClockApp::ClockApp(int &argc, char **argv):QApplication(argc, argv)
 {
     undoRedoWindow = NULL;
     undoRedoViewController = NULL;
     mainWindow = NULL;
+    this->dataSource = new DummyDataSource();
 }
 
 ClockApp::~ClockApp()
 {
     delete mainWindow;
     delete undoRedoViewController;
+    delete this->dataSource;
 }
 
 void ClockApp::showMainWindow()
@@ -64,4 +68,10 @@ void ClockApp::showUndoRedoPlayGround()
     }    
     
     undoRedoWindow->setVisible(true);
+}
+
+
+DataSource* ClockApp::getDataSource()
+{
+    return this->dataSource;
 }

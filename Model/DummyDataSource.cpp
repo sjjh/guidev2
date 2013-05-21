@@ -36,3 +36,8 @@ Pupil* DummyDataSource::getPupilById(int i)
     else
         return 0;
 }
+
+int DummyDataSource::getNumberOfPupils()
+{
+    return this->pupils->size();
+}

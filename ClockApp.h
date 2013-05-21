@@ -14,6 +14,8 @@
 #include "UndoRedo/UndoRedoWindow.h"
 #include "mainwindow.h"
 #include "UndoRedo/UndoRedoViewController.h"
+#include "Model/DataSource.h"
+#include "Model/DummyDataSource.h"
 
 /**
  * Represents the clock application.
@@ -28,6 +30,7 @@ class ClockApp: public QApplication
         UndoRedoWindow* undoRedoWindow;
         QAction* showUndoRedoPlaygroundAction;
         UndoRedoViewController* undoRedoViewController;
+        DataSource* dataSource;
     
     public:
     
@@ -45,6 +48,12 @@ class ClockApp: public QApplication
          * Shows main window
          */
         void showMainWindow();
+
+        /**
+         * @brief getDataSource
+         * @return the DataSource used in the app
+         */
+        DataSource* getDataSource();
 
     
     public slots:

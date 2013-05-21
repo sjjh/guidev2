@@ -13,6 +13,7 @@ public:
     QList<Pupil *> getAllPupils();
     Pupil *getPupilByName(QString &name);
     Pupil *getPupilById(int i);
+    int getNumberOfPupils();
 
 private:
     QList<Pupil*> *pupils;

@@ -43,6 +43,13 @@ class DataSource
          */
         virtual Pupil* getPupilById(int i) = 0;
 
+        /**
+         * @brief getNumberOfPupils
+         * @return returns number of errors
+         * @author Simon
+         */
+        virtual int getNumberOfPupils() = 0;
+
 };
 
 #endif /* defined(__guidev2__DataSource__) */
