@@ -28,18 +28,24 @@ double EaseInOutAnimationCurve::offsetForTime(int time)
 {
     double t = (double) time / duration;
     
+    // Calculates ease in curve part
+    
     if(t <= p4.x())
     {
         double offset = t / p4.x();
         return calculateQuadraticBezier(p1, p2, p3, p4, offset).y();
     }
     
+    // Calculates the linear middle path between ease in and ease out
+    
     if(t <= p5.x())
     {
         double offset = (t - p4.x()) / (p5.x() - p4.x());
         return (p4 + (p5 - p4) * offset).y() ;
     }
-        
+    
+    // Calculates the ease out part
+    
     double offset = (t - p5.x()) / (1 - p5.x());
     
     return calculateQuadraticBezier(p5, p6, p7, p8, offset).y();

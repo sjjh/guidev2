@@ -14,10 +14,16 @@
 #include "EaseInOutAnimationCurve.h"
 #include <QPointF>
 
+/**
+ * Realizes a animation curve with ease in using beziere curves
+ */
 class EaseInAnimationCurve: public EaseInOutAnimationCurve
 {
     public:
     
+        /**
+         * Creates and intializes a new ease in animation curve.
+         */
         EaseInAnimationCurve(int = 0, QVariant = 0, QVariant = 0);
 
 };

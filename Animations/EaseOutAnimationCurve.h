@@ -13,10 +13,16 @@
 
 #include "EaseInOutAnimationCurve.h"
 
+/**
+ * Realizes a animation curve with ease out using beziere curves
+ */
 class EaseOutAnimationCurve: public EaseInOutAnimationCurve
 {
     public:
     
+        /**
+         * Creates and initializes a new ease out animation curve.
+         */
         EaseOutAnimationCurve(int = 0, QVariant = 0, QVariant = 0);
 };
 

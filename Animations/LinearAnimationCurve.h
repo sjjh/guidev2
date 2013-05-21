@@ -12,10 +12,16 @@
 #include <iostream>
 #include "AnimationCurve.h"
 
+/**
+ * Realizes a simple linear animation curve.
+ */
 class LinearAnimationCurve: public AnimationCurve
 {
     public:
     
+        /**
+         * Creates and initializes the linear animation curve.
+         */
         LinearAnimationCurve(int = 0,QVariant = 0, QVariant = 0);
     
     protected:
