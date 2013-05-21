@@ -14,6 +14,7 @@ SelectPupilView::SelectPupilView(QWidget *parent) :
     setLayout(new QGridLayout());
 
     pupilList = new QListView();
+    pupilList->setEditTriggers(QAbstractItemView::NoEditTriggers);
     
     layout()->addWidget(pupilList);
 }

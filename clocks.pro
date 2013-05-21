@@ -12,10 +12,12 @@ TARGET = clocks
 TEMPLATE = app
 
 INCLUDEPATH = ViewControllers \
+Model \
+ViewControllers/DataModel \
 UndoRedo \
 Animations \
 Views \
-View/Clocks
+Views/Clocks
 
 
 SOURCES += main.cpp\
@@ -47,7 +49,10 @@ SOURCES += main.cpp\
     Views/IntroView.cpp \
     Model/DummyDataSource.cpp \
     ViewControllers/SelectPupilViewController.cpp \
-    Views/SelectPupilView.cpp
+    Views/SelectPupilView.cpp \
+    ViewControllers/DataModel/PupilListModel.cpp \
+    ViewControllers/MainMenuViewController.cpp \
+    Views/MainMenuView.cpp
 
 HEADERS  += mainwindow.h \
     NotificationCenter.h \
@@ -78,7 +83,10 @@ HEADERS  += mainwindow.h \
     Views/IntroView.h \
     Model/DummyDataSource.h \
     ViewControllers/SelectPupilViewController.h \
-    Views/SelectPupilView.h
+    Views/SelectPupilView.h \
+    ViewControllers/DataModel/PupilListModel.h \
+    ViewControllers/MainMenuViewController.h \
+    Views/MainMenuView.h
 
 RESOURCES += \
     Clocks.qrc

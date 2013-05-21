@@ -20,6 +20,11 @@ int PupilListModel::rowCount ( const QModelIndex & parent) const
 }
 
 QVariant PupilListModel::data ( const QModelIndex & index, int role ) const
-{    
-    return dataSource->getAllPupils().at(index.row())->getName();
+{
+    if ( role == Qt::DisplayRole )
+    {
+        return dataSource->getAllPupils().at(index.row())->getName();
+    }
+    return QVariant();
+    
 }
