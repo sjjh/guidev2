@@ -12,6 +12,8 @@ class SelectPupilView : public QWidget
 public:
     SelectPupilView(QWidget *parent = 0);
     virtual ~SelectPupilView();
+    
+    QPushButton* getHomeButton();
 
 private:
     QGridLayout *mainLayout;

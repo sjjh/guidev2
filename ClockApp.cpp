@@ -91,7 +91,7 @@ DataSource* ClockApp::getDataSource()
 
 void ClockApp::showSelectPupilView()
 {
-    activeViewController->getView()->hide();
+    activeViewController->getView()->setParent(NULL);
 
     
     if (!selectPupilViewController)
@@ -100,6 +100,15 @@ void ClockApp::showSelectPupilView()
     }
     
     activeViewController = selectPupilViewController;
+    
+    mainWindow->centralWidget()->layout()->addWidget(activeViewController->getView());
+}
+
+void ClockApp::showIntroView()
+{
+    activeViewController->getView()->setParent(NULL);
+    
+    activeViewController = introViewController;
     
     mainWindow->centralWidget()->layout()->addWidget(activeViewController->getView());
 }

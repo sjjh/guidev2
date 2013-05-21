@@ -13,7 +13,7 @@
 SelectPupilView::SelectPupilView(QWidget *parent) :
     QWidget(parent)
 {
-    this->mainLayout = new QGridLayout();
+    setLayout(new QGridLayout());
 
     //current row
     int curRow = 0;
@@ -25,9 +25,14 @@ SelectPupilView::SelectPupilView(QWidget *parent) :
     this->homeButton->setIcon(QIcon(":/icon/go-home"));
 
     //add widget bottom-left to layout (row,col,rowSpan,colspan)
-    this->mainLayout->addWidget(homeButton,curRow,0,Qt::AlignLeft);
+    layout()->addWidget(homeButton);
 }
 
 SelectPupilView::~SelectPupilView()
 {
+}
+
+QPushButton* SelectPupilView::getHomeButton()
+{
+    return this->homeButton;
 }

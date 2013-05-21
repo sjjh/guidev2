@@ -42,7 +42,7 @@ class FlipClock : public Clock
          */
         QBrush getBackgroundBrush();
     
-        virtual void setTime(QTime,bool);
+        virtual void setTime(QTime, bool = false);
 
         virtual void paintEvent(QPaintEvent*);
     

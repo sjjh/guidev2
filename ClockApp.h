@@ -72,9 +72,14 @@ class ClockApp: public QApplication
         void showUndoRedoPlayGround();
     
         /**
-         *
+         * Shows selection view for pupils
          */
          void showSelectPupilView();
+    
+         /**
+         * Shows selection view for pupils
+         */
+         void showIntroView();
 };
 
 #endif /* defined(__guidev2__ClockApp__) */

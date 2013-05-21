@@ -4,7 +4,11 @@
 
 SelectPupilViewController::SelectPupilViewController(ClockApp* app):ViewController(app)
 {
-    view = new SelectPupilView();
+    SelectPupilView* selectPupilView = new SelectPupilView();
+    
+    connect(selectPupilView->getHomeButton(), SIGNAL(clicked()), app, SLOT(showIntroView()));
+    
+    view = selectPupilView;
 }
 
 SelectPupilViewController::~SelectPupilViewController()

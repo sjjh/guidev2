@@ -1,6 +1,4 @@
 #include "IntroView.h"
-#include "Clocks/AnalogClock.h"
-#include "Clocks/FlipClock.h"
 #include <QIcon>
 #include <QString>
 
@@ -42,4 +40,14 @@ IntroView::~IntroView() {
 QPushButton* IntroView::getStartButton()
 {
     return this->startButton;
+}
+
+AnalogClock* IntroView::getAnalogClock()
+{
+    return this->analogClock;
+}
+
+FlipClock* IntroView::getFlipClock()
+{
+    return this->flipClock;
 }

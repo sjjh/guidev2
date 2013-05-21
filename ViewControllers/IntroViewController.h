@@ -10,6 +10,10 @@ class IntroViewController : public ViewController
 public:
     IntroViewController(ClockApp*);
     ~IntroViewController();
+    
+    public slots:
+    
+        void adjustTime(Clock*);
 };
 
 #endif // __guidev2__IntroViewController__

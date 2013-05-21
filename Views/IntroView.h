@@ -5,6 +5,8 @@
 #include <QWidget>
 #include "Clocks/Clock.h"
 #include <QPushButton>
+#include "AnalogClock.h"
+#include "FlipClock.h"
 
 class IntroView : public QWidget
 {
@@ -14,11 +16,14 @@ public:
     ~IntroView();
     
     QPushButton* getStartButton();
+    
+    AnalogClock* getAnalogClock();
+    FlipClock* getFlipClock();
 
 private:
     QGridLayout *mainLayout;
-    Clock *analogClock;
-    Clock *flipClock;
+    AnalogClock *analogClock;
+    FlipClock *flipClock;
     QPushButton *startButton;
     QPushButton *teacherButton;
     
