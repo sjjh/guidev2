@@ -19,7 +19,7 @@ class UndoRedoViewController: public ViewController
     
     public:
     
-        UndoRedoViewController();
+        UndoRedoViewController(ClockApp* app);
 
     private:
         QWidget* canvasView;

@@ -8,9 +8,9 @@
 
 #include "ViewController.h"
 
-ViewController::ViewController()
+ViewController::ViewController(ClockApp* app)
 {
-    
+    this->app = app;
 }
 
 ViewController::~ViewController()

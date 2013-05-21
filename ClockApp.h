@@ -13,10 +13,13 @@
 #include <QApplication>
 #include "UndoRedo/UndoRedoWindow.h"
 #include "mainwindow.h"
-#include "UndoRedo/UndoRedoViewController.h"
 #include "Model/DataSource.h"
 #include "Model/DummyDataSource.h"
-#include "IntroViewController.h"
+
+class IntroViewController;
+class SelectPupilViewController;
+class ViewController;
+class UndoRedoViewController;
 
 /**
  * Represents the clock application.
@@ -32,7 +35,10 @@ class ClockApp: public QApplication
         QAction* showUndoRedoPlaygroundAction;
         UndoRedoViewController* undoRedoViewController;
         IntroViewController* introViewController;
+        SelectPupilViewController* selectPupilViewController;
         DataSource* dataSource;
+    
+        ViewController* activeViewController;
     
     public:
     
@@ -64,6 +70,11 @@ class ClockApp: public QApplication
          * Show undo redo playground window
          */
         void showUndoRedoPlayGround();
+    
+        /**
+         *
+         */
+         void showSelectPupilView();
 };
 
 #endif /* defined(__guidev2__ClockApp__) */

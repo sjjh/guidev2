@@ -8,7 +8,7 @@ class IntroViewController : public ViewController
     Q_OBJECT
 
 public:
-    IntroViewController();
+    IntroViewController(ClockApp*);
     ~IntroViewController();
 };
 

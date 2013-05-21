@@ -10,11 +10,12 @@
 #define __guidev2__NotificationCenter__
 
 #include <iostream>
+#include <QObject>
 
 /**
  * Represents a notification center for distributing application wide messages between objects using signals and slots.
  */
-class NotificationCenter
+class NotificationCenter: public QObject
 {
     public:
     
@@ -23,12 +24,17 @@ class NotificationCenter
         */
         ~NotificationCenter();
     
+        /**
+         * Returns the only instance of this class
+         */
+         NotificationCenter* instance();
+    
     private:
     
         /**
          * Creates a new NotificationCenter instance.
          */
-        NotificationCenter();
+        NotificationCenter();   
 };
 
 #endif /* defined(__guidev2__NotificationCenter__) */

@@ -11,7 +11,7 @@
 #include "Rectangle.h"
 #include "Circle.h"
 
-UndoRedoViewController::UndoRedoViewController()
+UndoRedoViewController::UndoRedoViewController(ClockApp* app): ViewController(app)
 {
     view = new UndoRedoView();
 

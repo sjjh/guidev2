@@ -17,3 +17,15 @@ NotificationCenter::~NotificationCenter()
 {
     
 }
+
+NotificationCenter* NotificationCenter::instance()
+{
+    static NotificationCenter* instance = NULL;
+    
+    if(!instance)
+    {
+        instance = new NotificationCenter();
+    }
+    
+    return instance;
+}

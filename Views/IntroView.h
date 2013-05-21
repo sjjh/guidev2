@@ -12,6 +12,8 @@ class IntroView : public QWidget
 public:
     IntroView(QWidget *parent = 0);
     ~IntroView();
+    
+    QPushButton* getStartButton();
 
 private:
     QGridLayout *mainLayout;

@@ -8,6 +8,7 @@
 #include <iostream>
 #include <QWidget>
 #include <QObject>
+#include "ClockApp.h"
 
 /**
  * Base class for all view controllers
@@ -19,11 +20,12 @@ class ViewController: public QObject
         /**
          * Creates a new ViewController instance.
          */
-        ViewController();
+        ViewController(ClockApp* app);
     
     protected:
     
         QWidget* view;
+        ClockApp* app;
     
     public:
     

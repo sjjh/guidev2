@@ -38,3 +38,8 @@ IntroView::~IntroView() {
     this->startButton = NULL;
     this->teacherButton = NULL;
 }
+
+QPushButton* IntroView::getStartButton()
+{
+    return this->startButton;
+}

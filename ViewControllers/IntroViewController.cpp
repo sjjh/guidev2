@@ -1,9 +1,13 @@
 #include "IntroViewController.h"
 #include "IntroView.h"
 
-IntroViewController::IntroViewController()
+IntroViewController::IntroViewController(ClockApp* app):ViewController(app)
 {
-    view = new IntroView();
+    IntroView* introView = new IntroView();
+    
+    connect(introView->getStartButton(), SIGNAL(clicked()), app, SLOT(showSelectPupilView()));
+    
+    view = introView;
 }
 
 IntroViewController::~IntroViewController()
