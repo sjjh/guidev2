@@ -7,16 +7,24 @@
 #include "SelectPupilView.h"
 #include <QGridLayout>
 #include "ClockApp.h"
+#include <QLabel>
 
 SelectPupilView::SelectPupilView(QWidget *parent) :
     QWidget(parent)
 {
-    setLayout(new QGridLayout());
-
+    QGridLayout* gridLayout = new QGridLayout();
+    QVBoxLayout* boxLayout = new QVBoxLayout();
+    
     pupilList = new QListView();
+    pupilList->setMaximumWidth(200);
     pupilList->setEditTriggers(QAbstractItemView::NoEditTriggers);
     
-    layout()->addWidget(pupilList);
+    gridLayout->addWidget(pupilList, 0, 0, Qt::AlignLeft);
+    gridLayout->addLayout(boxLayout,0, 1, Qt::AlignLeft);
+    
+    boxLayout->addWidget(new QLabel("Your points"), Qt::AlignTop);
+    
+    setLayout(gridLayout);
 }
 
 SelectPupilView::~SelectPupilView()

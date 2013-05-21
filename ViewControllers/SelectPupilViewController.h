@@ -3,12 +3,20 @@
 
 #include "ViewController.h"
 #include "ClockApp.h"
+#include <QItemSelection>
 
 class SelectPupilViewController: public ViewController
 {
-public:
-    SelectPupilViewController(ClockApp* app);
-    ~SelectPupilViewController();
+    Q_OBJECT
+
+    public:
+    
+        SelectPupilViewController(ClockApp* app);
+        ~SelectPupilViewController();
+    
+    public slots:
+    
+        void selectionChanged( const QModelIndex & index );
 };
 
 #endif // __guidev2__SelectPupilViewController__

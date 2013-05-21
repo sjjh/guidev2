@@ -325,7 +325,7 @@ void AnalogClock::mousePressEvent (QMouseEvent* event)
     // Draw minute arm
     
     mat.rotate(-angle);
-    angle = DEGREES_IN_CIRCLE / MINUTES_PER_HOUR * time.minute() + 90 + 6 * time.second() / SECONDS_PER_MINUTE;
+    angle = DEGREES_IN_CIRCLE / MINUTES_PER_HOUR * time.minute() + 90;
     mat.rotate(angle);
     
     if (mat.map(minuteArmPath).contains(event->pos()))
