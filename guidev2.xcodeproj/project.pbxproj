@@ -88,6 +88,9 @@
 		B4AC9D18174BD72B00D05A9B /* AnalogClock.h in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9D10174BD71E00D05A9B /* AnalogClock.h */; };
 		B4AC9D19174BD72B00D05A9B /* Clock.h in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9D12174BD71E00D05A9B /* Clock.h */; };
 		B4AC9D1A174BD72B00D05A9B /* FlipClock.h in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9D14174BD71E00D05A9B /* FlipClock.h */; };
+		B4AC9D1E174BF0D300D05A9B /* MainMenuViewController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9D1C174BF0D300D05A9B /* MainMenuViewController.cpp */; };
+		B4AC9D21174BF21900D05A9B /* MainMenuView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9D1F174BF21800D05A9B /* MainMenuView.cpp */; };
+		B4AC9D25174BFA5000D05A9B /* PupilListModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9D23174BFA5000D05A9B /* PupilListModel.cpp */; };
 		B4EFFEF6171ED2DA0076E810 /* ViewController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4EFFEF4171ED2DA0076E810 /* ViewController.cpp */; };
 		B4EFFEFC171ED2FF0076E810 /* Pupil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4EFFEFA171ED2FF0076E810 /* Pupil.cpp */; };
 		B4EFFEFF171ED3130076E810 /* ClockApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4EFFEFD171ED3130076E810 /* ClockApp.cpp */; };
@@ -223,6 +226,12 @@
 		B4AC9D12174BD71E00D05A9B /* Clock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Clock.h; path = Views/Clocks/Clock.h; sourceTree = SOURCE_ROOT; };
 		B4AC9D13174BD71E00D05A9B /* FlipClock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FlipClock.cpp; path = Views/Clocks/FlipClock.cpp; sourceTree = SOURCE_ROOT; };
 		B4AC9D14174BD71E00D05A9B /* FlipClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlipClock.h; path = Views/Clocks/FlipClock.h; sourceTree = SOURCE_ROOT; };
+		B4AC9D1C174BF0D300D05A9B /* MainMenuViewController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainMenuViewController.cpp; path = ViewControllers/MainMenuViewController.cpp; sourceTree = SOURCE_ROOT; };
+		B4AC9D1D174BF0D300D05A9B /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuViewController.h; path = ViewControllers/MainMenuViewController.h; sourceTree = SOURCE_ROOT; };
+		B4AC9D1F174BF21800D05A9B /* MainMenuView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainMenuView.cpp; path = Views/MainMenuView.cpp; sourceTree = SOURCE_ROOT; };
+		B4AC9D20174BF21900D05A9B /* MainMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuView.h; path = Views/MainMenuView.h; sourceTree = SOURCE_ROOT; };
+		B4AC9D23174BFA5000D05A9B /* PupilListModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PupilListModel.cpp; path = ViewControllers/DataModel/PupilListModel.cpp; sourceTree = SOURCE_ROOT; };
+		B4AC9D24174BFA5000D05A9B /* PupilListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PupilListModel.h; path = ViewControllers/DataModel/PupilListModel.h; sourceTree = SOURCE_ROOT; };
 		B4EFFEF4171ED2DA0076E810 /* ViewController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ViewController.cpp; path = ViewControllers/ViewController.cpp; sourceTree = SOURCE_ROOT; };
 		B4EFFEF5171ED2DA0076E810 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ViewControllers/ViewController.h; sourceTree = SOURCE_ROOT; };
 		B4EFFEF8171ED2F20076E810 /* DataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataSource.h; path = Model/DataSource.h; sourceTree = SOURCE_ROOT; };
@@ -426,17 +435,29 @@
 			name = Icons;
 			sourceTree = "<group>";
 		};
+		B4AC9D22174BFA2B00D05A9B /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				B4AC9D23174BFA5000D05A9B /* PupilListModel.cpp */,
+				B4AC9D24174BFA5000D05A9B /* PupilListModel.h */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
 		B4EFFEE5171ED03E0076E810 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B4AC9D22174BFA2B00D05A9B /* DataModel */,
 				B4AC9CFE174B9BF900D05A9B /* IntroViewController.cpp */,
 				B4AC9CFF174B9BF900D05A9B /* IntroViewController.h */,
 				B4AC9D00174B9BF900D05A9B /* SelectPupilViewController.cpp */,
 				B4AC9D01174B9BF900D05A9B /* SelectPupilViewController.h */,
 				B4EFFEF4171ED2DA0076E810 /* ViewController.cpp */,
 				B4EFFEF5171ED2DA0076E810 /* ViewController.h */,
+				B4AC9D1C174BF0D300D05A9B /* MainMenuViewController.cpp */,
+				B4AC9D1D174BF0D300D05A9B /* MainMenuViewController.h */,
 			);
-			name = ViewControllers;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		B4EFFEE6171ED08D0076E810 /* Views */ = {
@@ -447,8 +468,10 @@
 				B4AC9CF4174B986500D05A9B /* SelectPupilView.cpp */,
 				B4AC9CF5174B986500D05A9B /* SelectPupilView.h */,
 				B48E32D81704DC2D00E0DB00 /* Clocks */,
+				B4AC9D1F174BF21800D05A9B /* MainMenuView.cpp */,
+				B4AC9D20174BF21900D05A9B /* MainMenuView.h */,
 			);
-			name = Views;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		B4EFFEF0171ED1A10076E810 /* Model */ = {
@@ -607,6 +630,9 @@
 				B4AC9D15174BD71E00D05A9B /* AnalogClock.cpp in Sources */,
 				B4AC9D16174BD71E00D05A9B /* Clock.cpp in Sources */,
 				B4AC9D17174BD71E00D05A9B /* FlipClock.cpp in Sources */,
+				B4AC9D1E174BF0D300D05A9B /* MainMenuViewController.cpp in Sources */,
+				B4AC9D21174BF21900D05A9B /* MainMenuView.cpp in Sources */,
+				B4AC9D25174BFA5000D05A9B /* PupilListModel.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

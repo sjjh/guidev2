@@ -16,7 +16,7 @@ FlipClock::FlipClock(QTime time)
 void FlipClock::init()
 {
     //Initialize the clock with default values
-    backgroundBrush = QBrush(Qt::black);
+    backgroundBrush = QBrush(Qt::transparent);
     font = QFont();
 }
 
@@ -32,10 +32,7 @@ void FlipClock::paintEvent(QPaintEvent *)
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing, true);
 
-    // Draw "case" of clock 10% offset of width/height()
-    painter.setPen(QPen(Qt::black,0));//TODO: create attribute+method; rename background to clockBackground; move to Clock
-    painter.setBrush(backgroundBrush);
-    painter.drawRect(0, 0, width(), height());
+    painter.fillRect(0, 0, width(), height(),backgroundBrush);
     
     // Clip context
     
@@ -125,12 +122,12 @@ void FlipClock::setTime(QTime time, bool animated)
 
 void FlipClock::resizeEvent(QResizeEvent * event)
 {
-    digitWidth = width()/100.0*17;
+    digitWidth = width()/100.0*20.5;
     digitHeight = 2* digitWidth;
     digitYOffset = height() / 2.0 - digitHeight / 2.0;
-    digitXOffset = width()/100.0*12;
+    digitXOffset = 0;
     digitCornerRadius = digitWidth / 20.0;
-    digitSpacing = digitWidth / 10;
+    digitSpacing = width() / 100.0 * 3.0;
     
     hourDigit1Path = QPainterPath();
     hourDigit2Path = QPainterPath();

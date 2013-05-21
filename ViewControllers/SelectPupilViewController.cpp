@@ -1,17 +1,18 @@
 #include "SelectPupilViewController.h"
 #include "SelectPupilView.h"
 #include "ClockApp.h"
+#include <QList>
+#include "PupilListModel.h"
 
 SelectPupilViewController::SelectPupilViewController(ClockApp* app):ViewController(app)
 {
     SelectPupilView* selectPupilView = new SelectPupilView();
     
-    connect(selectPupilView->getHomeButton(), SIGNAL(clicked()), app, SLOT(showIntroView()));
+    selectPupilView->getPupilList()->setModel(new PupilListModel(app->getDataSource()));
     
     view = selectPupilView;
 }
 
 SelectPupilViewController::~SelectPupilViewController()
 {
-
 }

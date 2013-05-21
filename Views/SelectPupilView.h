@@ -5,6 +5,7 @@
 #include <QGridLayout>
 #include <QList>
 #include <QPushButton>
+#include <QListView>
 
 class SelectPupilView : public QWidget
 {
@@ -13,12 +14,10 @@ public:
     SelectPupilView(QWidget *parent = 0);
     virtual ~SelectPupilView();
     
-    QPushButton* getHomeButton();
+    QListView* getPupilList();
 
 private:
-    QGridLayout *mainLayout;
-    QList<QPushButton*> *pupilButtons;
-    QPushButton *homeButton;
+    QListView* pupilList;
     
 signals:
     

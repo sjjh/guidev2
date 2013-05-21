@@ -15,8 +15,6 @@ public:
     IntroView(QWidget *parent = 0);
     ~IntroView();
     
-    QPushButton* getStartButton();
-    
     AnalogClock* getAnalogClock();
     FlipClock* getFlipClock();
 
@@ -24,8 +22,6 @@ private:
     QGridLayout *mainLayout;
     AnalogClock *analogClock;
     FlipClock *flipClock;
-    QPushButton *startButton;
-    QPushButton *teacherButton;
     
 signals:
     

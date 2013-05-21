@@ -17,6 +17,7 @@
 #include "IntroViewController.h"
 #include "SelectPupilViewController.h"
 #include "UndoRedoViewController.h"
+#include "MainMenuViewController.h"
 
 ClockApp::ClockApp(int &argc, char **argv):QApplication(argc, argv)
 {
@@ -25,9 +26,8 @@ ClockApp::ClockApp(int &argc, char **argv):QApplication(argc, argv)
     mainWindow = NULL;
     this->dataSource = new DummyDataSource();
     
-    introViewController = new IntroViewController(this);
-    activeViewController = introViewController;
-    selectPupilViewController = NULL;
+    mainMenuViewController = new MainMenuViewController(this);
+    activeViewController = mainMenuViewController;
 }
 
 ClockApp::~ClockApp()
@@ -35,7 +35,7 @@ ClockApp::~ClockApp()
     delete mainWindow;
     delete undoRedoViewController;
     delete this->dataSource;
-    delete introViewController;
+    delete mainMenuViewController;
 }
 
 void ClockApp::showMainWindow()
@@ -87,28 +87,4 @@ void ClockApp::showUndoRedoPlayGround()
 DataSource* ClockApp::getDataSource()
 {
     return this->dataSource;
-}
-
-void ClockApp::showSelectPupilView()
-{
-    activeViewController->getView()->setParent(NULL);
-
-    
-    if (!selectPupilViewController)
-    {
-        selectPupilViewController = new SelectPupilViewController(this);
-    }
-    
-    activeViewController = selectPupilViewController;
-    
-    mainWindow->centralWidget()->layout()->addWidget(activeViewController->getView());
-}
-
-void ClockApp::showIntroView()
-{
-    activeViewController->getView()->setParent(NULL);
-    
-    activeViewController = introViewController;
-    
-    mainWindow->centralWidget()->layout()->addWidget(activeViewController->getView());
 }

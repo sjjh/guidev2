@@ -6,8 +6,6 @@
 
 #include "SelectPupilView.h"
 #include <QGridLayout>
-#include <QList>
-#include <QPushButton>
 #include "ClockApp.h"
 
 SelectPupilView::SelectPupilView(QWidget *parent) :
@@ -15,24 +13,16 @@ SelectPupilView::SelectPupilView(QWidget *parent) :
 {
     setLayout(new QGridLayout());
 
-    //current row
-    int curRow = 0;
-    //buttons to select pupils
-    this->pupilButtons = new QList<QPushButton*>();
-
-    //home-button
-    this->homeButton = new QPushButton("");
-    this->homeButton->setIcon(QIcon(":/icon/go-home"));
-
-    //add widget bottom-left to layout (row,col,rowSpan,colspan)
-    layout()->addWidget(homeButton);
+    pupilList = new QListView();
+    
+    layout()->addWidget(pupilList);
 }
 
 SelectPupilView::~SelectPupilView()
 {
 }
 
-QPushButton* SelectPupilView::getHomeButton()
+QListView* SelectPupilView::getPupilList()
 {
-    return this->homeButton;
+    return this->pupilList;
 }

@@ -5,7 +5,6 @@ IntroViewController::IntroViewController(ClockApp* app):ViewController(app)
 {
     IntroView* introView = new IntroView();
     
-    connect(introView->getStartButton(), SIGNAL(clicked()), app, SLOT(showSelectPupilView()));
     connect(introView->getAnalogClock(), SIGNAL(timeChanged(Clock*)), this, SLOT(adjustTime(Clock*)));
     connect(introView->getFlipClock(), SIGNAL(timeChanged(Clock*)), this, SLOT(adjustTime(Clock*)));
     

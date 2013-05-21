@@ -20,6 +20,7 @@ class IntroViewController;
 class SelectPupilViewController;
 class ViewController;
 class UndoRedoViewController;
+class MainMenuViewController;
 
 /**
  * Represents the clock application.
@@ -34,8 +35,8 @@ class ClockApp: public QApplication
         UndoRedoWindow* undoRedoWindow;
         QAction* showUndoRedoPlaygroundAction;
         UndoRedoViewController* undoRedoViewController;
-        IntroViewController* introViewController;
-        SelectPupilViewController* selectPupilViewController;
+
+        MainMenuViewController* mainMenuViewController;
         DataSource* dataSource;
     
         ViewController* activeViewController;
@@ -70,16 +71,6 @@ class ClockApp: public QApplication
          * Show undo redo playground window
          */
         void showUndoRedoPlayGround();
-    
-        /**
-         * Shows selection view for pupils
-         */
-         void showSelectPupilView();
-    
-         /**
-         * Shows selection view for pupils
-         */
-         void showIntroView();
 };
 
 #endif /* defined(__guidev2__ClockApp__) */
