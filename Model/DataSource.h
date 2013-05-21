@@ -21,6 +21,7 @@ class DataSource
          */
         DataSource() {};
 
+public:
         /**
          * @brief getAllPupils
          * @return a QList with all pupils
@@ -49,7 +50,6 @@ class DataSource
          */
         virtual int getNumberOfPupils() = 0;
 
-public:
         virtual ~DataSource() {};
 
 };

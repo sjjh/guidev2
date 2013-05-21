@@ -369,7 +369,7 @@ void AnalogClock::mouseMoveEvent (QMouseEvent* event)
             }
         }
     }
-    else if(draggingHourArm)
+    else if(draggingHourArm) 
     {
         float alpha = 2 * M_PI / NUMBER_OF_HOURS * (time.hour() % NUMBER_OF_HOURS);
         float x2 = sinf(alpha);

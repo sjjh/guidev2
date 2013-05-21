@@ -5,17 +5,15 @@
 #include <QGridLayout>
 #include <QList>
 #include <QPushButton>
-#include "ClockApp.h"
 
 class SelectPupilView : public QWidget
 {
     Q_OBJECT
 public:
-    SelectPupilView(ClockApp app, QWidget *parent = 0);
+    SelectPupilView(QWidget *parent = 0);
     virtual ~SelectPupilView();
 
 private:
-    ClockApp app;
     QGridLayout *mainLayout;
     QList<QPushButton*> *pupilButtons;
     QPushButton *homeButton;

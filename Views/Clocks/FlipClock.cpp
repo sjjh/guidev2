@@ -160,7 +160,7 @@ void FlipClock::resizeEvent(QResizeEvent * event)
 }
 
 void FlipClock::mouseReleaseEvent(QMouseEvent *event)
-{
+{ 
     int multiplier = -1;
     int numberOfSecondsToAdd = 0;
     

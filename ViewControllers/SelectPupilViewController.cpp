@@ -2,10 +2,9 @@
 #include "SelectPupilView.h"
 #include "ClockApp.h"
 
-SelectPupilViewController::SelectPupilViewController(ClockApp app)
+SelectPupilViewController::SelectPupilViewController(ClockApp* app)
 {
     this->app = app;
-    this->view = new SelectPupilView(this->app);
 }
 
 SelectPupilViewController::~SelectPupilViewController()

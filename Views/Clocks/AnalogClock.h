@@ -107,7 +107,7 @@ class AnalogClock: public Clock
     
     private:
     
-        QBrush  hourArmBrush;
+        QBrush  hourArmBrush; 
         QBrush  minuteArmBrush;
         QBrush  hourTickBrush;
         QBrush  minuteTickBrush;

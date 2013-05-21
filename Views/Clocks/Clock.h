@@ -37,7 +37,7 @@ class Clock: public QWidget
         /**
          * Returns the time of the clock
          */
-        QTime getTime();
+        QTime getTime(); 
     
         /**
          * Destroys the Clock object and performs necessary clean up.

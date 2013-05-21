@@ -25,7 +25,7 @@ Clock::~Clock()
 
 void Clock::setTime(QTime time)
 {
-    this->time = time;
+    this->time = time; 
     
     repaint();
 }

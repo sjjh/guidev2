@@ -10,28 +10,15 @@
 #include <QPushButton>
 #include "ClockApp.h"
 
-SelectPupilView::SelectPupilView(ClockApp app, QWidget *parent) :
+SelectPupilView::SelectPupilView(QWidget *parent) :
     QWidget(parent)
 {
-    thos->app = app;
     this->mainLayout = new QGridLayout();
 
     //current row
     int curRow = 0;
     //buttons to select pupils
     this->pupilButtons = new QList<QPushButton*>();
-    for(int pupilIndex=0; pupilIndex<app.getDataSource()->getNumberOfPupils(); pupilIndex++)
-    {
-        for(int colIndex=1; colIndex<MAX_PUPIL_COLS; colIndex++)
-        {
-            QPushButton* b = new QPushButton();
-            this->pupilButtons->append(b);
-            this->mainLayout->addWidget(b,curRow,colIndex);
-            if(++pupilIndex==app.getDataSource()->getNumberOfPupils())
-                break;
-        }
-        curRow++;
-    }
 
     //home-button
     this->homeButton = new QPushButton("");

@@ -30,7 +30,7 @@ class FlipClock : public Clock
         /**
          * @brief FlipClock destructor
          */
-        ~FlipClock();
+        ~FlipClock(); 
 
         /**
          * Sets the brush used to draw the background of the clock.
@@ -71,7 +71,7 @@ class FlipClock : public Clock
 
     protected:
 
-      void init();
+        void init();
 };
 
 #endif // __guidev2__FlipClock__
