@@ -28,12 +28,12 @@ ClockApp::~ClockApp()
     delete mainWindow;
     delete undoRedoViewController;
     delete this->dataSource;
+    delete introViewController;
 }
 
 void ClockApp::showMainWindow()
 {
     mainWindow = new MainWindow();
-    mainWindow->show();
     
     // Setup main window menu bar
     
@@ -52,6 +52,14 @@ void ClockApp::showMainWindow()
     menuBar->addMenu(helpMenu);
     
     mainWindow->setMenuBar(menuBar);
+    
+    // Setup first view controller
+    
+    introViewController = new IntroViewController();
+    
+    mainWindow->centralWidget()->layout()->addWidget(introViewController->getView());
+    
+    mainWindow->show();
 }
 
 void ClockApp::showUndoRedoPlayGround()

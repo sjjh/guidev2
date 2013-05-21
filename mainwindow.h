@@ -24,15 +24,6 @@ class MainWindow : public QMainWindow
          * Creates a new main window instance.
          */
         MainWindow(QWidget *parent = 0);
-    
-    public slots:
-    
-        void timeChanged(Clock*);
-    
-    private:
-
-        Clock* analog;
-        Clock* digital;
 
 };
 
