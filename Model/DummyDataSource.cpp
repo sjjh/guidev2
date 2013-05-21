@@ -12,7 +12,7 @@ DummyDataSource::DummyDataSource()
 
 DummyDataSource::~DummyDataSource()
 {
-
+    delete pupils;
 }
 
 QList<Pupil*> DummyDataSource::getAllPupils()
