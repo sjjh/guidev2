@@ -52,7 +52,9 @@ SOURCES += main.cpp\
     Views/SelectPupilView.cpp \
     ViewControllers/DataModel/PupilListModel.cpp \
     ViewControllers/MainMenuViewController.cpp \
-    Views/MainMenuView.cpp
+    Views/MainMenuView.cpp \
+    Model/JSONDataSource.cpp \
+    Model/DataSource.cpp
 
 HEADERS  += mainwindow.h \
     NotificationCenter.h \
@@ -86,7 +88,8 @@ HEADERS  += mainwindow.h \
     Views/SelectPupilView.h \
     ViewControllers/DataModel/PupilListModel.h \
     ViewControllers/MainMenuViewController.h \
-    Views/MainMenuView.h
+    Views/MainMenuView.h \
+    Model/JSONDataSource.h
 
 RESOURCES += \
     Clocks.qrc
