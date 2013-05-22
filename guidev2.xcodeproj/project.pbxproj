@@ -71,6 +71,8 @@
 		B465D89D17033FDE0022E543 /* QtWidgets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B465D88017033FDE0022E543 /* QtWidgets.framework */; };
 		B465D89E17033FDE0022E543 /* QtXml.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B465D88117033FDE0022E543 /* QtXml.framework */; };
 		B465D89F17033FDE0022E543 /* QtXmlPatterns.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B465D88217033FDE0022E543 /* QtXmlPatterns.framework */; };
+		B489C87D174D07C9003B8444 /* JSONDataSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B489C87B174D07C9003B8444 /* JSONDataSource.cpp */; };
+		B489C87F174D0922003B8444 /* DataSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B489C87E174D0922003B8444 /* DataSource.cpp */; };
 		B4AC9CF6174B986500D05A9B /* IntroView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9CF2174B986500D05A9B /* IntroView.cpp */; };
 		B4AC9CF7174B986500D05A9B /* SelectPupilView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9CF4174B986500D05A9B /* SelectPupilView.cpp */; };
 		B4AC9CFA174B987A00D05A9B /* DummyDataSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9CF8174B987A00D05A9B /* DummyDataSource.cpp */; };
@@ -206,6 +208,9 @@
 		B465D88017033FDE0022E543 /* QtWidgets.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtWidgets.framework; path = ../../../Qt5.0.1/5.0.1/clang_64/lib/QtWidgets.framework; sourceTree = "<group>"; };
 		B465D88117033FDE0022E543 /* QtXml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtXml.framework; path = ../../../Qt5.0.1/5.0.1/clang_64/lib/QtXml.framework; sourceTree = "<group>"; };
 		B465D88217033FDE0022E543 /* QtXmlPatterns.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtXmlPatterns.framework; path = ../../../Qt5.0.1/5.0.1/clang_64/lib/QtXmlPatterns.framework; sourceTree = "<group>"; };
+		B489C87B174D07C9003B8444 /* JSONDataSource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = JSONDataSource.cpp; path = Model/JSONDataSource.cpp; sourceTree = SOURCE_ROOT; };
+		B489C87C174D07C9003B8444 /* JSONDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONDataSource.h; path = Model/JSONDataSource.h; sourceTree = SOURCE_ROOT; };
+		B489C87E174D0922003B8444 /* DataSource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DataSource.cpp; path = Model/DataSource.cpp; sourceTree = SOURCE_ROOT; };
 		B4AC9CF2174B986500D05A9B /* IntroView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IntroView.cpp; path = Views/IntroView.cpp; sourceTree = SOURCE_ROOT; };
 		B4AC9CF3174B986500D05A9B /* IntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntroView.h; path = Views/IntroView.h; sourceTree = SOURCE_ROOT; };
 		B4AC9CF4174B986500D05A9B /* SelectPupilView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SelectPupilView.cpp; path = Views/SelectPupilView.cpp; sourceTree = SOURCE_ROOT; };
@@ -480,10 +485,13 @@
 				B4AC9CF8174B987A00D05A9B /* DummyDataSource.cpp */,
 				B4AC9CF9174B987A00D05A9B /* DummyDataSource.h */,
 				B4EFFEF8171ED2F20076E810 /* DataSource.h */,
+				B489C87E174D0922003B8444 /* DataSource.cpp */,
 				B4EFFEFA171ED2FF0076E810 /* Pupil.cpp */,
 				B4EFFEFB171ED2FF0076E810 /* Pupil.h */,
+				B489C87B174D07C9003B8444 /* JSONDataSource.cpp */,
+				B489C87C174D07C9003B8444 /* JSONDataSource.h */,
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -633,6 +641,8 @@
 				B4AC9D1E174BF0D300D05A9B /* MainMenuViewController.cpp in Sources */,
 				B4AC9D21174BF21900D05A9B /* MainMenuView.cpp in Sources */,
 				B4AC9D25174BFA5000D05A9B /* PupilListModel.cpp in Sources */,
+				B489C87D174D07C9003B8444 /* JSONDataSource.cpp in Sources */,
+				B489C87F174D0922003B8444 /* DataSource.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

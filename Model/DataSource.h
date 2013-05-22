@@ -19,38 +19,46 @@ class DataSource
         /**
          * Creates a new DataSource instance.
          */
-        DataSource() {};
+        DataSource();
+    
+        QList<Pupil*>* pupils;
+    
+        bool isLoaded;
 
-public:
+    public:
         /**
          * @brief getAllPupils
          * @return a QList with all pupils
          * @author Simon
          */
-        virtual QList<Pupil*> getAllPupils() = 0;
+        virtual QList<Pupil*> getAllPupils();
         /**
          * @brief getPupilByName
          * @param name the name of a pupil as QString
          * @return a Pupil or NULL if no matching item was found
          * @author Simon
          */
-        virtual Pupil* getPupilByName(QString *name) = 0;
+        virtual Pupil* getPupilByName(QString *name);
         /**
          * @brief getPupilById
          * @param i the index of the pupil we want
          * @return a Pupil or NULL if no matching item was found
          * @author Simon
          */
-        virtual Pupil* getPupilById(int i) = 0;
+        virtual Pupil* getPupilById(int i);
 
         /**
          * @brief getNumberOfPupils
          * @return returns number of errors
          * @author Simon
          */
-        virtual int getNumberOfPupils() = 0;
+        virtual int getNumberOfPupils();
+    
+        virtual void save() = 0;
+    
+        virtual void load() = 0;
 
-        virtual ~DataSource() {};
+        virtual ~DataSource();
 
 };
 

@@ -13,7 +13,7 @@
 #include <QRect>
 #include "BasicAnimation.h"
 #include "Model/DataSource.h"
-#include "Model/DummyDataSource.h"
+#include "Model/JSONDataSource.h"
 #include "IntroViewController.h"
 #include "SelectPupilViewController.h"
 #include "UndoRedoViewController.h"
@@ -24,7 +24,7 @@ ClockApp::ClockApp(int &argc, char **argv):QApplication(argc, argv)
     undoRedoWindow = NULL;
     undoRedoViewController = NULL;
     mainWindow = NULL;
-    this->dataSource = new DummyDataSource();
+    this->dataSource = new JSONDataSource();
     
     mainMenuViewController = new MainMenuViewController(this);
     activeViewController = mainMenuViewController;
