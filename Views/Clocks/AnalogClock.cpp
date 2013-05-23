@@ -416,36 +416,36 @@ void AnalogClock::mouseMoveEvent (QMouseEvent* event)
     {
         // Highlight hour arm
 
-    QMatrix mat;
-    mat.translate((width() - diameter) / 2.,(height() - diameter) / 2.);
-    mat.translate(radius, radius);
-    mat.rotate(angle);
+        QMatrix mat;
+        mat.translate((width() - diameter) / 2.,(height() - diameter) / 2.);
+        mat.translate(radius, radius);
+        mat.rotate(angle);
     
-    if (mat.map(hourArmPath).contains(event->pos()))
-    {
-        highlightHourArm = true;
-    }
-    else
-    {
-        highlightHourArm = false;
-    }
+        if (mat.map(hourArmPath).contains(event->pos()))
+        {
+            highlightHourArm = true;
+        }
+        else
+        {
+            highlightHourArm = false;
+        }
     
-    // Highlight minute arm
+        // Highlight minute arm
     
-    mat.rotate(-angle);
-    angle = DEGREES_IN_CIRCLE / MINUTES_PER_HOUR * time.minute() + 90;
-    mat.rotate(angle);
+        mat.rotate(-angle);
+        angle = DEGREES_IN_CIRCLE / MINUTES_PER_HOUR * time.minute() + 90;
+        mat.rotate(angle);
     
-    if (mat.map(minuteArmPath).contains(event->pos()))
-    {
-        highlightMinuteArm = true;
-    }
-    else
-    {
-        highlightMinuteArm = false;
-    }
+        if (mat.map(minuteArmPath).contains(event->pos()))
+        {
+            highlightMinuteArm = true;
+        }
+        else
+        {
+            highlightMinuteArm = false;
+        }
     
-    repaint();
+        repaint();
     }
 }
 

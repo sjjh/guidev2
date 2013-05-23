@@ -58,7 +58,9 @@ SOURCES += main.cpp\
     Controller/ViewControllers/SelectPupilViewController.cpp \
     Controller/ViewControllers/MainMenuViewController.cpp \
     Controller/ViewControllers/IntroViewController.cpp \
-    Controller/ViewControllers/DataModel/PupilListModel.cpp
+    Controller/ViewControllers/DataModel/PupilListModel.cpp \
+    Controller/OrderQuizQuestion.cpp \
+    Controller/AdjustQuizQuestion.cpp
 
 HEADERS  += mainwindow.h \
     NotificationCenter.h \
@@ -96,7 +98,9 @@ HEADERS  += mainwindow.h \
     Controller/ViewControllers/ViewController.h \
     Controller/ViewControllers/SelectPupilViewController.h \
     Controller/ViewControllers/MainMenuViewController.h \
-    Controller/ViewControllers/IntroViewController.h
+    Controller/ViewControllers/IntroViewController.h \
+    Controller/OrderQuizQuestion.h \
+    Controller/AdjustQuizQuestion.h
 
 RESOURCES += \
     Clocks.qrc

@@ -96,6 +96,8 @@
 		B4EF266D174E4B87005261CB /* QuizGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4EF266B174E4B87005261CB /* QuizGenerator.cpp */; };
 		B4EF2670174E4B9E005261CB /* QuizQuestion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4EF266E174E4B9E005261CB /* QuizQuestion.cpp */; };
 		B4EF2673174E4BAB005261CB /* Quiz.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4EF2671174E4BAB005261CB /* Quiz.cpp */; };
+		B4EF2679174E5BBD005261CB /* OrderQuizQuestion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4EF2677174E5BBD005261CB /* OrderQuizQuestion.cpp */; };
+		B4EF267C174E5BCB005261CB /* AdjustQuizQuestion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4EF267A174E5BCB005261CB /* AdjustQuizQuestion.cpp */; };
 		B4EFFEF6171ED2DA0076E810 /* ViewController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4EFFEF4171ED2DA0076E810 /* ViewController.cpp */; };
 		B4EFFEFC171ED2FF0076E810 /* Pupil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4EFFEFA171ED2FF0076E810 /* Pupil.cpp */; };
 		B4EFFEFF171ED3130076E810 /* ClockApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4EFFEFD171ED3130076E810 /* ClockApp.cpp */; };
@@ -246,6 +248,10 @@
 		B4EF266F174E4B9E005261CB /* QuizQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuizQuestion.h; path = Controller/QuizQuestion.h; sourceTree = SOURCE_ROOT; };
 		B4EF2671174E4BAB005261CB /* Quiz.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Quiz.cpp; path = Controller/Quiz.cpp; sourceTree = SOURCE_ROOT; };
 		B4EF2672174E4BAB005261CB /* Quiz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Quiz.h; path = Controller/Quiz.h; sourceTree = SOURCE_ROOT; };
+		B4EF2677174E5BBD005261CB /* OrderQuizQuestion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OrderQuizQuestion.cpp; path = Controller/OrderQuizQuestion.cpp; sourceTree = SOURCE_ROOT; };
+		B4EF2678174E5BBD005261CB /* OrderQuizQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrderQuizQuestion.h; path = Controller/OrderQuizQuestion.h; sourceTree = SOURCE_ROOT; };
+		B4EF267A174E5BCB005261CB /* AdjustQuizQuestion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AdjustQuizQuestion.cpp; path = Controller/AdjustQuizQuestion.cpp; sourceTree = SOURCE_ROOT; };
+		B4EF267B174E5BCB005261CB /* AdjustQuizQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdjustQuizQuestion.h; path = Controller/AdjustQuizQuestion.h; sourceTree = SOURCE_ROOT; };
 		B4EFFEF4171ED2DA0076E810 /* ViewController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ViewController.cpp; path = Controller/ViewControllers/ViewController.cpp; sourceTree = SOURCE_ROOT; };
 		B4EFFEF5171ED2DA0076E810 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Controller/ViewControllers/ViewController.h; sourceTree = SOURCE_ROOT; };
 		B4EFFEF8171ED2F20076E810 /* DataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataSource.h; path = Model/DataSource.h; sourceTree = SOURCE_ROOT; };
@@ -468,6 +474,10 @@
 				B4EF266F174E4B9E005261CB /* QuizQuestion.h */,
 				B4EF2671174E4BAB005261CB /* Quiz.cpp */,
 				B4EF2672174E4BAB005261CB /* Quiz.h */,
+				B4EF2677174E5BBD005261CB /* OrderQuizQuestion.cpp */,
+				B4EF2678174E5BBD005261CB /* OrderQuizQuestion.h */,
+				B4EF267A174E5BCB005261CB /* AdjustQuizQuestion.cpp */,
+				B4EF267B174E5BCB005261CB /* AdjustQuizQuestion.h */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -669,6 +679,8 @@
 				B4EF266D174E4B87005261CB /* QuizGenerator.cpp in Sources */,
 				B4EF2670174E4B9E005261CB /* QuizQuestion.cpp in Sources */,
 				B4EF2673174E4BAB005261CB /* Quiz.cpp in Sources */,
+				B4EF2679174E5BBD005261CB /* OrderQuizQuestion.cpp in Sources */,
+				B4EF267C174E5BCB005261CB /* AdjustQuizQuestion.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
