@@ -17,13 +17,15 @@ class Quiz
 {
     public:
     
-        Quiz(QList<QuizQuestion>);
+        Quiz(QList<QuizQuestion*>*);
     
-        QList<QuizQuestion>* questions();
+        QList<QuizQuestion*>* questions();
+    
+        virtual ~Quiz();
     
     private:
     
-        QList<QuizQuestion> _questions;
+        QList<QuizQuestion*>* _questions;
 };
 
 #endif /* defined(__guidev2__Quiz__) */

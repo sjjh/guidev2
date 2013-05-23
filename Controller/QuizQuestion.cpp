@@ -12,3 +12,7 @@ QuizQuestion::QuizQuestion()
 {
     
 }
+
+QuizQuestion::~QuizQuestion()
+{
+}

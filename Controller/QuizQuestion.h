@@ -18,6 +18,11 @@ class QuizQuestion
     protected:
     
         QuizQuestion();
+    
+    public:
+    
+        virtual bool isAnswerCorrect() = 0;
+        virtual ~QuizQuestion();
 };
 
 #endif /* defined(__guidev2__QuizQuestion__) */

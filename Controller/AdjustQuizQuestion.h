@@ -14,6 +14,18 @@
 
 class AdjustQuizQuestion: public QuizQuestion
 {
+    private:
+    
+        QTime* _answer;
+        QTime _correctAnswer;
+    
+    public:
+    
+        AdjustQuizQuestion(QTime);
+        bool isAnswerCorrect();
+        void setAnswer(QTime*);
+        QTime correctAnswer();
+        virtual ~AdjustQuizQuestion();
 };
 
 #endif /* defined(__guidev2__AdjustQuizQuestion__) */

@@ -8,12 +8,17 @@
 
 #include "Quiz.h"
 
-Quiz::Quiz(QList<QuizQuestion> questions)
+Quiz::Quiz(QList<QuizQuestion*>* questions)
 {
     _questions = questions;
 }
 
-QList<QuizQuestion>* Quiz::questions()
+QList<QuizQuestion*>* Quiz::questions()
 {
-    return &_questions;
+    return _questions;
+}
+
+Quiz::~Quiz()
+{
+    delete _questions;
 }
