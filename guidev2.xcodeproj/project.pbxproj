@@ -93,6 +93,9 @@
 		B4AC9D1E174BF0D300D05A9B /* MainMenuViewController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9D1C174BF0D300D05A9B /* MainMenuViewController.cpp */; };
 		B4AC9D21174BF21900D05A9B /* MainMenuView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9D1F174BF21800D05A9B /* MainMenuView.cpp */; };
 		B4AC9D25174BFA5000D05A9B /* PupilListModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9D23174BFA5000D05A9B /* PupilListModel.cpp */; };
+		B4EF266D174E4B87005261CB /* QuizGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4EF266B174E4B87005261CB /* QuizGenerator.cpp */; };
+		B4EF2670174E4B9E005261CB /* QuizQuestion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4EF266E174E4B9E005261CB /* QuizQuestion.cpp */; };
+		B4EF2673174E4BAB005261CB /* Quiz.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4EF2671174E4BAB005261CB /* Quiz.cpp */; };
 		B4EFFEF6171ED2DA0076E810 /* ViewController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4EFFEF4171ED2DA0076E810 /* ViewController.cpp */; };
 		B4EFFEFC171ED2FF0076E810 /* Pupil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4EFFEFA171ED2FF0076E810 /* Pupil.cpp */; };
 		B4EFFEFF171ED3130076E810 /* ClockApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4EFFEFD171ED3130076E810 /* ClockApp.cpp */; };
@@ -217,10 +220,10 @@
 		B4AC9CF5174B986500D05A9B /* SelectPupilView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectPupilView.h; path = Views/SelectPupilView.h; sourceTree = SOURCE_ROOT; };
 		B4AC9CF8174B987A00D05A9B /* DummyDataSource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DummyDataSource.cpp; path = Model/DummyDataSource.cpp; sourceTree = SOURCE_ROOT; };
 		B4AC9CF9174B987A00D05A9B /* DummyDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DummyDataSource.h; path = Model/DummyDataSource.h; sourceTree = SOURCE_ROOT; };
-		B4AC9CFE174B9BF900D05A9B /* IntroViewController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IntroViewController.cpp; path = ViewControllers/IntroViewController.cpp; sourceTree = SOURCE_ROOT; };
-		B4AC9CFF174B9BF900D05A9B /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntroViewController.h; path = ViewControllers/IntroViewController.h; sourceTree = SOURCE_ROOT; };
-		B4AC9D00174B9BF900D05A9B /* SelectPupilViewController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SelectPupilViewController.cpp; path = ViewControllers/SelectPupilViewController.cpp; sourceTree = SOURCE_ROOT; };
-		B4AC9D01174B9BF900D05A9B /* SelectPupilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectPupilViewController.h; path = ViewControllers/SelectPupilViewController.h; sourceTree = SOURCE_ROOT; };
+		B4AC9CFE174B9BF900D05A9B /* IntroViewController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IntroViewController.cpp; path = Controller/ViewControllers/IntroViewController.cpp; sourceTree = SOURCE_ROOT; };
+		B4AC9CFF174B9BF900D05A9B /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntroViewController.h; path = Controller/ViewControllers/IntroViewController.h; sourceTree = SOURCE_ROOT; };
+		B4AC9D00174B9BF900D05A9B /* SelectPupilViewController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SelectPupilViewController.cpp; path = Controller/ViewControllers/SelectPupilViewController.cpp; sourceTree = SOURCE_ROOT; };
+		B4AC9D01174B9BF900D05A9B /* SelectPupilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectPupilViewController.h; path = Controller/ViewControllers/SelectPupilViewController.h; sourceTree = SOURCE_ROOT; };
 		B4AC9D08174B9D4600D05A9B /* go-home.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "go-home.svg"; path = "res/icons/go-home.svg"; sourceTree = SOURCE_ROOT; };
 		B4AC9D09174B9D4600D05A9B /* go-next.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "go-next.svg"; path = "res/icons/go-next.svg"; sourceTree = SOURCE_ROOT; };
 		B4AC9D0A174B9D4600D05A9B /* preferences-system.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "preferences-system.svg"; path = "res/icons/preferences-system.svg"; sourceTree = SOURCE_ROOT; };
@@ -231,14 +234,20 @@
 		B4AC9D12174BD71E00D05A9B /* Clock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Clock.h; path = Views/Clocks/Clock.h; sourceTree = SOURCE_ROOT; };
 		B4AC9D13174BD71E00D05A9B /* FlipClock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FlipClock.cpp; path = Views/Clocks/FlipClock.cpp; sourceTree = SOURCE_ROOT; };
 		B4AC9D14174BD71E00D05A9B /* FlipClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlipClock.h; path = Views/Clocks/FlipClock.h; sourceTree = SOURCE_ROOT; };
-		B4AC9D1C174BF0D300D05A9B /* MainMenuViewController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainMenuViewController.cpp; path = ViewControllers/MainMenuViewController.cpp; sourceTree = SOURCE_ROOT; };
-		B4AC9D1D174BF0D300D05A9B /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuViewController.h; path = ViewControllers/MainMenuViewController.h; sourceTree = SOURCE_ROOT; };
+		B4AC9D1C174BF0D300D05A9B /* MainMenuViewController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainMenuViewController.cpp; path = Controller/ViewControllers/MainMenuViewController.cpp; sourceTree = SOURCE_ROOT; };
+		B4AC9D1D174BF0D300D05A9B /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuViewController.h; path = Controller/ViewControllers/MainMenuViewController.h; sourceTree = SOURCE_ROOT; };
 		B4AC9D1F174BF21800D05A9B /* MainMenuView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainMenuView.cpp; path = Views/MainMenuView.cpp; sourceTree = SOURCE_ROOT; };
 		B4AC9D20174BF21900D05A9B /* MainMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuView.h; path = Views/MainMenuView.h; sourceTree = SOURCE_ROOT; };
-		B4AC9D23174BFA5000D05A9B /* PupilListModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PupilListModel.cpp; path = ViewControllers/DataModel/PupilListModel.cpp; sourceTree = SOURCE_ROOT; };
-		B4AC9D24174BFA5000D05A9B /* PupilListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PupilListModel.h; path = ViewControllers/DataModel/PupilListModel.h; sourceTree = SOURCE_ROOT; };
-		B4EFFEF4171ED2DA0076E810 /* ViewController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ViewController.cpp; path = ViewControllers/ViewController.cpp; sourceTree = SOURCE_ROOT; };
-		B4EFFEF5171ED2DA0076E810 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ViewControllers/ViewController.h; sourceTree = SOURCE_ROOT; };
+		B4AC9D23174BFA5000D05A9B /* PupilListModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PupilListModel.cpp; path = Controller/ViewControllers/DataModel/PupilListModel.cpp; sourceTree = SOURCE_ROOT; };
+		B4AC9D24174BFA5000D05A9B /* PupilListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PupilListModel.h; path = Controller/ViewControllers/DataModel/PupilListModel.h; sourceTree = SOURCE_ROOT; };
+		B4EF266B174E4B87005261CB /* QuizGenerator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = QuizGenerator.cpp; path = Controller/QuizGenerator.cpp; sourceTree = SOURCE_ROOT; };
+		B4EF266C174E4B87005261CB /* QuizGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuizGenerator.h; path = Controller/QuizGenerator.h; sourceTree = SOURCE_ROOT; };
+		B4EF266E174E4B9E005261CB /* QuizQuestion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = QuizQuestion.cpp; path = Controller/QuizQuestion.cpp; sourceTree = SOURCE_ROOT; };
+		B4EF266F174E4B9E005261CB /* QuizQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuizQuestion.h; path = Controller/QuizQuestion.h; sourceTree = SOURCE_ROOT; };
+		B4EF2671174E4BAB005261CB /* Quiz.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Quiz.cpp; path = Controller/Quiz.cpp; sourceTree = SOURCE_ROOT; };
+		B4EF2672174E4BAB005261CB /* Quiz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Quiz.h; path = Controller/Quiz.h; sourceTree = SOURCE_ROOT; };
+		B4EFFEF4171ED2DA0076E810 /* ViewController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ViewController.cpp; path = Controller/ViewControllers/ViewController.cpp; sourceTree = SOURCE_ROOT; };
+		B4EFFEF5171ED2DA0076E810 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Controller/ViewControllers/ViewController.h; sourceTree = SOURCE_ROOT; };
 		B4EFFEF8171ED2F20076E810 /* DataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataSource.h; path = Model/DataSource.h; sourceTree = SOURCE_ROOT; };
 		B4EFFEFA171ED2FF0076E810 /* Pupil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Pupil.cpp; path = Model/Pupil.cpp; sourceTree = SOURCE_ROOT; };
 		B4EFFEFB171ED2FF0076E810 /* Pupil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pupil.h; path = Model/Pupil.h; sourceTree = SOURCE_ROOT; };
@@ -392,10 +401,10 @@
 		B4817F671702F83800BD9A2F /* devgui2 */ = {
 			isa = PBXGroup;
 			children = (
+				B4EF266A174E4ACA005261CB /* Controller */,
 				B450FF62173D2E20000A03B4 /* Animations */,
 				B4EFFEF0171ED1A10076E810 /* Model */,
 				B4EFFEE6171ED08D0076E810 /* Views */,
-				B4EFFEE5171ED03E0076E810 /* ViewControllers */,
 				B465D7B0170338B20022E543 /* mainwindow.cpp */,
 				B465D7B1170338B20022E543 /* mainwindow.h */,
 				B465D7B3170338C60022E543 /* main.cpp */,
@@ -447,6 +456,20 @@
 				B4AC9D24174BFA5000D05A9B /* PupilListModel.h */,
 			);
 			path = DataModel;
+			sourceTree = "<group>";
+		};
+		B4EF266A174E4ACA005261CB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B4EFFEE5171ED03E0076E810 /* ViewControllers */,
+				B4EF266B174E4B87005261CB /* QuizGenerator.cpp */,
+				B4EF266C174E4B87005261CB /* QuizGenerator.h */,
+				B4EF266E174E4B9E005261CB /* QuizQuestion.cpp */,
+				B4EF266F174E4B9E005261CB /* QuizQuestion.h */,
+				B4EF2671174E4BAB005261CB /* Quiz.cpp */,
+				B4EF2672174E4BAB005261CB /* Quiz.h */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		B4EFFEE5171ED03E0076E810 /* ViewControllers */ = {
@@ -643,6 +666,9 @@
 				B4AC9D25174BFA5000D05A9B /* PupilListModel.cpp in Sources */,
 				B489C87D174D07C9003B8444 /* JSONDataSource.cpp in Sources */,
 				B489C87F174D0922003B8444 /* DataSource.cpp in Sources */,
+				B4EF266D174E4B87005261CB /* QuizGenerator.cpp in Sources */,
+				B4EF2670174E4B9E005261CB /* QuizQuestion.cpp in Sources */,
+				B4EF2673174E4BAB005261CB /* Quiz.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

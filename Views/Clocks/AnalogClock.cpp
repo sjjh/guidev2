@@ -40,6 +40,9 @@ AnalogClock::AnalogClock(QTime time)
 void AnalogClock::init()
 {
     // Initialize the clock with default values
+    
+    highlightHourArm = false;
+    highlightMinuteArm = false;
 
     hourArmBrush = QBrush(Qt::red);
     minuteArmBrush = QBrush(Qt::black);
@@ -57,6 +60,8 @@ void AnalogClock::init()
     draggingMinuteArm = false;
     
     this->createArms();
+    
+    this->setMouseTracking(true);
 }
 
 AnalogClock::~AnalogClock()
@@ -140,13 +145,25 @@ void AnalogClock::paintEvent(QPaintEvent *)
     
     float angle = DEGREES_IN_CIRCLE / NUMBER_OF_HOURS * time.hour() + 90 + 30 * time.minute() / MINUTES_PER_HOUR;
 
-    drawArm(&painter, radius, angle, &hourArmPath, &this->hourArmBrush);
+    QBrush hourArm = this->hourArmBrush;
+    
+    if(highlightHourArm)
+    {
+        hourArm = QBrush(Qt::blue);
+    }
+    drawArm(&painter, radius, angle, &hourArmPath, &hourArm);
     
     // Draw minute arm
     
     angle = DEGREES_IN_CIRCLE / MINUTES_PER_HOUR * time.minute() + 90;
-        
-    drawArm(&painter, radius, angle, &minuteArmPath, &this->minuteArmBrush);
+    
+    QBrush minuteArm = this->minuteArmBrush;
+    
+    if(highlightMinuteArm)
+    {
+        minuteArm = QBrush(Qt::blue);
+    }
+    drawArm(&painter, radius, angle, &minuteArmPath, &minuteArm);
 }
 
 void AnalogClock::drawTick(QPainter *painter, int radius, float angle, int width, int height, QBrush* brush)
@@ -287,9 +304,9 @@ void AnalogClock::createArms()
     int labelRectSize = fmax(10, radius / 4.);
     
     int hourArmLength = fmax(2, radius / 3.);
-    int hourArmWidth = fmax(2, radius / 20.);
+    int hourArmWidth = fmax(2, radius / 15.);
     int minuteArmLength = fmax(5, radius - hourTickWidth - labelRectSize);
-    int minuteArmWidth = fmax(2, radius / 30.);
+    int minuteArmWidth = fmax(2, radius / 20.);
     
     hourArmPath = QPainterPath();
     hourArmPath.addRect(-hourArmLength + fmax(0, radius / 50), -hourArmWidth / 2, hourArmLength, hourArmWidth);
@@ -336,6 +353,8 @@ void AnalogClock::mousePressEvent (QMouseEvent* event)
 
 void AnalogClock::mouseMoveEvent (QMouseEvent* event)
 {
+    float angle = DEGREES_IN_CIRCLE / NUMBER_OF_HOURS * time.hour() + 90 + 30 * time.minute() / MINUTES_PER_HOUR;
+
     float x1 = event->pos().x() - width() / 2.0;
     float y1 = -(event->pos().y() - height() / 2.0);    
     
@@ -344,6 +363,7 @@ void AnalogClock::mouseMoveEvent (QMouseEvent* event)
     
     if(draggingMinuteArm)
     {
+        highlightMinuteArm = true;
         float alpha = 2 * M_PI / MINUTES_PER_HOUR * time.minute();
 
         float x2 = sinf(alpha);
@@ -369,8 +389,9 @@ void AnalogClock::mouseMoveEvent (QMouseEvent* event)
             }
         }
     }
-    else if(draggingHourArm) 
+    else if(draggingHourArm)
     {
+        highlightHourArm = true;
         float alpha = 2 * M_PI / NUMBER_OF_HOURS * (time.hour() % NUMBER_OF_HOURS);
         float x2 = sinf(alpha);
         float y2 = cosf(alpha);
@@ -391,6 +412,41 @@ void AnalogClock::mouseMoveEvent (QMouseEvent* event)
             }
         }
     }
+    else
+    {
+        // Highlight hour arm
+
+    QMatrix mat;
+    mat.translate((width() - diameter) / 2.,(height() - diameter) / 2.);
+    mat.translate(radius, radius);
+    mat.rotate(angle);
+    
+    if (mat.map(hourArmPath).contains(event->pos()))
+    {
+        highlightHourArm = true;
+    }
+    else
+    {
+        highlightHourArm = false;
+    }
+    
+    // Highlight minute arm
+    
+    mat.rotate(-angle);
+    angle = DEGREES_IN_CIRCLE / MINUTES_PER_HOUR * time.minute() + 90;
+    mat.rotate(angle);
+    
+    if (mat.map(minuteArmPath).contains(event->pos()))
+    {
+        highlightMinuteArm = true;
+    }
+    else
+    {
+        highlightMinuteArm = false;
+    }
+    
+    repaint();
+    }
 }
 
 
@@ -398,4 +454,8 @@ void AnalogClock::mouseReleaseEvent (QMouseEvent* event)
 {    
     draggingHourArm = false;
     draggingMinuteArm = false;
+    highlightMinuteArm = false;
+    highlightHourArm = false;
+    
+    repaint();
 }

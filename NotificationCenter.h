@@ -27,7 +27,7 @@ class NotificationCenter: public QObject
         /**
          * Returns the only instance of this class
          */
-         NotificationCenter* instance();
+         static NotificationCenter* instance();
     
     private:
     

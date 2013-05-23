@@ -11,9 +11,10 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = clocks
 TEMPLATE = app
 
-INCLUDEPATH = ViewControllers \
+INCLUDEPATH = Controller/ViewControllers \
 Model \
-ViewControllers/DataModel \
+Controller/ViewControllers/DataModel \
+Controller \
 UndoRedo \
 Animations \
 Views \
@@ -25,7 +26,6 @@ SOURCES += main.cpp\
     NotificationCenter.cpp \
     ClockApp.cpp \
     Model/Pupil.cpp \
-    ViewControllers/ViewController.cpp \
     Views/Clocks/Clock.cpp \
     Views/Clocks/AnalogClock.cpp \
     Views/Clocks/FlipClock.cpp \
@@ -45,23 +45,26 @@ SOURCES += main.cpp\
     Animations/BasicAnimation.cpp \
     Animations/AnimationCurve.cpp \
     Animations/Animation.cpp \
-    ViewControllers/IntroViewController.cpp \
     Views/IntroView.cpp \
     Model/DummyDataSource.cpp \
-    ViewControllers/SelectPupilViewController.cpp \
     Views/SelectPupilView.cpp \
-    ViewControllers/DataModel/PupilListModel.cpp \
-    ViewControllers/MainMenuViewController.cpp \
     Views/MainMenuView.cpp \
     Model/JSONDataSource.cpp \
-    Model/DataSource.cpp
+    Model/DataSource.cpp \
+    Controller/QuizQuestion.cpp \
+    Controller/QuizGenerator.cpp \
+    Controller/Quiz.cpp \
+    Controller/ViewControllers/ViewController.cpp \
+    Controller/ViewControllers/SelectPupilViewController.cpp \
+    Controller/ViewControllers/MainMenuViewController.cpp \
+    Controller/ViewControllers/IntroViewController.cpp \
+    Controller/ViewControllers/DataModel/PupilListModel.cpp
 
 HEADERS  += mainwindow.h \
     NotificationCenter.h \
     ClockApp.h \
     Model/Pupil.h \
     Model/DataSource.h \
-    ViewControllers/ViewController.h \
     Views/Clocks/Clock.h \
     Views/Clocks/AnalogClock.h \
     Views/Clocks/FlipClock.h \
@@ -81,15 +84,19 @@ HEADERS  += mainwindow.h \
     Animations/BasicAnimation.h \
     Animations/AnimationCurve.h \
     Animations/Animation.h \
-    ViewControllers/IntroViewController.h \
     Views/IntroView.h \
     Model/DummyDataSource.h \
-    ViewControllers/SelectPupilViewController.h \
     Views/SelectPupilView.h \
-    ViewControllers/DataModel/PupilListModel.h \
-    ViewControllers/MainMenuViewController.h \
     Views/MainMenuView.h \
-    Model/JSONDataSource.h
+    Model/JSONDataSource.h \
+    Controller/QuizQuestion.h \
+    Controller/QuizGenerator.h \
+    Controller/Quiz.h \
+    Controller/ViewControllers/DataModel/PupilListModel.h \
+    Controller/ViewControllers/ViewController.h \
+    Controller/ViewControllers/SelectPupilViewController.h \
+    Controller/ViewControllers/MainMenuViewController.h \
+    Controller/ViewControllers/IntroViewController.h
 
 RESOURCES += \
     Clocks.qrc

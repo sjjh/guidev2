@@ -122,6 +122,9 @@ class AnalogClock: public Clock
         bool draggingHourArm;
         bool draggingMinuteArm;
     
+        bool highlightHourArm;
+        bool highlightMinuteArm;
+    
         /**
          * Draws an arm of the clock.
          */
