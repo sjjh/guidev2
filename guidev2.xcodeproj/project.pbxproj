@@ -39,6 +39,20 @@
 		B450FF81173D58B6000A03B4 /* Animation.h in Sources */ = {isa = PBXBuildFile; fileRef = B450FF79173D3725000A03B4 /* Animation.h */; };
 		B457522F17398A1F006F1FA5 /* UndoRedoCanvasView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B457522D17398A1F006F1FA5 /* UndoRedoCanvasView.cpp */; };
 		B457523017398A27006F1FA5 /* UndoRedoCanvasView.h in Sources */ = {isa = PBXBuildFile; fileRef = B457522E17398A1F006F1FA5 /* UndoRedoCanvasView.h */; };
+		B461BCC317534B740009139E /* PupilListModel.h in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9D24174BFA5000D05A9B /* PupilListModel.h */; };
+		B461BCC417534B740009139E /* MainMenuViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9D1D174BF0D300D05A9B /* MainMenuViewController.h */; };
+		B461BCC517534B740009139E /* QuizGenerator.h in Sources */ = {isa = PBXBuildFile; fileRef = B4EF266C174E4B87005261CB /* QuizGenerator.h */; };
+		B461BCC617534B740009139E /* QuizQuestion.h in Sources */ = {isa = PBXBuildFile; fileRef = B4EF266F174E4B9E005261CB /* QuizQuestion.h */; };
+		B461BCC717534B740009139E /* Quiz.h in Sources */ = {isa = PBXBuildFile; fileRef = B4EF2672174E4BAB005261CB /* Quiz.h */; };
+		B461BCC817534B740009139E /* AdjustQuizQuestion.h in Sources */ = {isa = PBXBuildFile; fileRef = B4EF267B174E5BCB005261CB /* AdjustQuizQuestion.h */; };
+		B461BCC917534B740009139E /* JSONDataSource.h in Sources */ = {isa = PBXBuildFile; fileRef = B489C87C174D07C9003B8444 /* JSONDataSource.h */; };
+		B461BCD017534B740009139E /* MainMenuView.h in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9D20174BF21900D05A9B /* MainMenuView.h */; };
+		B461BCE017534BEF0009139E /* AnalogClock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B461BCDA17534BEF0009139E /* AnalogClock.cpp */; };
+		B461BCE117534BEF0009139E /* Clock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B461BCDC17534BEF0009139E /* Clock.cpp */; };
+		B461BCE217534BEF0009139E /* FlipClock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B461BCDE17534BEF0009139E /* FlipClock.cpp */; };
+		B461BCE317534C760009139E /* AnalogClock.h in Sources */ = {isa = PBXBuildFile; fileRef = B461BCDB17534BEF0009139E /* AnalogClock.h */; };
+		B461BCE417534C760009139E /* Clock.h in Sources */ = {isa = PBXBuildFile; fileRef = B461BCDD17534BEF0009139E /* Clock.h */; };
+		B461BCE517534C760009139E /* FlipClock.h in Sources */ = {isa = PBXBuildFile; fileRef = B461BCDF17534BEF0009139E /* FlipClock.h */; };
 		B465D7B2170338B20022E543 /* mainwindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B465D7B0170338B20022E543 /* mainwindow.cpp */; };
 		B465D7B5170338C60022E543 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B465D7B3170338C60022E543 /* main.cpp */; };
 		B465D7B6170339800022E543 /* mainwindow.h in Sources */ = {isa = PBXBuildFile; fileRef = B465D7B1170338B20022E543 /* mainwindow.h */; };
@@ -84,12 +98,6 @@
 		B4AC9D04174B9C0100D05A9B /* IntroViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9CFF174B9BF900D05A9B /* IntroViewController.h */; };
 		B4AC9D05174B9C0100D05A9B /* SelectPupilViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9D01174B9BF900D05A9B /* SelectPupilViewController.h */; };
 		B4AC9D0C174B9D9100D05A9B /* Clocks.qrc in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9D0B174B9D8800D05A9B /* Clocks.qrc */; };
-		B4AC9D15174BD71E00D05A9B /* AnalogClock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9D0F174BD71E00D05A9B /* AnalogClock.cpp */; };
-		B4AC9D16174BD71E00D05A9B /* Clock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9D11174BD71E00D05A9B /* Clock.cpp */; };
-		B4AC9D17174BD71E00D05A9B /* FlipClock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9D13174BD71E00D05A9B /* FlipClock.cpp */; };
-		B4AC9D18174BD72B00D05A9B /* AnalogClock.h in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9D10174BD71E00D05A9B /* AnalogClock.h */; };
-		B4AC9D19174BD72B00D05A9B /* Clock.h in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9D12174BD71E00D05A9B /* Clock.h */; };
-		B4AC9D1A174BD72B00D05A9B /* FlipClock.h in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9D14174BD71E00D05A9B /* FlipClock.h */; };
 		B4AC9D1E174BF0D300D05A9B /* MainMenuViewController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9D1C174BF0D300D05A9B /* MainMenuViewController.cpp */; };
 		B4AC9D21174BF21900D05A9B /* MainMenuView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9D1F174BF21800D05A9B /* MainMenuView.cpp */; };
 		B4AC9D25174BFA5000D05A9B /* PupilListModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9D23174BFA5000D05A9B /* PupilListModel.cpp */; };
@@ -180,6 +188,12 @@
 		B450FF79173D3725000A03B4 /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Animation.h; path = Animations/Animation.h; sourceTree = SOURCE_ROOT; };
 		B457522D17398A1F006F1FA5 /* UndoRedoCanvasView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UndoRedoCanvasView.cpp; path = UndoRedo/UndoRedoCanvasView.cpp; sourceTree = SOURCE_ROOT; };
 		B457522E17398A1F006F1FA5 /* UndoRedoCanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UndoRedoCanvasView.h; path = UndoRedo/UndoRedoCanvasView.h; sourceTree = SOURCE_ROOT; };
+		B461BCDA17534BEF0009139E /* AnalogClock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AnalogClock.cpp; path = Views/Clocks/AnalogClock.cpp; sourceTree = SOURCE_ROOT; };
+		B461BCDB17534BEF0009139E /* AnalogClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnalogClock.h; path = Views/Clocks/AnalogClock.h; sourceTree = SOURCE_ROOT; };
+		B461BCDC17534BEF0009139E /* Clock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Clock.cpp; path = Views/Clocks/Clock.cpp; sourceTree = SOURCE_ROOT; };
+		B461BCDD17534BEF0009139E /* Clock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Clock.h; path = Views/Clocks/Clock.h; sourceTree = SOURCE_ROOT; };
+		B461BCDE17534BEF0009139E /* FlipClock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FlipClock.cpp; path = Views/Clocks/FlipClock.cpp; sourceTree = SOURCE_ROOT; };
+		B461BCDF17534BEF0009139E /* FlipClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlipClock.h; path = Views/Clocks/FlipClock.h; sourceTree = SOURCE_ROOT; };
 		B465D7B0170338B20022E543 /* mainwindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainwindow.cpp; sourceTree = SOURCE_ROOT; };
 		B465D7B1170338B20022E543 /* mainwindow.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = mainwindow.h; sourceTree = SOURCE_ROOT; };
 		B465D7B3170338C60022E543 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = SOURCE_ROOT; };
@@ -229,12 +243,6 @@
 		B4AC9D09174B9D4600D05A9B /* go-next.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "go-next.svg"; path = "res/icons/go-next.svg"; sourceTree = SOURCE_ROOT; };
 		B4AC9D0A174B9D4600D05A9B /* preferences-system.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "preferences-system.svg"; path = "res/icons/preferences-system.svg"; sourceTree = SOURCE_ROOT; };
 		B4AC9D0B174B9D8800D05A9B /* Clocks.qrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Clocks.qrc; sourceTree = "<group>"; };
-		B4AC9D0F174BD71E00D05A9B /* AnalogClock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AnalogClock.cpp; path = Views/Clocks/AnalogClock.cpp; sourceTree = SOURCE_ROOT; };
-		B4AC9D10174BD71E00D05A9B /* AnalogClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnalogClock.h; path = Views/Clocks/AnalogClock.h; sourceTree = SOURCE_ROOT; };
-		B4AC9D11174BD71E00D05A9B /* Clock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Clock.cpp; path = Views/Clocks/Clock.cpp; sourceTree = SOURCE_ROOT; };
-		B4AC9D12174BD71E00D05A9B /* Clock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Clock.h; path = Views/Clocks/Clock.h; sourceTree = SOURCE_ROOT; };
-		B4AC9D13174BD71E00D05A9B /* FlipClock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FlipClock.cpp; path = Views/Clocks/FlipClock.cpp; sourceTree = SOURCE_ROOT; };
-		B4AC9D14174BD71E00D05A9B /* FlipClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlipClock.h; path = Views/Clocks/FlipClock.h; sourceTree = SOURCE_ROOT; };
 		B4AC9D1C174BF0D300D05A9B /* MainMenuViewController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainMenuViewController.cpp; path = Controller/ViewControllers/MainMenuViewController.cpp; sourceTree = SOURCE_ROOT; };
 		B4AC9D1D174BF0D300D05A9B /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuViewController.h; path = Controller/ViewControllers/MainMenuViewController.h; sourceTree = SOURCE_ROOT; };
 		B4AC9D1F174BF21800D05A9B /* MainMenuView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainMenuView.cpp; path = Views/MainMenuView.cpp; sourceTree = SOURCE_ROOT; };
@@ -424,12 +432,12 @@
 		B48E32D81704DC2D00E0DB00 /* Clocks */ = {
 			isa = PBXGroup;
 			children = (
-				B4AC9D0F174BD71E00D05A9B /* AnalogClock.cpp */,
-				B4AC9D10174BD71E00D05A9B /* AnalogClock.h */,
-				B4AC9D11174BD71E00D05A9B /* Clock.cpp */,
-				B4AC9D12174BD71E00D05A9B /* Clock.h */,
-				B4AC9D13174BD71E00D05A9B /* FlipClock.cpp */,
-				B4AC9D14174BD71E00D05A9B /* FlipClock.h */,
+				B461BCDA17534BEF0009139E /* AnalogClock.cpp */,
+				B461BCDB17534BEF0009139E /* AnalogClock.h */,
+				B461BCDC17534BEF0009139E /* Clock.cpp */,
+				B461BCDD17534BEF0009139E /* Clock.h */,
+				B461BCDE17534BEF0009139E /* FlipClock.cpp */,
+				B461BCDF17534BEF0009139E /* FlipClock.h */,
 			);
 			name = Clocks;
 			sourceTree = "<group>";
@@ -605,9 +613,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4AC9D18174BD72B00D05A9B /* AnalogClock.h in Sources */,
-				B4AC9D19174BD72B00D05A9B /* Clock.h in Sources */,
-				B4AC9D1A174BD72B00D05A9B /* FlipClock.h in Sources */,
+				B461BCE317534C760009139E /* AnalogClock.h in Sources */,
+				B461BCE417534C760009139E /* Clock.h in Sources */,
+				B461BCE517534C760009139E /* FlipClock.h in Sources */,
+				B461BCC317534B740009139E /* PupilListModel.h in Sources */,
+				B461BCC417534B740009139E /* MainMenuViewController.h in Sources */,
+				B461BCC517534B740009139E /* QuizGenerator.h in Sources */,
+				B461BCC617534B740009139E /* QuizQuestion.h in Sources */,
+				B461BCC717534B740009139E /* Quiz.h in Sources */,
+				B461BCC817534B740009139E /* AdjustQuizQuestion.h in Sources */,
+				B461BCC917534B740009139E /* JSONDataSource.h in Sources */,
+				B461BCD017534B740009139E /* MainMenuView.h in Sources */,
 				B4AC9D0C174B9D9100D05A9B /* Clocks.qrc in Sources */,
 				B4AC9D04174B9C0100D05A9B /* IntroViewController.h in Sources */,
 				B4AC9D05174B9C0100D05A9B /* SelectPupilViewController.h in Sources */,
@@ -663,9 +679,6 @@
 				B4AC9CFA174B987A00D05A9B /* DummyDataSource.cpp in Sources */,
 				B4AC9D02174B9BF900D05A9B /* IntroViewController.cpp in Sources */,
 				B4AC9D03174B9BF900D05A9B /* SelectPupilViewController.cpp in Sources */,
-				B4AC9D15174BD71E00D05A9B /* AnalogClock.cpp in Sources */,
-				B4AC9D16174BD71E00D05A9B /* Clock.cpp in Sources */,
-				B4AC9D17174BD71E00D05A9B /* FlipClock.cpp in Sources */,
 				B4AC9D1E174BF0D300D05A9B /* MainMenuViewController.cpp in Sources */,
 				B4AC9D21174BF21900D05A9B /* MainMenuView.cpp in Sources */,
 				B4AC9D25174BFA5000D05A9B /* PupilListModel.cpp in Sources */,
@@ -675,6 +688,9 @@
 				B4EF2670174E4B9E005261CB /* QuizQuestion.cpp in Sources */,
 				B4EF2673174E4BAB005261CB /* Quiz.cpp in Sources */,
 				B4EF267C174E5BCB005261CB /* AdjustQuizQuestion.cpp in Sources */,
+				B461BCE017534BEF0009139E /* AnalogClock.cpp in Sources */,
+				B461BCE117534BEF0009139E /* Clock.cpp in Sources */,
+				B461BCE217534BEF0009139E /* FlipClock.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
