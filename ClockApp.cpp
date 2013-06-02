@@ -18,6 +18,8 @@
 #include "SelectPupilViewController.h"
 #include "UndoRedoViewController.h"
 #include "MainMenuViewController.h"
+#include <QFile>
+#include "QuizViewController.h"
 
 ClockApp::ClockApp(int &argc, char **argv):QApplication(argc, argv)
 {
@@ -28,6 +30,7 @@ ClockApp::ClockApp(int &argc, char **argv):QApplication(argc, argv)
     
     mainMenuViewController = new MainMenuViewController(this);
     activeViewController = mainMenuViewController;
+    quizViewController = NULL;
 }
 
 ClockApp::~ClockApp()
@@ -87,4 +90,22 @@ void ClockApp::showUndoRedoPlayGround()
 DataSource* ClockApp::getDataSource()
 {
     return this->dataSource;
+}
+
+void ClockApp::showQuiz(Quiz quiz)
+{
+    quizViewController = new QuizViewController(this, quiz);
+    activeViewController->getView()->setHidden(true);
+    activeViewController = quizViewController;
+    mainWindow->centralWidget()->layout()->addWidget(activeViewController->getView());
+}
+
+void ClockApp::quitQuiz()
+{
+    mainMenuViewController->getView()->setHidden(false);
+    delete activeViewController->getView();
+    delete activeViewController;
+    
+    activeViewController = mainMenuViewController;
+    quizViewController = NULL;
 }

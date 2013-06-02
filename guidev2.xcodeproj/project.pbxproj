@@ -85,6 +85,8 @@
 		B465D89D17033FDE0022E543 /* QtWidgets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B465D88017033FDE0022E543 /* QtWidgets.framework */; };
 		B465D89E17033FDE0022E543 /* QtXml.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B465D88117033FDE0022E543 /* QtXml.framework */; };
 		B465D89F17033FDE0022E543 /* QtXmlPatterns.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B465D88217033FDE0022E543 /* QtXmlPatterns.framework */; };
+		B475801A175BAEF60025643F /* QuizViewController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4758018175BAEF60025643F /* QuizViewController.cpp */; };
+		B475801D175BAF040025643F /* QuizView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B475801B175BAF040025643F /* QuizView.cpp */; };
 		B489C87D174D07C9003B8444 /* JSONDataSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B489C87B174D07C9003B8444 /* JSONDataSource.cpp */; };
 		B489C87F174D0922003B8444 /* DataSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B489C87E174D0922003B8444 /* DataSource.cpp */; };
 		B4AC9CF6174B986500D05A9B /* IntroView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9CF2174B986500D05A9B /* IntroView.cpp */; };
@@ -101,6 +103,7 @@
 		B4AC9D1E174BF0D300D05A9B /* MainMenuViewController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9D1C174BF0D300D05A9B /* MainMenuViewController.cpp */; };
 		B4AC9D21174BF21900D05A9B /* MainMenuView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9D1F174BF21800D05A9B /* MainMenuView.cpp */; };
 		B4AC9D25174BFA5000D05A9B /* PupilListModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9D23174BFA5000D05A9B /* PupilListModel.cpp */; };
+		B4DAA841175149F700F57D40 /* main.qss in CopyFiles */ = {isa = PBXBuildFile; fileRef = B4DAA83E17513FF700F57D40 /* main.qss */; };
 		B4EF266D174E4B87005261CB /* QuizGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4EF266B174E4B87005261CB /* QuizGenerator.cpp */; };
 		B4EF2670174E4B9E005261CB /* QuizQuestion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4EF266E174E4B9E005261CB /* QuizQuestion.cpp */; };
 		B4EF2673174E4BAB005261CB /* Quiz.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4EF2671174E4BAB005261CB /* Quiz.cpp */; };
@@ -145,12 +148,13 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		B40A8C7617032B2B00FE876D /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = res/qss;
+			dstSubfolderSpec = 16;
 			files = (
+				B4DAA841175149F700F57D40 /* main.qss in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -226,6 +230,10 @@
 		B465D88017033FDE0022E543 /* QtWidgets.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtWidgets.framework; path = ../../../Qt5.0.1/5.0.1/clang_64/lib/QtWidgets.framework; sourceTree = "<group>"; };
 		B465D88117033FDE0022E543 /* QtXml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtXml.framework; path = ../../../Qt5.0.1/5.0.1/clang_64/lib/QtXml.framework; sourceTree = "<group>"; };
 		B465D88217033FDE0022E543 /* QtXmlPatterns.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtXmlPatterns.framework; path = ../../../Qt5.0.1/5.0.1/clang_64/lib/QtXmlPatterns.framework; sourceTree = "<group>"; };
+		B4758018175BAEF60025643F /* QuizViewController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = QuizViewController.cpp; path = Controller/ViewControllers/QuizViewController.cpp; sourceTree = SOURCE_ROOT; };
+		B4758019175BAEF60025643F /* QuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuizViewController.h; path = Controller/ViewControllers/QuizViewController.h; sourceTree = SOURCE_ROOT; };
+		B475801B175BAF040025643F /* QuizView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = QuizView.cpp; path = Views/QuizView.cpp; sourceTree = SOURCE_ROOT; };
+		B475801C175BAF040025643F /* QuizView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuizView.h; path = Views/QuizView.h; sourceTree = SOURCE_ROOT; };
 		B489C87B174D07C9003B8444 /* JSONDataSource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = JSONDataSource.cpp; path = Model/JSONDataSource.cpp; sourceTree = SOURCE_ROOT; };
 		B489C87C174D07C9003B8444 /* JSONDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONDataSource.h; path = Model/JSONDataSource.h; sourceTree = SOURCE_ROOT; };
 		B489C87E174D0922003B8444 /* DataSource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DataSource.cpp; path = Model/DataSource.cpp; sourceTree = SOURCE_ROOT; };
@@ -249,6 +257,7 @@
 		B4AC9D20174BF21900D05A9B /* MainMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuView.h; path = Views/MainMenuView.h; sourceTree = SOURCE_ROOT; };
 		B4AC9D23174BFA5000D05A9B /* PupilListModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PupilListModel.cpp; path = Controller/ViewControllers/DataModel/PupilListModel.cpp; sourceTree = SOURCE_ROOT; };
 		B4AC9D24174BFA5000D05A9B /* PupilListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PupilListModel.h; path = Controller/ViewControllers/DataModel/PupilListModel.h; sourceTree = SOURCE_ROOT; };
+		B4DAA83E17513FF700F57D40 /* main.qss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = main.qss; path = res/qss/main.qss; sourceTree = SOURCE_ROOT; };
 		B4EF266B174E4B87005261CB /* QuizGenerator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = QuizGenerator.cpp; path = Controller/QuizGenerator.cpp; sourceTree = SOURCE_ROOT; };
 		B4EF266C174E4B87005261CB /* QuizGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuizGenerator.h; path = Controller/QuizGenerator.h; sourceTree = SOURCE_ROOT; };
 		B4EF266E174E4B9E005261CB /* QuizQuestion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = QuizQuestion.cpp; path = Controller/QuizQuestion.cpp; sourceTree = SOURCE_ROOT; };
@@ -445,6 +454,7 @@
 		B4AC9D06174B9D3000D05A9B /* res */ = {
 			isa = PBXGroup;
 			children = (
+				B4DAA83D17513FBE00F57D40 /* qss */,
 				B4AC9D07174B9D3800D05A9B /* Icons */,
 			);
 			name = res;
@@ -467,6 +477,15 @@
 				B4AC9D24174BFA5000D05A9B /* PupilListModel.h */,
 			);
 			path = DataModel;
+			sourceTree = "<group>";
+		};
+		B4DAA83D17513FBE00F57D40 /* qss */ = {
+			isa = PBXGroup;
+			children = (
+				B4DAA83E17513FF700F57D40 /* main.qss */,
+			);
+			name = qss;
+			path = res/qss;
 			sourceTree = "<group>";
 		};
 		B4EF266A174E4ACA005261CB /* Controller */ = {
@@ -497,6 +516,8 @@
 				B4EFFEF5171ED2DA0076E810 /* ViewController.h */,
 				B4AC9D1C174BF0D300D05A9B /* MainMenuViewController.cpp */,
 				B4AC9D1D174BF0D300D05A9B /* MainMenuViewController.h */,
+				B4758018175BAEF60025643F /* QuizViewController.cpp */,
+				B4758019175BAEF60025643F /* QuizViewController.h */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -511,6 +532,8 @@
 				B48E32D81704DC2D00E0DB00 /* Clocks */,
 				B4AC9D1F174BF21800D05A9B /* MainMenuView.cpp */,
 				B4AC9D20174BF21900D05A9B /* MainMenuView.h */,
+				B475801B175BAF040025643F /* QuizView.cpp */,
+				B475801C175BAF040025643F /* QuizView.h */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -691,6 +714,8 @@
 				B461BCE017534BEF0009139E /* AnalogClock.cpp in Sources */,
 				B461BCE117534BEF0009139E /* Clock.cpp in Sources */,
 				B461BCE217534BEF0009139E /* FlipClock.cpp in Sources */,
+				B475801A175BAEF60025643F /* QuizViewController.cpp in Sources */,
+				B475801D175BAF040025643F /* QuizView.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

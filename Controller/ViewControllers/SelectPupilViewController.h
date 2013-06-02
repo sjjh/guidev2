@@ -17,6 +17,14 @@ class SelectPupilViewController: public ViewController
     public slots:
     
         void selectionChanged( const QModelIndex & index );
+    
+        void startEasyQuiz();
+        void startMediumQuiz();
+        void startHardQuiz();
+    
+    private:
+    
+        Pupil* _selectedPupil;
 };
 
 #endif // __guidev2__SelectPupilViewController__

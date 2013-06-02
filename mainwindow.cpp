@@ -18,6 +18,8 @@ MainWindow::MainWindow(QWidget *parent)
     // Create layout and central widget for window
     
     QVBoxLayout* layout = new QVBoxLayout();
+    layout->setSpacing(0);
+    layout->setMargin(0);
     
     QWidget* centralWidget = new QWidget();
     setCentralWidget(centralWidget);

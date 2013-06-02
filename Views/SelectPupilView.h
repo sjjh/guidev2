@@ -10,18 +10,27 @@
 class SelectPupilView : public QWidget
 {
     Q_OBJECT
-public:
-    SelectPupilView(QWidget *parent = 0);
-    virtual ~SelectPupilView();
     
-    QListView* getPupilList();
+    public:
+    
+        SelectPupilView(QWidget *parent = 0);
+        virtual ~SelectPupilView();
+    
+        QListView* getPupilList();
+        QPushButton* easyButton();
+        QPushButton* mediumButton();
+        QPushButton* hardButton();
 
-private:
-    QListView* pupilList;
+    private:
     
-signals:
+        QListView* pupilList;
+        QPushButton* _easyButton;
+        QPushButton* _mediumButton;
+        QPushButton* _hardButton;
     
-public slots:
+    signals:
+    
+    public slots:
     
 };
 

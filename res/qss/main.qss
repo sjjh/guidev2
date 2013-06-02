@@ -1,0 +1,48 @@
+/* 
+  Created by Jens Meder on 25.05.13.
+*/
+
+QListView
+{   
+    border: 0px;
+    background: transparent;
+    font-size: 18pt;
+    font-family: "Exo";
+}
+
+QListView::item
+{
+    background: transparent;
+    height: 50px;
+    padding-left: 30px;
+}
+
+QListView::item:selected
+{
+    background: #455d9e;
+    color: #ffffff;
+}
+
+QTabBar
+{
+    background: #ff0000;
+    left: 0px;
+}
+
+QTabBar::tab
+{
+    background: gray;
+    color: white;
+    font-family: Exo;
+    font-size: 30pt;
+    height: 100px;
+}
+
+QTabBar::tab:selected
+{
+    background: #fcfdff;
+    border-top: 10px;
+    border-style: solid;    
+    border-top-color: #455d9e;
+    height: 90px;
+}

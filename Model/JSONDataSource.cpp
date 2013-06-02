@@ -28,6 +28,11 @@ JSONDataSource::~JSONDataSource()
 
 void JSONDataSource::save()
 {
+    if(!isLoaded)
+    {
+        return;
+    }
+    
     QJsonDocument doc;
     QJsonArray pupilArray;
     

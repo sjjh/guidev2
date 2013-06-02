@@ -15,12 +15,14 @@
 #include "mainwindow.h"
 #include "Model/DataSource.h"
 #include "Model/DummyDataSource.h"
+#include "Quiz.h"
 
 class IntroViewController;
 class SelectPupilViewController;
 class ViewController;
 class UndoRedoViewController;
 class MainMenuViewController;
+class QuizViewController;
 
 /**
  * Represents the clock application.
@@ -40,6 +42,8 @@ class ClockApp: public QApplication
         DataSource* dataSource;
     
         ViewController* activeViewController;
+    
+        QuizViewController* quizViewController;
     
     public:
     
@@ -71,6 +75,10 @@ class ClockApp: public QApplication
          * Show undo redo playground window
          */
         void showUndoRedoPlayGround();
+    
+        void showQuiz(Quiz quiz);
+    
+        void quitQuiz();
 };
 
 #endif /* defined(__guidev2__ClockApp__) */

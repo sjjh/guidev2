@@ -31,7 +31,7 @@ class DataSource
          * @return a QList with all pupils
          * @author Simon
          */
-        virtual QList<Pupil*> getAllPupils();
+        virtual QList<Pupil*>& getAllPupils();
         /**
          * @brief getPupilByName
          * @param name the name of a pupil as QString

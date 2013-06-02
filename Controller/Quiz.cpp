@@ -13,7 +13,17 @@ Quiz::Quiz(QList<QuizQuestion*>* questions)
     _questions = questions;
 }
 
-QList<QuizQuestion*>* Quiz::questions()
+Quiz::Quiz(const Quiz& quiz)
+{
+    _questions = new QList<QuizQuestion*>(*quiz.questions());
+}
+
+Quiz::Quiz()
+{
+    _questions = new QList<QuizQuestion*>();
+}
+
+QList<QuizQuestion*>* Quiz::questions() const
 {
     return _questions;
 }
@@ -21,4 +31,11 @@ QList<QuizQuestion*>* Quiz::questions()
 Quiz::~Quiz()
 {
     delete _questions;
+}
+
+Quiz& Quiz::operator=(const Quiz &other)
+{
+    _questions->empty();
+    _questions->append(*other.questions());
+    return *this;
 }

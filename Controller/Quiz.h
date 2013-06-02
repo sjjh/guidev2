@@ -18,10 +18,14 @@ class Quiz
     public:
     
         Quiz(QList<QuizQuestion*>*);
+        Quiz(const Quiz&);
+        Quiz();
     
-        QList<QuizQuestion*>* questions();
+        QList<QuizQuestion*>* questions() const;
     
         virtual ~Quiz();
+    
+        Quiz& operator= (const Quiz& other);
     
     private:
     

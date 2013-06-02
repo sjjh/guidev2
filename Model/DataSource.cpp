@@ -19,7 +19,7 @@ DataSource::~DataSource()
     delete pupils;
 }
 
-QList<Pupil*> DataSource::getAllPupils()
+QList<Pupil*>& DataSource::getAllPupils()
 {
     if(!isLoaded)
     {

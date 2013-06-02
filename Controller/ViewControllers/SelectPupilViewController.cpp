@@ -3,6 +3,7 @@
 #include "ClockApp.h"
 #include <QList>
 #include "PupilListModel.h"
+#include "QuizGenerator.h"
 
 SelectPupilViewController::SelectPupilViewController(ClockApp* app):ViewController(app)
 {
@@ -12,6 +13,14 @@ SelectPupilViewController::SelectPupilViewController(ClockApp* app):ViewControll
     connect(selectPupilView->getPupilList(), SIGNAL(clicked(const QModelIndex &)), this, SLOT(selectionChanged( const QModelIndex & )));
     
     view = selectPupilView;
+    
+    if(app->getDataSource()->getAllPupils().count() > 0)
+    {
+        _selectedPupil = app->getDataSource()->getAllPupils().at(0);
+        selectPupilView->getPupilList()->selectionModel()->select(selectPupilView->getPupilList()->model()->index(0, 0), QItemSelectionModel::Select);
+    }
+    
+    connect(selectPupilView->easyButton(),SIGNAL(clicked()),this,SLOT(startEasyQuiz()));
 }
 
 SelectPupilViewController::~SelectPupilViewController()
@@ -20,5 +29,20 @@ SelectPupilViewController::~SelectPupilViewController()
 
 void SelectPupilViewController::selectionChanged( const QModelIndex & index )
 {
-    std::cout << index.row() << std::endl;
+    _selectedPupil = app->getDataSource()->getAllPupils().at(index.row());
+    
+    std::cout << _selectedPupil->getName().toStdString() << std::endl;
+}
+
+void SelectPupilViewController::startEasyQuiz()
+{
+    app->showQuiz(QuizGenerator::generateEasyQuiz());
+}
+
+void SelectPupilViewController::startMediumQuiz()
+{
+}
+
+void SelectPupilViewController::startHardQuiz()
+{
 }
