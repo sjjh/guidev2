@@ -20,10 +20,12 @@ class QuizView: public QWidget
         QuizView();
     
         QPushButton* mainMenuButton();
+        QPushButton* checkAnswerButton();
     
     private:
     
         QPushButton* _mainMenuButton;
+        QPushButton* _checkAnswerButton;
 };
 
 #endif /* defined(__guidev2__QuizView__) */

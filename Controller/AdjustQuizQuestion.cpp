@@ -10,10 +10,10 @@
 
 bool AdjustQuizQuestion::isAnswerCorrect()
 {
-    return _answer != NULL && _answer->secsTo(_correctAnswer) == 0;
+    return _answer.hour() % 12 == _correctAnswer.hour() % 12 && _answer.minute() == _correctAnswer.minute();
 }
 
-void AdjustQuizQuestion::setAnswer(QTime* answer)
+void AdjustQuizQuestion::setAnswer(QTime answer)
 {
     _answer = answer;
 }
@@ -21,7 +21,7 @@ void AdjustQuizQuestion::setAnswer(QTime* answer)
 AdjustQuizQuestion::AdjustQuizQuestion(QTime correctAnswer)
 {
     _correctAnswer = correctAnswer;
-    _answer = NULL;
+    _answer = QTime(0,0,0);
 }
 
 AdjustQuizQuestion::~AdjustQuizQuestion()

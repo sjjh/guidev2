@@ -61,7 +61,9 @@ SOURCES += main.cpp\
     Controller/ViewControllers/DataModel/PupilListModel.cpp \
     Controller/AdjustQuizQuestion.cpp \
     Views/QuizView.cpp \
-    Controller/ViewControllers/QuizViewController.cpp
+    Controller/ViewControllers/QuizViewController.cpp \
+    Controller/ViewControllers/AnalogDigitalAdjustViewController.cpp \
+    Views/AnalogDigitalView.cpp
 
 HEADERS  += mainwindow.h \
     NotificationCenter.h \
@@ -102,7 +104,9 @@ HEADERS  += mainwindow.h \
     Controller/ViewControllers/IntroViewController.h \
     Controller/AdjustQuizQuestion.h \
     Views/QuizView.h \
-    Controller/ViewControllers/QuizViewController.h
+    Controller/ViewControllers/QuizViewController.h \
+    Controller/ViewControllers/AnalogDigitalAdjustViewController.h \
+    Views/AnalogDigitalView.h
 
 RESOURCES += \
     Clocks.qrc

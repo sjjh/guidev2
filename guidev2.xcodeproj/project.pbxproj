@@ -87,6 +87,12 @@
 		B465D89F17033FDE0022E543 /* QtXmlPatterns.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B465D88217033FDE0022E543 /* QtXmlPatterns.framework */; };
 		B475801A175BAEF60025643F /* QuizViewController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4758018175BAEF60025643F /* QuizViewController.cpp */; };
 		B475801D175BAF040025643F /* QuizView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B475801B175BAF040025643F /* QuizView.cpp */; };
+		B4758020175BB9690025643F /* AnalogDigitalAdjustViewController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B475801E175BB9690025643F /* AnalogDigitalAdjustViewController.cpp */; };
+		B4758026175BBB140025643F /* AnalogDigitalView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4758024175BBB140025643F /* AnalogDigitalView.cpp */; };
+		B4758027175BD3780025643F /* QuizViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = B4758019175BAEF60025643F /* QuizViewController.h */; };
+		B4758028175BD3780025643F /* AnalogDigitalAdjustViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = B475801F175BB9690025643F /* AnalogDigitalAdjustViewController.h */; };
+		B4758029175BD3780025643F /* QuizView.h in Sources */ = {isa = PBXBuildFile; fileRef = B475801C175BAF040025643F /* QuizView.h */; };
+		B475802A175BD3780025643F /* AnalogDigitalView.h in Sources */ = {isa = PBXBuildFile; fileRef = B4758025175BBB140025643F /* AnalogDigitalView.h */; };
 		B489C87D174D07C9003B8444 /* JSONDataSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B489C87B174D07C9003B8444 /* JSONDataSource.cpp */; };
 		B489C87F174D0922003B8444 /* DataSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B489C87E174D0922003B8444 /* DataSource.cpp */; };
 		B4AC9CF6174B986500D05A9B /* IntroView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9CF2174B986500D05A9B /* IntroView.cpp */; };
@@ -234,6 +240,10 @@
 		B4758019175BAEF60025643F /* QuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuizViewController.h; path = Controller/ViewControllers/QuizViewController.h; sourceTree = SOURCE_ROOT; };
 		B475801B175BAF040025643F /* QuizView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = QuizView.cpp; path = Views/QuizView.cpp; sourceTree = SOURCE_ROOT; };
 		B475801C175BAF040025643F /* QuizView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuizView.h; path = Views/QuizView.h; sourceTree = SOURCE_ROOT; };
+		B475801E175BB9690025643F /* AnalogDigitalAdjustViewController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AnalogDigitalAdjustViewController.cpp; path = Controller/ViewControllers/AnalogDigitalAdjustViewController.cpp; sourceTree = SOURCE_ROOT; };
+		B475801F175BB9690025643F /* AnalogDigitalAdjustViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnalogDigitalAdjustViewController.h; path = Controller/ViewControllers/AnalogDigitalAdjustViewController.h; sourceTree = SOURCE_ROOT; };
+		B4758024175BBB140025643F /* AnalogDigitalView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AnalogDigitalView.cpp; path = Views/AnalogDigitalView.cpp; sourceTree = SOURCE_ROOT; };
+		B4758025175BBB140025643F /* AnalogDigitalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnalogDigitalView.h; path = Views/AnalogDigitalView.h; sourceTree = SOURCE_ROOT; };
 		B489C87B174D07C9003B8444 /* JSONDataSource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = JSONDataSource.cpp; path = Model/JSONDataSource.cpp; sourceTree = SOURCE_ROOT; };
 		B489C87C174D07C9003B8444 /* JSONDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONDataSource.h; path = Model/JSONDataSource.h; sourceTree = SOURCE_ROOT; };
 		B489C87E174D0922003B8444 /* DataSource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DataSource.cpp; path = Model/DataSource.cpp; sourceTree = SOURCE_ROOT; };
@@ -518,6 +528,8 @@
 				B4AC9D1D174BF0D300D05A9B /* MainMenuViewController.h */,
 				B4758018175BAEF60025643F /* QuizViewController.cpp */,
 				B4758019175BAEF60025643F /* QuizViewController.h */,
+				B475801E175BB9690025643F /* AnalogDigitalAdjustViewController.cpp */,
+				B475801F175BB9690025643F /* AnalogDigitalAdjustViewController.h */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -534,6 +546,8 @@
 				B4AC9D20174BF21900D05A9B /* MainMenuView.h */,
 				B475801B175BAF040025643F /* QuizView.cpp */,
 				B475801C175BAF040025643F /* QuizView.h */,
+				B4758024175BBB140025643F /* AnalogDigitalView.cpp */,
+				B4758025175BBB140025643F /* AnalogDigitalView.h */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -636,6 +650,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4758027175BD3780025643F /* QuizViewController.h in Sources */,
+				B4758028175BD3780025643F /* AnalogDigitalAdjustViewController.h in Sources */,
+				B4758029175BD3780025643F /* QuizView.h in Sources */,
+				B475802A175BD3780025643F /* AnalogDigitalView.h in Sources */,
 				B461BCE317534C760009139E /* AnalogClock.h in Sources */,
 				B461BCE417534C760009139E /* Clock.h in Sources */,
 				B461BCE517534C760009139E /* FlipClock.h in Sources */,
@@ -716,6 +734,8 @@
 				B461BCE217534BEF0009139E /* FlipClock.cpp in Sources */,
 				B475801A175BAEF60025643F /* QuizViewController.cpp in Sources */,
 				B475801D175BAF040025643F /* QuizView.cpp in Sources */,
+				B4758020175BB9690025643F /* AnalogDigitalAdjustViewController.cpp in Sources */,
+				B4758026175BBB140025643F /* AnalogDigitalView.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

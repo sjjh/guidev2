@@ -21,6 +21,8 @@ SelectPupilViewController::SelectPupilViewController(ClockApp* app):ViewControll
     }
     
     connect(selectPupilView->easyButton(),SIGNAL(clicked()),this,SLOT(startEasyQuiz()));
+    connect(selectPupilView->mediumButton(), SIGNAL(clicked()), this, SLOT(startMediumQuiz()));
+    connect(selectPupilView->hardButton(), SIGNAL(clicked()), this, SLOT(startHardQuiz()));
 }
 
 SelectPupilViewController::~SelectPupilViewController()
@@ -41,8 +43,10 @@ void SelectPupilViewController::startEasyQuiz()
 
 void SelectPupilViewController::startMediumQuiz()
 {
+    app->showQuiz(QuizGenerator::generateMediumQuiz());
 }
 
 void SelectPupilViewController::startHardQuiz()
 {
+    app->showQuiz(QuizGenerator::generateHardQuiz());
 }

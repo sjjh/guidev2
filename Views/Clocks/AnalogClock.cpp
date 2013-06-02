@@ -380,11 +380,13 @@ void AnalogClock::mouseMoveEvent (QMouseEvent* event)
             if((beta - alpha > 0 && fabs(beta - alpha) < 1) || beta - alpha < -M_PI)
             {
                 this->setTime(time.addSecs(d/M_PI * SECONDS_PER_HOUR / 2.0));
+                time.setHMS(time.hour(), time.minute(), 0);
                 emit(timeChanged(this));
             }
             else
             {
                 this->setTime(time.addSecs(-d/M_PI * SECONDS_PER_HOUR / 2.0));
+                time.setHMS(time.hour(), time.minute(), 0);
                 emit(timeChanged(this));
             }
         }

@@ -12,9 +12,12 @@
 #include <iostream>
 #include "ViewController.h"
 #include "Quiz.h"
+#include "AnalogDigitalAdjustViewController.h"
 
 class QuizViewController: public ViewController
 {
+    Q_OBJECT
+
     public:
     
         QuizViewController(ClockApp* app, Quiz quiz);
@@ -22,6 +25,12 @@ class QuizViewController: public ViewController
     private:
     
         Quiz _quiz;
+    
+        AnalogDigitalAdjustViewController* _quizQuestionViewController;
+    
+    public slots:
+    
+        void checkAnswer();
 };
 
 #endif /* defined(__guidev2__QuizViewController__) */

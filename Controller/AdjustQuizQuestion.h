@@ -16,14 +16,14 @@ class AdjustQuizQuestion: public QuizQuestion
 {
     private:
     
-        QTime* _answer;
+        QTime _answer;
         QTime _correctAnswer;
     
     public:
     
         AdjustQuizQuestion(QTime);
         bool isAnswerCorrect();
-        void setAnswer(QTime*);
+        void setAnswer(QTime);
         QTime correctAnswer();
         virtual ~AdjustQuizQuestion();
 };

@@ -27,9 +27,16 @@ class Quiz
     
         Quiz& operator= (const Quiz& other);
     
+        QuizQuestion* currentQuestion();
+        QuizQuestion* nextQuestion();
+    
+        int numberOfQuestionsLeft();
+    
     private:
     
         QList<QuizQuestion*>* _questions;
+    
+        int _currentQuestion;
 };
 
 #endif /* defined(__guidev2__Quiz__) */
